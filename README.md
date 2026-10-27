@@ -1,4 +1,4 @@
-# medscribe-hitl
+# llm-doc-assistant-hitl
 
 Prototype of a medical documentation assistant. An LLM drafts prescriptions, patient instructions and visit notes from the doctor's dictation; the doctor reviews, edits and approves every document before it is saved.
 
