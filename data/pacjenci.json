@@ -1,0 +1,22 @@
+[
+  {
+    "pesel": "80010112345",
+    "imie": "Jan",
+    "nazwisko": "Kowalski",
+    "data_urodzenia": "1980-01-01",
+    "adres": "ul. Lipowa 5, 30-001 Kraków",
+    "choroby_przewlekle": ["nadciśnienie tętnicze"],
+    "leki_stale": ["ramipril 5 mg 1x1"],
+    "alergie": []
+  },
+  {
+    "pesel": "65052254321",
+    "imie": "Maria",
+    "nazwisko": "Nowak",
+    "data_urodzenia": "1965-05-22",
+    "adres": "ul. Długa 12/4, 00-238 Warszawa",
+    "choroby_przewlekle": ["cukrzyca typu 2", "niedoczynność tarczycy"],
+    "leki_stale": ["metformina 850 mg 2x1", "lewotyroksyna 50 mcg 1x1 na czczo"],
+    "alergie": ["penicylina"]
+  }
+]

@@ -1,0 +1,9 @@
+langgraph>=0.4
+langchain>=0.3
+langchain-anthropic
+langchain-openai
+pydantic>=2
+rapidfuzz
+python-dotenv
+# opcjonalnie, tylko gdy wejściem jest nagranie zamiast tekstu:
+# faster-whisper
