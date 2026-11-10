@@ -1,11 +1,13 @@
-"""Graf wizyty: dwa etapy, każdy kończy się zatwierdzeniem przez lekarza.
+"""Visit graph: two stages, each ending with the doctor's approval.
 
-Etap 1 (w trakcie wizyty):  dyktowanie -> agent recepty + agent zaleceń -> LEKARZ
-Etap 2 (po wizycie):        dyktowanie -> agent karty -> weryfikator -> LEKARZ
+Stage 1 (during the visit):  dictation -> prescription agent + instructions agent -> DOCTOR
+Stage 2 (after the visit):   dictation -> visit note agent -> verifier -> DOCTOR
 
-Graf nie wie nic o interfejsie: w miejscach, gdzie potrzebny jest człowiek,
-wywołuje interrupt() i czeka na Command(resume=...). Dziś odpowiada na to
-run.py (pliki JSON), później ten sam graf obsłuży Streamlit.
+The graph knows nothing about the user interface: wherever a human is needed
+it calls interrupt() and waits for Command(resume=...). Today run.py answers
+(through JSON files); later the same graph will be driven by Streamlit.
+
+Prompts are in Polish, since the assistant produces Polish medical documentation.
 """
 
 import json
@@ -17,168 +19,172 @@ from langgraph.graph import END, START, StateGraph
 from langgraph.types import interrupt
 
 from . import drugs
-from .llm import ustrukturyzuj
-from .schemas import KartaWizyty, ReceptaLLM, Weryfikacja, Zalecenia
+from .llm import generate_structured
+from .schemas import DictatedPrescription, PatientInstructions, Verification, VisitNote
 
-PACJENCI_JSON = Path(__file__).parent.parent / "data" / "pacjenci.json"
+PATIENTS_JSON = Path(__file__).parent.parent / "data" / "patients.json"
 
-ZASADY = (
+BASE_RULES = (
     "Jesteś asystentem dokumentacji medycznej. Porządkujesz to, co podyktował lekarz. "
     "Używasz wyłącznie informacji z dyktowania i danych pacjenta. Niczego nie dodajesz, "
     "nie dobierasz leków ani dawek i nie zgadujesz brakujących informacji."
 )
 
 
-class Stan(TypedDict, total=False):
-    wizyta_id: str
+class VisitState(TypedDict, total=False):
+    visit_id: str
     pesel: str
-    pacjent: dict
-    etap1_dyktowanie: str
-    etap2_dyktowanie: str
-    recepta: dict
-    zalecenia: dict
-    karta: dict
-    uwagi: list[dict]
-    etap1_zatwierdzony: bool
-    etap2_zatwierdzony: bool
-    komentarz: str | None  # uwagi lekarza przy odesłaniu do poprawy
-    dokumentacja: dict
+    patient: dict
+    stage1_dictation: str
+    stage2_dictation: str
+    prescription: dict
+    patient_instructions: dict
+    visit_note: dict
+    issues: list[dict]
+    stage1_approved: bool
+    stage2_approved: bool
+    comment: str | None  # doctor's comment when sending a draft back for revision
+    documentation: dict
 
 
-def _json(obj) -> str:
+def _to_json(obj) -> str:
     return json.dumps(obj, ensure_ascii=False, indent=2)
 
 
-def _poprawka(stan: Stan, poprzedni_draft: dict | None) -> str:
-    if not stan.get("komentarz") or poprzedni_draft is None:
+def _revision_request(state: VisitState, previous_draft: dict | None) -> str:
+    if not state.get("comment") or previous_draft is None:
         return ""
     return (
-        f"\n\nPoprzednia wersja:\n{_json(poprzedni_draft)}"
-        f"\n\nLekarz odesłał ją do poprawy z komentarzem:\n{stan['komentarz']}"
+        f"\n\nPoprzednia wersja:\n{_to_json(previous_draft)}"
+        f"\n\nLekarz odesłał ją do poprawy z komentarzem:\n{state['comment']}"
     )
 
 
-def wczytaj_pacjenta(stan: Stan) -> dict:
-    pacjenci = json.loads(PACJENCI_JSON.read_text(encoding="utf-8"))
-    pacjent = next((p for p in pacjenci if p["pesel"] == stan["pesel"]), None)
-    if pacjent is None:
-        raise ValueError(f"Brak pacjenta o PESEL {stan['pesel']} w {PACJENCI_JSON.name}")
-    return {"pacjent": pacjent}
+def load_patient(state: VisitState) -> dict:
+    patients = json.loads(PATIENTS_JSON.read_text(encoding="utf-8"))
+    patient = next((p for p in patients if p["pesel"] == state["pesel"]), None)
+    if patient is None:
+        raise ValueError(f"No patient with PESEL {state['pesel']} in {PATIENTS_JSON.name}")
+    return {"patient": patient}
 
 
-def agent_recepty(stan: Stan) -> dict:
-    wynik = ustrukturyzuj(
-        ReceptaLLM,
-        ZASADY + " Wyciągnij z dyktowania leki do projektu recepty.",
-        f"Dyktowanie:\n{stan['etap1_dyktowanie']}" + _poprawka(stan, stan.get("recepta")),
+def prescription_agent(state: VisitState) -> dict:
+    result = generate_structured(
+        DictatedPrescription,
+        BASE_RULES + " Wyciągnij z dyktowania leki do projektu recepty.",
+        f"Dyktowanie:\n{state['stage1_dictation']}" + _revision_request(state, state.get("prescription")),
     )
-    pozycje = []
-    for lek in wynik.pozycje:
-        kandydaci = drugs.dopasuj(lek.nazwa, lek.dawka)
-        braki = [pole for pole in ("dawka", "dawkowanie", "ilosc") if getattr(lek, pole) is None]
-        if not kandydaci:
-            braki.append("brak dopasowania w bazie leków")
-        pozycje.append({
-            "podyktowano": lek.model_dump(),
-            # Lekarz zostawia jednego kandydata albo poprawia go ręcznie.
-            "wybrany_lek": kandydaci[0] if kandydaci else None,
-            "pozostali_kandydaci": kandydaci[1:],
-            "do_uzupelnienia": braki,
+    items = []
+    for drug in result.items:
+        candidates = drugs.match_drug(drug.name, drug.strength)
+        missing = [field for field in ("strength", "dosage", "quantity") if getattr(drug, field) is None]
+        if not candidates:
+            missing.append("no_registry_match")
+        items.append({
+            "dictated": drug.model_dump(),
+            # The doctor keeps one candidate or corrects it by hand.
+            "selected_drug": candidates[0] if candidates else None,
+            "other_candidates": candidates[1:],
+            "missing_fields": missing,
         })
-    return {"recepta": {"pozycje": pozycje}}
+    return {"prescription": {"items": items}}
 
 
-def agent_zalecen(stan: Stan) -> dict:
-    wynik = ustrukturyzuj(
-        Zalecenia,
-        ZASADY + " Przygotuj zalecenia dla pacjenta prostym, zrozumiałym językiem.",
-        f"Dyktowanie:\n{stan['etap1_dyktowanie']}" + _poprawka(stan, stan.get("zalecenia")),
+def instructions_agent(state: VisitState) -> dict:
+    result = generate_structured(
+        PatientInstructions,
+        BASE_RULES + " Przygotuj zalecenia dla pacjenta prostym, zrozumiałym językiem.",
+        f"Dyktowanie:\n{state['stage1_dictation']}" + _revision_request(state, state.get("patient_instructions")),
     )
-    return {"zalecenia": wynik.model_dump()}
+    return {"patient_instructions": result.model_dump()}
 
 
-def przeglad_etap1(stan: Stan) -> dict:
-    odpowiedz = interrupt({
-        "typ": "zatwierdzenie",
-        "etap": 1,
-        "dokumenty": {"recepta": stan["recepta"], "zalecenia": stan["zalecenia"]},
-        "uwagi": [],
+def review_stage1(state: VisitState) -> dict:
+    response = interrupt({
+        "type": "approval",
+        "stage": 1,
+        "documents": {"prescription": state["prescription"], "patient_instructions": state["patient_instructions"]},
+        "issues": [],
     })
-    if not odpowiedz["zatwierdzone"]:
-        return {"etap1_zatwierdzony": False, "komentarz": odpowiedz["komentarz"]}
-    return {**odpowiedz["dokumenty"], "etap1_zatwierdzony": True, "komentarz": None}
+    if not response["approved"]:
+        return {"stage1_approved": False, "comment": response["comment"]}
+    return {**response["documents"], "stage1_approved": True, "comment": None}
 
 
-def czekaj_na_notatke(stan: Stan) -> dict:
-    """Pacjent wyszedł z receptą; graf czeka, aż lekarz podyktuje notatkę z wizyty."""
-    return {"etap2_dyktowanie": interrupt({"typ": "dyktowanie", "etap": 2})}
+def await_stage2_dictation(state: VisitState) -> dict:
+    """The patient has left with the prescription; wait for the doctor to dictate the visit note."""
+    return {"stage2_dictation": interrupt({"type": "dictation", "stage": 2})}
 
 
-def agent_karty(stan: Stan) -> dict:
-    wynik = ustrukturyzuj(
-        KartaWizyty,
-        ZASADY + " Przygotuj wpis do karty wizyty ambulatoryjnej językiem dokumentacji medycznej.",
-        f"Dane pacjenta:\n{_json(stan['pacjent'])}\n\nDyktowanie po wizycie:\n{stan['etap2_dyktowanie']}"
-        + _poprawka(stan, stan.get("karta")),
+def visit_note_agent(state: VisitState) -> dict:
+    result = generate_structured(
+        VisitNote,
+        BASE_RULES + " Przygotuj wpis do karty wizyty ambulatoryjnej językiem dokumentacji medycznej.",
+        f"Dane pacjenta:\n{_to_json(state['patient'])}\n\nDyktowanie po wizycie:\n{state['stage2_dictation']}"
+        + _revision_request(state, state.get("visit_note")),
     )
-    return {"karta": wynik.model_dump()}
+    return {"visit_note": result.model_dump()}
 
 
-def weryfikator(stan: Stan) -> dict:
-    wynik = ustrukturyzuj(
-        Weryfikacja,
+def verifier(state: VisitState) -> dict:
+    result = generate_structured(
+        Verification,
         "Sprawdzasz projekt karty wizyty. Zgłoś każdą informację w karcie, której nie ma "
         "w dyktowaniu ani w danych pacjenta, oraz każdą istotną informację z dyktowania, "
         "której w karcie brakuje. Nie oceniaj decyzji lekarza.",
-        f"Dane pacjenta:\n{_json(stan['pacjent'])}\n\nDyktowanie:\n{stan['etap2_dyktowanie']}"
-        f"\n\nProjekt karty:\n{_json(stan['karta'])}",
+        f"Dane pacjenta:\n{_to_json(state['patient'])}\n\nDyktowanie:\n{state['stage2_dictation']}"
+        f"\n\nProjekt karty:\n{_to_json(state['visit_note'])}",
     )
-    return {"uwagi": [u.model_dump() for u in wynik.uwagi]}
+    return {"issues": [issue.model_dump() for issue in result.issues]}
 
 
-def przeglad_etap2(stan: Stan) -> dict:
-    odpowiedz = interrupt({
-        "typ": "zatwierdzenie",
-        "etap": 2,
-        "dokumenty": {"karta": stan["karta"]},
-        "uwagi": stan["uwagi"],
+def review_stage2(state: VisitState) -> dict:
+    response = interrupt({
+        "type": "approval",
+        "stage": 2,
+        "documents": {"visit_note": state["visit_note"]},
+        "issues": state["issues"],
     })
-    if not odpowiedz["zatwierdzone"]:
-        return {"etap2_zatwierdzony": False, "komentarz": odpowiedz["komentarz"]}
-    return {**odpowiedz["dokumenty"], "etap2_zatwierdzony": True, "komentarz": None}
+    if not response["approved"]:
+        return {"stage2_approved": False, "comment": response["comment"]}
+    return {**response["documents"], "stage2_approved": True, "comment": None}
 
 
-def zloz_dokumentacje(stan: Stan) -> dict:
-    # Zatwierdzone w etapie 1 leki i zalecenia trafiają do karty bez ponownego dyktowania.
-    return {"dokumentacja": {
-        "wizyta_id": stan["wizyta_id"],
-        "pacjent": stan["pacjent"],
-        "karta_wizyty": {**stan["karta"], "zalecenia": stan["zalecenia"], "przepisane_leki": stan["recepta"]},
+def assemble_documentation(state: VisitState) -> dict:
+    # Drugs and instructions approved in stage 1 go into the visit note without being dictated again.
+    return {"documentation": {
+        "visit_id": state["visit_id"],
+        "patient": state["patient"],
+        "visit_note": {
+            **state["visit_note"],
+            "patient_instructions": state["patient_instructions"],
+            "prescribed_drugs": state["prescription"],
+        },
     }}
 
 
-def zbuduj_graf(checkpointer=None):
-    g = StateGraph(Stan)
-    for wezel in (wczytaj_pacjenta, agent_recepty, agent_zalecen, przeglad_etap1,
-                  czekaj_na_notatke, agent_karty, weryfikator, przeglad_etap2, zloz_dokumentacje):
-        g.add_node(wezel.__name__, wezel)
+def build_graph(checkpointer=None):
+    g = StateGraph(VisitState)
+    for node in (load_patient, prescription_agent, instructions_agent, review_stage1,
+                 await_stage2_dictation, visit_note_agent, verifier, review_stage2, assemble_documentation):
+        g.add_node(node.__name__, node)
 
-    g.add_edge(START, "wczytaj_pacjenta")
-    g.add_edge("wczytaj_pacjenta", "agent_recepty")
-    g.add_edge("wczytaj_pacjenta", "agent_zalecen")
-    g.add_edge(["agent_recepty", "agent_zalecen"], "przeglad_etap1")
+    g.add_edge(START, "load_patient")
+    g.add_edge("load_patient", "prescription_agent")
+    g.add_edge("load_patient", "instructions_agent")
+    g.add_edge(["prescription_agent", "instructions_agent"], "review_stage1")
     g.add_conditional_edges(
-        "przeglad_etap1",
-        lambda s: ["czekaj_na_notatke"] if s["etap1_zatwierdzony"] else ["agent_recepty", "agent_zalecen"],
-        ["czekaj_na_notatke", "agent_recepty", "agent_zalecen"],
+        "review_stage1",
+        lambda s: ["await_stage2_dictation"] if s["stage1_approved"] else ["prescription_agent", "instructions_agent"],
+        ["await_stage2_dictation", "prescription_agent", "instructions_agent"],
     )
-    g.add_edge("czekaj_na_notatke", "agent_karty")
-    g.add_edge("agent_karty", "weryfikator")
-    g.add_edge("weryfikator", "przeglad_etap2")
+    g.add_edge("await_stage2_dictation", "visit_note_agent")
+    g.add_edge("visit_note_agent", "verifier")
+    g.add_edge("verifier", "review_stage2")
     g.add_conditional_edges(
-        "przeglad_etap2",
-        lambda s: "zloz_dokumentacje" if s["etap2_zatwierdzony"] else "agent_karty",
-        ["zloz_dokumentacje", "agent_karty"],
+        "review_stage2",
+        lambda s: "assemble_documentation" if s["stage2_approved"] else "visit_note_agent",
+        ["assemble_documentation", "visit_note_agent"],
     )
-    g.add_edge("zloz_dokumentacje", END)
+    g.add_edge("assemble_documentation", END)
     return g.compile(checkpointer=checkpointer or InMemorySaver())

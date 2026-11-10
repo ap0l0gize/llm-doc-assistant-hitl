@@ -1,18 +1,18 @@
-"""Zamiana nagrania na tekst (opcjonalna - wymaga `pip install faster-whisper`)."""
+"""Speech-to-text (optional - requires `pip install faster-whisper`)."""
 
 from functools import lru_cache
 
-# Podpowiedź dla Whispera: poprawia rozpoznawanie słownictwa medycznego.
-PODPOWIEDZ = "Dyktowanie lekarza: recepta, dawkowanie, miligramy, tabletki, amoksycylina, ibuprofen, rozpoznanie."
+# Hint for Whisper (in Polish, like the dictation): improves recognition of medical vocabulary.
+INITIAL_PROMPT = "Dyktowanie lekarza: recepta, dawkowanie, miligramy, tabletki, amoksycylina, ibuprofen, rozpoznanie."
 
 
 @lru_cache
-def _whisper(rozmiar: str):
+def _whisper(model_size: str):
     from faster_whisper import WhisperModel
 
-    return WhisperModel(rozmiar, compute_type="int8")
+    return WhisperModel(model_size, compute_type="int8")
 
 
-def transkrybuj(sciezka_audio: str, rozmiar: str = "large-v3") -> str:
-    segmenty, _ = _whisper(rozmiar).transcribe(sciezka_audio, language="pl", initial_prompt=PODPOWIEDZ)
-    return " ".join(s.text.strip() for s in segmenty)
+def transcribe(audio_path: str, model_size: str = "large-v3") -> str:
+    segments, _ = _whisper(model_size).transcribe(audio_path, language="pl", initial_prompt=INITIAL_PROMPT)
+    return " ".join(s.text.strip() for s in segments)

@@ -5,5 +5,5 @@ langchain-openai
 pydantic>=2
 rapidfuzz
 python-dotenv
-# opcjonalnie, tylko gdy wejściem jest nagranie zamiast tekstu:
+# optional, only when the input is an audio recording instead of text:
 # faster-whisper

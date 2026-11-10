@@ -221,4 +221,6 @@ __marimo__/
 
 # Project
 out/
+# Drug registry export, downloaded with: python -m src.drugs
+data/Rejestr_Produktow_Leczniczych_*.csv
 .DS_Store

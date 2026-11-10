@@ -1,0 +1,22 @@
+[
+  {
+    "pesel": "80010112345",
+    "first_name": "Jan",
+    "last_name": "Kowalski",
+    "date_of_birth": "1980-01-01",
+    "address": "ul. Lipowa 5, 30-001 Kraków",
+    "chronic_conditions": ["nadciśnienie tętnicze"],
+    "regular_medications": ["ramipril 5 mg 1x1"],
+    "allergies": []
+  },
+  {
+    "pesel": "65052254321",
+    "first_name": "Maria",
+    "last_name": "Nowak",
+    "date_of_birth": "1965-05-22",
+    "address": "ul. Długa 12/4, 00-238 Warszawa",
+    "chronic_conditions": ["cukrzyca typu 2", "niedoczynność tarczycy"],
+    "regular_medications": ["metformina 850 mg 2x1", "lewotyroksyna 50 mcg 1x1 na czczo"],
+    "allergies": ["penicylina"]
+  }
+]

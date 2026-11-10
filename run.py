@@ -1,11 +1,11 @@
-"""Uruchomienie wizyty bez frontendu: lekarz "zatwierdza" przez edycję plików JSON.
+"""Run a visit without a frontend: the doctor "approves" by editing JSON files.
 
-    python run.py data/wizyty/wizyta_001.json          # interaktywnie
-    python run.py data/wizyty/wizyta_001.json --auto   # zatwierdza drafty bez zmian
+    python run.py data/visits/visit_001.json          # interactive
+    python run.py data/visits/visit_001.json --auto   # approve drafts unchanged
 
-Przy każdym zatwierdzeniu draft trafia do out/<wizyta_id>/etapN_draft.json.
-Popraw plik w edytorze i wciśnij Enter, żeby zatwierdzić, albo wpisz komentarz,
-żeby odesłać dokumenty do agentów do poprawy.
+At every approval point the draft is written to out/<visit_id>/stageN_draft.json.
+Edit the file and press Enter to approve it, or type a comment to send the
+documents back to the agents for revision.
 """
 
 import argparse
@@ -16,80 +16,80 @@ from pathlib import Path
 
 from langgraph.types import Command
 
-from src.graph import zbuduj_graf
+from src.graph import build_graph
 
-OUT = Path(__file__).parent / "out"
-
-
-def _zapisz(sciezka: Path, obj) -> None:
-    sciezka.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8")
+OUT_DIR = Path(__file__).parent / "out"
 
 
-def _tekst_dyktowania(wizyta: dict, etap: int) -> str:
-    if f"etap{etap}_dyktowanie" in wizyta:
-        return wizyta[f"etap{etap}_dyktowanie"]
-    from src.stt import transkrybuj
-
-    return transkrybuj(wizyta[f"etap{etap}_audio"])
+def _write_json(path: Path, obj) -> None:
+    path.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def _zatwierdzenie(zadanie: dict, katalog: Path, auto: bool, log: list) -> dict:
-    etap = zadanie["etap"]
-    plik = katalog / f"etap{etap}_draft.json"
-    _zapisz(plik, zadanie["dokumenty"])
-    print(f"\n=== Etap {etap}: draft do zatwierdzenia -> {plik}")
-    for uwaga in zadanie["uwagi"]:
-        print(f"  ! weryfikator [{uwaga['pole']}]: {uwaga['problem']}")
+def _dictation_text(visit: dict, stage: int) -> str:
+    if f"stage{stage}_dictation" in visit:
+        return visit[f"stage{stage}_dictation"]
+    from src.stt import transcribe
+
+    return transcribe(visit[f"stage{stage}_audio"])
+
+
+def _review(task: dict, out_dir: Path, auto: bool, log: list) -> dict:
+    stage = task["stage"]
+    draft_path = out_dir / f"stage{stage}_draft.json"
+    _write_json(draft_path, task["documents"])
+    print(f"\n=== Stage {stage}: draft awaiting approval -> {draft_path}")
+    for issue in task["issues"]:
+        print(f"  ! verifier [{issue['field']}]: {issue['problem']}")
 
     start = time.time()
-    komentarz = "" if auto else input("Enter = zatwierdź (z edycjami z pliku) | tekst = odeślij do poprawy: ").strip()
-    wpis = {"etap": etap, "czas_przegladu_s": round(time.time() - start, 1)}
-    if komentarz:
-        log.append({**wpis, "decyzja": "do_poprawy", "komentarz": komentarz})
-        return {"zatwierdzone": False, "komentarz": komentarz}
+    comment = "" if auto else input("Enter = approve (with your edits to the file) | text = send back for revision: ").strip()
+    entry = {"stage": stage, "review_time_s": round(time.time() - start, 1)}
+    if comment:
+        log.append({**entry, "decision": "sent_back", "comment": comment})
+        return {"approved": False, "comment": comment}
 
-    zatwierdzone = json.loads(plik.read_text(encoding="utf-8"))
-    draft, final = (json.dumps(d, ensure_ascii=False, sort_keys=True) for d in (zadanie["dokumenty"], zatwierdzone))
+    approved = json.loads(draft_path.read_text(encoding="utf-8"))
+    draft, final = (json.dumps(d, ensure_ascii=False, sort_keys=True) for d in (task["documents"], approved))
     log.append({
-        **wpis,
-        "decyzja": "zatwierdzone",
-        # 1.0 = lekarz nic nie zmienił; im niżej, tym więcej poprawek
-        "podobienstwo_draft_final": round(difflib.SequenceMatcher(None, draft, final).ratio(), 3),
-        "uwagi_weryfikatora": len(zadanie["uwagi"]),
+        **entry,
+        "decision": "approved",
+        # 1.0 = the doctor changed nothing; the lower, the more edits
+        "draft_final_similarity": round(difflib.SequenceMatcher(None, draft, final).ratio(), 3),
+        "verifier_issues": len(task["issues"]),
     })
-    _zapisz(katalog / f"etap{etap}_zatwierdzone.json", zatwierdzone)
-    return {"zatwierdzone": True, "dokumenty": zatwierdzone}
+    _write_json(out_dir / f"stage{stage}_approved.json", approved)
+    return {"approved": True, "documents": approved}
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("wizyta", type=Path, help="plik JSON z danymi wejściowymi wizyty")
-    parser.add_argument("--auto", action="store_true", help="zatwierdzaj drafty bez czekania na lekarza")
+    parser.add_argument("visit", type=Path, help="JSON file with the visit input")
+    parser.add_argument("--auto", action="store_true", help="approve drafts without waiting for the doctor")
     args = parser.parse_args()
 
-    wizyta = json.loads(args.wizyta.read_text(encoding="utf-8"))
-    katalog = OUT / wizyta["wizyta_id"]
-    katalog.mkdir(parents=True, exist_ok=True)
+    visit = json.loads(args.visit.read_text(encoding="utf-8"))
+    out_dir = OUT_DIR / visit["visit_id"]
+    out_dir.mkdir(parents=True, exist_ok=True)
     log: list[dict] = []
 
-    graf = zbuduj_graf()
-    cfg = {"configurable": {"thread_id": wizyta["wizyta_id"]}}
-    wynik = graf.invoke(
-        {"wizyta_id": wizyta["wizyta_id"], "pesel": wizyta["pesel"],
-         "etap1_dyktowanie": _tekst_dyktowania(wizyta, 1)},
-        cfg,
+    graph = build_graph()
+    config = {"configurable": {"thread_id": visit["visit_id"]}}
+    result = graph.invoke(
+        {"visit_id": visit["visit_id"], "pesel": visit["pesel"],
+         "stage1_dictation": _dictation_text(visit, 1)},
+        config,
     )
-    while "__interrupt__" in wynik:
-        zadanie = wynik["__interrupt__"][0].value
-        if zadanie["typ"] == "dyktowanie":
-            odpowiedz = _tekst_dyktowania(wizyta, zadanie["etap"])
+    while "__interrupt__" in result:
+        task = result["__interrupt__"][0].value
+        if task["type"] == "dictation":
+            response = _dictation_text(visit, task["stage"])
         else:
-            odpowiedz = _zatwierdzenie(zadanie, katalog, args.auto, log)
-        wynik = graf.invoke(Command(resume=odpowiedz), cfg)
+            response = _review(task, out_dir, args.auto, log)
+        result = graph.invoke(Command(resume=response), config)
 
-    _zapisz(katalog / "dokumentacja.json", wynik["dokumentacja"])
-    _zapisz(katalog / "log.json", log)
-    print(f"\nGotowe: {katalog / 'dokumentacja.json'} (metryki: log.json)")
+    _write_json(out_dir / "documentation.json", result["documentation"])
+    _write_json(out_dir / "log.json", log)
+    print(f"\nDone: {out_dir / 'documentation.json'} (metrics: log.json)")
 
 
 if __name__ == "__main__":

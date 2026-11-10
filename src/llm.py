@@ -1,4 +1,4 @@
-"""Jedno miejsce wyboru modelu. Zmiana dostawcy = zmiana LLM_MODEL w .env."""
+"""Single place to choose the model. Switching provider = changing LLM_MODEL in .env."""
 
 import os
 from functools import lru_cache
@@ -14,8 +14,8 @@ def _model():
     return init_chat_model(os.environ.get("LLM_MODEL", "anthropic:claude-haiku-5-5"))
 
 
-def ustrukturyzuj(schemat, system: str, tresc: str):
-    """Wywołuje model i zwraca obiekt zgodny ze schematem Pydantic."""
-    return _model().with_structured_output(schemat).invoke(
-        [("system", system), ("human", tresc)]
+def generate_structured(schema, system_prompt: str, user_prompt: str):
+    """Calls the model and returns an instance of the given Pydantic schema."""
+    return _model().with_structured_output(schema).invoke(
+        [("system", system_prompt), ("human", user_prompt)]
     )
