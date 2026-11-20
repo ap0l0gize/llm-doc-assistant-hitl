@@ -28,6 +28,52 @@ Etap 2 (po wizycie)
 
 Dane pacjenta (imię i nazwisko, choroby przewlekłe, leki stałe, alergie) są wczytywane z bazy po numerze PESEL, więc lekarz dyktuje tylko to, co wydarzyło się podczas wizyty. Leki i zalecenia zatwierdzone w etapie 1 trafiają do karty wizyty automatycznie.
 
+## Architektura
+
+### Graf wizyty
+
+Wizyta jest grafem [LangGraph](https://langchain-ai.github.io/langgraph/) (`src/graph.py`, `build_graph()`). Węzły i krawędzie:
+
+```
+START
+ └─ load_patient                 dane pacjenta z data/patients.json po PESEL
+     ├─ prescription_agent       model: leki z dyktowania → dopasowanie do rejestru (kod, src/drugs.py)
+     └─ instructions_agent       model: zalecenia, objawy alarmowe, termin kontroli
+         └─ review_stage1            interrupt(): recepta + zalecenia + uwagi do recepty → LEKARZ
+             └─ await_stage2_dictation   interrupt(): dyktowanie etapu 2
+                 └─ visit_note_agent      model: wywiad, badanie przedmiotowe, rozpoznanie
+                     └─ verifier           model: karta porównana z dyktowaniem i danymi pacjenta
+                         └─ review_stage2       interrupt(): karta + uwagi weryfikatora → LEKARZ (wpisuje ICD-10)
+                             └─ assemble_documentation   dokumentacja końcowa
+                                 └─ END
+```
+
+- **Stan wizyty** (`VisitState`): `visit_id`, `pesel`, `patient`, `stage1_dictation`, `stage2_dictation`, `prescription`, `patient_instructions`, `visit_note`, `issues`, `documentation`. Agenci recepty i zaleceń działają równolegle; przegląd etapu 1 czeka na oba.
+- **Człowiek w pętli:** graf nie zna interfejsu. W punktach przeglądu wywołuje `interrupt()` z dokumentami i uwagami, a wznawiany jest przez `Command(resume=<zatwierdzone dokumenty>)`. Zatwierdzone dokumenty zastępują projekt w stanie, więc dokumentacja końcowa powstaje z wersji lekarza; nic nie wraca do modelu. Stan trzyma checkpointer w pamięci (`InMemorySaver`, wątek = `visit_id`).
+- **Granica decyzji:** model porządkuje dyktowanie (odpowiedzi strukturalne według schematów Pydantic, `src/schemas.py`); produkt leczniczy wybiera kod, i tylko gdy dyktowanie go jednoznacznie określa; kod ICD-10 wpisuje lekarz. Uwagi do recepty powstają w kodzie z brakujących pól i flag dopasowania, uwagi do karty – z weryfikatora.
+
+### Moduły
+
+| Moduł | Odpowiedzialność |
+|---|---|
+| `src/graph.py` | graf wizyty, prompty agentów, uwagi do recepty z flag dopasowania |
+| `src/schemas.py` | schematy odpowiedzi modelu: `DictatedPrescription`, `PatientInstructions`, `VisitNote`, `Verification` |
+| `src/llm.py` | wybór modelu (`LLM_MODEL` w `.env`) i wywołanie z odpowiedzią strukturalną (schemat JSON) |
+| `src/drugs.py` | pobranie Rejestru Produktów Leczniczych i dopasowanie leku: `match_drug()` → wybrany produkt, kandydaci, flagi |
+| `src/review_format.py` | format przeglądu: projekt dla lekarza (`to_editable`), walidacja i odczyt wersji zatwierdzonej (`from_editable`), lista zmian (`diff`), szablon oceny wizyty |
+| `src/stt.py` | opcjonalne rozpoznawanie mowy (faster-whisper), gdy wizyta zawiera nagranie zamiast tekstu |
+| `run.py` | interfejs bez frontendu: zapis projektów do plików, oczekiwanie na lekarza (Enter albo `stageN.done`), log przeglądu |
+| `benchmark.py` | przebieg scenariuszy z lekarzem w pętli, zestawienie poprawek, eksport CSV |
+| `benchmark_report.py` | fragmenty LaTeX raportu z wyeksportowanego przebiegu |
+
+### Przebieg jednej wizyty
+
+1. `run.py` wczytuje plik wizyty i uruchamia graf z numerem PESEL i dyktowaniem etapu 1.
+2. Po agentach etapu 1 graf zatrzymuje się; `run.py` zapisuje projekt (`stage1_draft.json`) i uwagi (`stage1_issues.json`) i czeka na lekarza.
+3. Lekarz poprawia projekt i zatwierdza. `from_editable` sprawdza dokument (błąd → komunikat i ponowna poprawka), `diff` wyznacza zmiany do `log.json`, wersja lekarza trafia do `stage1_approved.json`, a projekt systemu wraca do `stage1_draft.json`. Graf wznawia się z zatwierdzonymi dokumentami.
+4. Graf pobiera dyktowanie etapu 2, tworzy kartę, weryfikuje ją i zatrzymuje się na przeglądzie etapu 2 (te same kroki, plus kod ICD-10).
+5. Po zatwierdzeniu powstaje `documentation.json`; `run.py` zapisuje `log.json` i szablon oceny wizyty `analysis.json`.
+
 ## Instalacja
 
 Wymaga Pythona 3.11+.
@@ -140,6 +186,7 @@ tests/            testy dopasowania leków do rejestru i grupowania poprawek (py
 src/graph.py      graf LangGraph: agenci i punkty zatwierdzania
 src/schemas.py    schematy Pydantic dokumentów
 src/drugs.py      pobieranie rejestru leków i dopasowanie podyktowanych leków do produktów
+src/review_format.py  format przeglądu: projekt dla lekarza, walidacja wersji zatwierdzonej, lista zmian
 src/llm.py        wybór modelu (jedno miejsce zmiany dostawcy)
 src/stt.py        rozpoznawanie mowy przez faster-whisper (opcjonalne)
 data/             syntetyczni pacjenci i wizyty (oraz pobrany rejestr leków)
