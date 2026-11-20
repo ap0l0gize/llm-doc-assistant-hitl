@@ -1,0 +1,92 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "prescription.0.strength",
+        "kind": "modified",
+        "before": "1 milion jednostek",
+        "after": "1 000 000 j.m.",
+        "chars_edited": 15,
+        "pointed_by_issue": false,
+        "has_note": true
+      },
+      {
+        "path": "prescription.0.quantity",
+        "kind": "added",
+        "before": null,
+        "after": "30 tabletek",
+        "chars_edited": 11,
+        "pointed_by_issue": true,
+        "has_note": true
+      },
+      {
+        "path": "prescription.0.product",
+        "kind": "added",
+        "before": null,
+        "after": "Ospen 1000 · 1 000 000 j.m. · Tabletki powlekane · RPL 100049983",
+        "chars_edited": 0,
+        "pointed_by_issue": true,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 26,
+    "doc_chars": 747,
+    "issues": [
+      {
+        "field": "prescription.0.quantity",
+        "problem": "fenoksymetylpenicylina: nie podano ilości"
+      },
+      {
+        "field": "prescription.0.product",
+        "problem": "fenoksymetylpenicylina: w rejestrze nie ma produktu o mocy 1 milion jednostek - sprawdź moc i wybierz produkt"
+      }
+    ],
+    "doctor_notes": [
+      {
+        "path": "prescription.0",
+        "category": "recepta",
+        "severity": "umiarkowany",
+        "source": "system",
+        "reason": "Model zapisał moc słownie („1 milion jednostek”), przez co rejestr nie znalazł produktu; poprawiam moc na 1 000 000 j.m. i wybieram Ospen 1000."
+      },
+      {
+        "path": "prescription.0.quantity",
+        "category": "recepta",
+        "severity": "umiarkowany",
+        "source": "dyktowanie",
+        "reason": "Nie podałem ilości (system to oznaczył); 3 × 1 tabletka przez 10 dni = 30 tabletek."
+      }
+    ]
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "visit_note.physical_examination",
+        "kind": "modified",
+        "before": "Temperatura 38,7°C. Migdałki powiększone, przekrwione, z wysiękiem. Węzły chłonne szyjne przednie powiększone i bolesne. Skala Centora-McIsaaca: 4 punkty. Szybki test na antygen paciorkowca (GAS): dodatni.",
+        "after": "Temperatura 38,7°C. Migdałki powiększone, przekrwione, z wysiękiem. Węzły chłonne szyjne przednie powiększone i bolesne. Skala Centora-McIsaaca: 4 punkty. Szybki test na antygen paciorkowca: dodatni.",
+        "chars_edited": 6,
+        "pointed_by_issue": false,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 6,
+    "doc_chars": 339,
+    "issues": [],
+    "doctor_notes": [
+      {
+        "path": "visit_note.physical_examination",
+        "category": "treść spoza dyktowania",
+        "severity": "kosmetyczny",
+        "source": "system",
+        "reason": "Dopisany skrót „(GAS)”, którego nie dyktowałem."
+      }
+    ]
+  }
+]

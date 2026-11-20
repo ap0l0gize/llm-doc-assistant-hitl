@@ -1,0 +1,33 @@
+{
+  "visit_id": "visit_112",
+  "pesel": "58062807355",
+  "stage1_dictation": "Recepta: ketoprofen żel dwa i pół procent, nakładać cienką warstwę na prawe kolano trzy razy dziennie przez dwa tygodnie, jedna tuba. Paracetamol pięćset miligramów, dwie tabletki do trzech razy dziennie przy bólu, maksymalnie sześć tabletek na dobę, dwa opakowania. Tabletek z ibuprofenem ani ketoprofenem doustnie nie brać ze względu na przebytą chorobę wrzodową. Zalecenia: nie wystawiać posmarowanego miejsca na słońce, myć ręce po nałożeniu żelu, zmniejszyć masę ciała, ćwiczenia wzmacniające mięsień czworogłowy, rower stacjonarny. Skierowanie na RTG prawego kolana w dwóch projekcjach na stojąco i na fizjoterapię. Kontrola za sześć tygodni z wynikiem RTG. Pilnie zgłosić się, gdy kolano będzie gorące, zaczerwienione, mocno obrzęknięte albo pojawi się gorączka.",
+  "stage2_dictation": "Pacjent sześćdziesiąt osiem lat. Od roku bóle prawego kolana, nasilające się przy schodzeniu ze schodów i po dłuższym chodzeniu, sztywność poranna do piętnastu minut. Lewe kolano bez dolegliwości. Choroba wrzodowa żołądka w wywiadzie, w dwa tysiące piętnastym roku. W badaniu masa ciała dziewięćdziesiąt jeden kilogramów, wzrost sto siedemdziesiąt cztery centymetry. Prawe kolano: trzeszczenia przy ruchach, niewielki wysięk, zgięcie do stu dziesięciu stopni, bez zaczerwienienia i ucieplenia. Lewe kolano prawidłowe. Rozpoznanie: choroba zwyrodnieniowa prawego stawu kolanowego.",
+  "benchmark": {
+    "title": "Choroba zwyrodnieniowa prawego stawu kolanowego",
+    "short_title": "Gonartroza",
+    "difficulty": "B",
+    "specialty": "ortopedia / reumatologia",
+    "features": [
+      "postac-nietabletkowa",
+      "jednostki-slownie",
+      "lateralizacja",
+      "zaprzeczenia"
+    ],
+    "clinical_summary": "68-latek z chorobą wrzodową w wywiadzie i gonartrozą prawego kolana. Ketoprofen w żelu 2,5% zamiast NLPZ doustnych, paracetamol, RTG prawego kolana, fizjoterapia.",
+    "hypotheses": [
+      {
+        "id": "H112-1",
+        "text": "Ketoprofen w żelu 2,5% zostanie dopasowany do produktu 25 mg/g w postaci żelu."
+      },
+      {
+        "id": "H112-2",
+        "text": "Strona (prawe kolano) będzie spójna w recepcie, zaleceniach i karcie."
+      },
+      {
+        "id": "H112-3",
+        "text": "Ostrzeżenie przed NLPZ doustnymi zostanie zachowane; żaden NLPZ doustny nie trafi na receptę."
+      }
+    ]
+  }
+}

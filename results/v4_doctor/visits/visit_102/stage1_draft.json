@@ -1,0 +1,32 @@
+{
+  "prescription": [
+    {
+      "substance": "lewofloksacyna",
+      "brand_name": null,
+      "strength": "5 mg/ml",
+      "form": "krople do oczu",
+      "dosage": "po jednej kropli do obu oczu co dwie godziny w ciągu dnia przez pierwsze dwa dni, potem cztery razy dziennie, łącznie siedem dni",
+      "quantity": "1 opakowanie",
+      "product": "Levofloxacin Genoptim · 5 mg/ml · Krople do oczu, roztwór · RPL 100329470",
+      "candidates": [
+        "Levoftyal · 5 mg/ml · Krople do oczu, roztwór · RPL 100364147",
+        "Oftaquix · 5 mg/ml · Krople do oczu, roztwór · RPL 100127766"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Nie noś soczewek kontaktowych do końca leczenia i jeszcze przez dwa dni po jego zakończeniu.",
+      "Przemywaj powieki przegotowaną wodą.",
+      "Używaj osobnego ręcznika.",
+      "Często myj ręce."
+    ],
+    "warning_signs": [
+      "Ból oka.",
+      "Światłowstręt.",
+      "Pogorszenie widzenia."
+    ],
+    "follow_up": "Zgłoś się na kontrolę, jeśli po trzech dniach nie będzie poprawy."
+  },
+  "doctor_notes": []
+}

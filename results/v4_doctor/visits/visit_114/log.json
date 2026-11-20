@@ -1,0 +1,49 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "prescription.0.product",
+        "kind": "added",
+        "before": null,
+        "after": "Gastrolit · - · Proszek do sporządzania roztworu · RPL 100026019",
+        "chars_edited": 0,
+        "pointed_by_issue": true,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 0,
+    "doc_chars": 1058,
+    "issues": [
+      {
+        "field": "prescription.0.strength",
+        "problem": "Gastrolit: nie podano mocy"
+      },
+      {
+        "field": "prescription.0.product",
+        "problem": "Gastrolit: bez podanej mocy nie da się ustalić produktu - wybierz produkt"
+      }
+    ],
+    "doctor_notes": [
+      {
+        "path": "prescription.0.product",
+        "category": "recepta",
+        "severity": "umiarkowany",
+        "source": "rejestr",
+        "reason": "Gastrolit ma w rejestrze moc „-” (produkt złożony), więc system bez mocy nie wybiera produktu; jedyny Gastrolit na liście – wybieram go."
+      }
+    ]
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": true,
+    "changes": [],
+    "chars_edited": 0,
+    "doc_chars": 603,
+    "issues": [],
+    "doctor_notes": []
+  }
+]

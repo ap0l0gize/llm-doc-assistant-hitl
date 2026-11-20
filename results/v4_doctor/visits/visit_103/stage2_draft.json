@@ -1,0 +1,9 @@
+{
+  "visit_note": {
+    "history": "Pacjent 41-letni, palący papierosy, około 15 paczkolat. Od 5 dni kaszel, początkowo suchy, obecnie z niewielką ilością białej plwociny, stan podgorączkowy do 37,8°C, na początku katar i ból gardła. Bez duszności, bez bólu w klatce piersiowej, bez krwioplucia.",
+    "physical_examination": "Stan ogólny dobry. Temperatura 37,4°C, saturacja 98%. Osłuchowo nad płucami szmer pęcherzykowy prawidłowy, pojedyncze furczenia ustępujące po odkaszlnięciu, bez trzeszczeń. Gardło lekko przekrwione.",
+    "diagnosis": "Ostre zapalenie oskrzeli, najpewniej wirusowe.",
+    "icd10": null
+  },
+  "doctor_notes": []
+}

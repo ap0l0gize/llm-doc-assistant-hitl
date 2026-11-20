@@ -1,0 +1,9 @@
+{
+  "visit_note": {
+    "history": "Chłopiec, wiek 2,5 roku. Masa ciała 12 kg; tydzień temu w domu 12,5 kg. Od wczoraj biegunka, 6 luźnych stolców na dobę, bez krwi i śluzu. Wczoraj wieczorem 3-krotne wymioty, dziś bez wymiotów. Gorączka do 38,9°C. Pije chętnie. Diureza zachowana, ostatnie oddanie moczu 3 godziny przed wizytą. W żłobku podobne zachorowania.",
+    "physical_examination": "Stan ogólny dobry, dziecko aktywne. Błony śluzowe lekko suche, łzy obecne, nawrót kapilarny poniżej 2 sekund. Brzuch miękki, perystaltyka wzmożona. Temperatura 38,2°C. Odwodnienie łagodne, około 4%.",
+    "diagnosis": "Ostry nieżyt żołądkowo-jelitowy, prawdopodobnie wirusowy, z łagodnym odwodnieniem.",
+    "icd10": "A08.4"
+  },
+  "doctor_notes": []
+}

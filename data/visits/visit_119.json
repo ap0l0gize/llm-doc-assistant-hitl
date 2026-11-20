@@ -1,0 +1,35 @@
+{
+  "visit_id": "visit_119",
+  "pesel": "00311905271",
+  "stage1_dictation": "Recepta, yyy, Voltaren Max żel, diklofenak, nakładać na staw skokowy trzy razy dziennie przez siedem dni, jedna tuba. Ibuprofen czterysta, nie, jednak bez tabletek, wystarczy żel. Zalecenia: przez pierwsze trzy dni zimne okłady po piętnaście minut kilka razy dziennie, przez tkaninę, noga wyżej, opaska elastyczna w dzień, chodzić z obciążaniem w granicach bólu, przez dwa tygodnie bez biegania i piłki. Zwolnienie lekarskie, nie, pracuje zdalnie, nie trzeba. Kontrola tylko, jeśli po tygodniu nie będzie poprawy. Pilnie, gdyby stopa zrobiła się zimna, blada, zdrętwiała albo nie mógłby pan w ogóle stanąć na nodze.",
+  "stage2_dictation": "Pacjent dwadzieścia sześć lat, wczoraj podczas gry w piłkę skręcił, eee, lewą... nie, prawą kostkę, inwersyjnie. Mógł od razu stanąć i przejść kilka kroków, utykał. Obrzęk narastał do wieczora. W badaniu prawy staw skokowy: obrzęk i zasinienie okolicy kostki bocznej, tkliwość więzadła skokowo-strzałkowego przedniego, bez tkliwości na tylnej krawędzi kostki bocznej i przyśrodkowej, podstawa piątej kości śródstopia i kość łódkowata niebolesne. Przechodzi cztery kroki z obciążeniem. Kryteria ottawskie ujemne, bez wskazań do RTG. Lewy staw skokowy bez zmian. Krążenie i czucie na obwodzie zachowane. Rozpoznanie: skręcenie prawego stawu skokowego, uszkodzenie więzadła drugiego stopnia.",
+  "benchmark": {
+    "title": "Skręcenie prawego stawu skokowego – autokorekta strony i leczenia",
+    "short_title": "Skręcenie kostki",
+    "difficulty": "C",
+    "specialty": "ortopedia / urazy",
+    "features": [
+      "lateralizacja",
+      "autokorekta",
+      "zaprzeczenia",
+      "dyktowanie-chaotyczne",
+      "postac-nietabletkowa",
+      "nazwa-handlowa"
+    ],
+    "clinical_summary": "26-latek po urazie inwersyjnym, kryteria ottawskie ujemne (bez RTG). Lekarz w etapie 1 odwołuje ibuprofen i zwolnienie lekarskie, w etapie 2 poprawia stronę („lewą… nie, prawą”). Żel z diklofenakiem podany nazwą handlową bez mocy.",
+    "hypotheses": [
+      {
+        "id": "H119-1",
+        "text": "Ibuprofen (odwołany) nie trafi na receptę, a zwolnienie lekarskie (odwołane) nie trafi do zaleceń."
+      },
+      {
+        "id": "H119-2",
+        "text": "Strona urazu (prawa) będzie poprawna w karcie mimo autokorekty w dyktowaniu."
+      },
+      {
+        "id": "H119-3",
+        "text": "Voltaren Max bez podanej mocy nie zostanie wybrany automatycznie – system oznaczy wybór produktu."
+      }
+    ]
+  }
+}

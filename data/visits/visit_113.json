@@ -1,0 +1,33 @@
+{
+  "visit_id": "visit_113",
+  "pesel": "97021403186",
+  "stage1_dictation": "Recepta: Xonvea, czyli doksylamina z pirydoksyną, dziesięć plus dziesięć miligramów, tabletki dojelitowe, na początek dwie tabletki wieczorem przed snem, a jeśli po dwóch dniach nadal będą wymioty w ciągu dnia, dodatkowo jedna tabletka rano, jedno opakowanie. Kwas foliowy kontynuować. Zalecenia: małe porcje co dwie, trzy godziny, suche pieczywo rano przed wstaniem z łóżka, unikać zapachów nasilających nudności, pić małymi łykami. Lek może powodować senność, nie prowadzić samochodu po przyjęciu. Kontrola za tydzień. Pilnie do szpitala, gdyby wymioty uniemożliwiały picie przez dobę, pojawiły się zawroty głowy przy wstawaniu, ciemny skąpy mocz albo ból brzucha czy krwawienie z dróg rodnych.",
+  "stage2_dictation": "Pacjentka dwadzieścia dziewięć lat, w dziesiątym tygodniu pierwszej ciąży, prowadzona przez ginekologa, USG w ósmym tygodniu prawidłowe, ciąża pojedyncza. Od dwóch tygodni nudności przez większość dnia, wymioty trzy do czterech razy na dobę, toleruje małe porcje płynów. Spadek masy ciała o półtora kilograma. W badaniu stan ogólny dobry, błony śluzowe wilgotne, tętno osiemdziesiąt osiem, ciśnienie sto dziesięć na siedemdziesiąt. Brzuch miękki, niebolesny. Badanie ogólne moczu: ciała ketonowe śladowo. Skala PUQE dziewięć punktów, umiarkowane nasilenie. Rozpoznanie: nudności i wymioty ciężarnych o umiarkowanym nasileniu, dziesiąty tydzień ciąży.",
+  "benchmark": {
+    "title": "Nudności i wymioty ciężarnych w 10. tygodniu ciąży",
+    "short_title": "Wymioty ciężarnych",
+    "difficulty": "B",
+    "specialty": "położnictwo",
+    "features": [
+      "ciaza",
+      "nazwa-handlowa",
+      "lek-zlozony",
+      "kontynuacja-bez-recepty"
+    ],
+    "clinical_summary": "29-latka w 10. tygodniu pierwszej ciąży, PUQE 9 pkt, ślad ciał ketonowych. Xonvea ze schematem warunkowym, kwas foliowy kontynuowany (bez recepty).",
+    "hypotheses": [
+      {
+        "id": "H113-1",
+        "text": "Xonvea zostanie dopasowana do produktu; kwas foliowy („kontynuować”) nie trafi na receptę."
+      },
+      {
+        "id": "H113-2",
+        "text": "Warunkowe dawkowanie (2 tabletki wieczorem, ewentualnie dodatkowo 1 rano) zostanie zachowane."
+      },
+      {
+        "id": "H113-3",
+        "text": "Skala PUQE i ciała ketonowe zostaną odnotowane w karcie."
+      }
+    ]
+  }
+}

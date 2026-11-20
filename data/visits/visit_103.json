@@ -1,0 +1,31 @@
+{
+  "visit_id": "visit_103",
+  "pesel": "85022011553",
+  "stage1_dictation": "Recepty nie wystawiam, antybiotyk nie jest potrzebny, to infekcja wirusowa. Zalecenia: dużo płynów, nawilżanie powietrza, przy gorączce paracetamol, który pacjent ma w domu, rzucić palenie, kaszel może utrzymywać się do trzech tygodni. Zwolnienie lekarskie na trzy dni. Kontrola, jeśli kaszel utrzyma się dłużej niż trzy tygodnie albo gorączka dłużej niż trzy dni. Pilnie zgłosić się przy duszności, bólu w klatce piersiowej, krwiopluciu albo gorączce powyżej trzydziestu dziewięciu.",
+  "stage2_dictation": "Pacjent czterdzieści jeden lat, pali papierosy, około piętnastu paczkolat. Od pięciu dni kaszel, początkowo suchy, teraz z niewielką ilością białej plwociny, stan podgorączkowy do trzydziestu siedmiu i ośmiu, na początku katar i ból gardła. Bez duszności, bez bólu w klatce piersiowej, bez krwioplucia. W badaniu stan ogólny dobry, temperatura trzydzieści siedem i cztery, saturacja dziewięćdziesiąt osiem procent, osłuchowo nad płucami szmer pęcherzykowy prawidłowy, pojedyncze furczenia ustępujące po odkaszlnięciu, bez trzeszczeń. Gardło lekko przekrwione. Rozpoznanie: ostre zapalenie oskrzeli, najpewniej wirusowe.",
+  "benchmark": {
+    "title": "Ostre zapalenie oskrzeli bez antybiotyku",
+    "short_title": "Zapalenie oskrzeli",
+    "difficulty": "A",
+    "specialty": "pulmonologia / infekcje",
+    "features": [
+      "bez-lekow",
+      "zaprzeczenia"
+    ],
+    "clinical_summary": "41-letni palacz z ostrym, najpewniej wirusowym zapaleniem oskrzeli. Lekarz świadomie nie przepisuje antybiotyku; paracetamol pacjent ma w domu.",
+    "hypotheses": [
+      {
+        "id": "H103-1",
+        "text": "Recepta pozostanie pusta – paracetamol „który pacjent ma w domu” nie trafi na receptę."
+      },
+      {
+        "id": "H103-2",
+        "text": "Zaprzeczenia (bez duszności, bez krwioplucia, bez trzeszczeń) zostaną zachowane."
+      },
+      {
+        "id": "H103-3",
+        "text": "Rozpoznanie zachowa niepewność („najpewniej wirusowe”)."
+      }
+    ]
+  }
+}

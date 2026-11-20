@@ -1,0 +1,41 @@
+{
+  "visit_id": "visit_118",
+  "pesel": "24230209644",
+  "stage1_dictation": "Recepta: amoksycylina zawiesina dwieście pięćdziesiąt na pięć mililitrów, dawka dziewięćdziesiąt miligramów na kilogram na dobę, przy dwunastu kilogramach to tysiąc osiemdziesiąt na dobę, czyli pięćset czterdzieści co dwanaście godzin, to jest... dziesięć i osiem dziesiątych mililitra, zaokrąglamy, nie, dajemy dziesięć i pół mililitra dwa razy dziennie przez siedem dni, dwie butelki po sto mililitrów. Ibuprofen zawiesina sto miligramów na pięć mililitrów, sześć mililitrów doraźnie przy gorączce, nie częściej niż co osiem godzin. Zalecenia dla rodziców: antybiotyk przez pełne siedem dni, dużo płynów, mierzyć temperaturę i liczyć oddechy w spoczynku. Kontrola za czterdzieści osiem godzin, obowiązkowo. Natychmiast do szpitala, jeśli dziecko zacznie szybko oddychać, ponad czterdzieści oddechów na minutę, pojawi się zaciąganie międzyżebrzy, sinienie wokół ust, odmowa picia albo senność.",
+  "stage2_dictation": "Dziewczynka dwa lata i osiem miesięcy, dwanaście kilogramów. Od trzech dni gorączka do trzydziestu dziewięciu i siedmiu, kaszel mokry, od wczoraj szybszy oddech, mniej je, pije. Szczepiona zgodnie z kalendarzem. W badaniu temperatura trzydzieści dziewięć i jeden, oddechy trzydzieści osiem na minutę, saturacja dziewięćdziesiąt cztery procent, tętno sto czterdzieści. Bez zaciągania międzyżebrzy, bez stękania. Osłuchowo nad dolnym polem lewego płuca trzeszczenia i osłabiony szmer pęcherzykowy, prawe płuco bez zmian. Stan ogólny średni, dziecko aktywne, pije. Rozpoznanie: pozaszpitalne zapalenie płuc lewostronne, leczenie ambulatoryjne, kontrola za czterdzieści osiem godzin.",
+  "benchmark": {
+    "title": "Pozaszpitalne zapalenie płuc u 2,5-letniej dziewczynki – dawkowanie wagowe",
+    "short_title": "Zapalenie płuc u dziecka",
+    "difficulty": "C",
+    "specialty": "pediatria",
+    "features": [
+      "pediatria",
+      "dawka-wagowa",
+      "wartosci-liczbowe",
+      "postac-nietabletkowa",
+      "autokorekta",
+      "brak-ilosci",
+      "dyktowanie-chaotyczne",
+      "lateralizacja"
+    ],
+    "clinical_summary": "Dziewczynka 12 kg, lewostronne zapalenie płuc. Amoksycylina 90 mg/kg/d: lekarz liczy na głos (1080 mg/d → 540 mg co 12 h → 10,8 ml) i ostatecznie podaje 10,5 ml. Ibuprofen w zawiesinie bez ilości.",
+    "hypotheses": [
+      {
+        "id": "H118-1",
+        "text": "W dawkowaniu amoksycyliny znajdzie się ostateczna objętość 10,5 ml, nie 10,8 ml z obliczeń."
+      },
+      {
+        "id": "H118-2",
+        "text": "System oznaczy brak ilości ibuprofenu."
+      },
+      {
+        "id": "H118-3",
+        "text": "Strona (lewe płuco) nie zostanie zamieniona."
+      },
+      {
+        "id": "H118-4",
+        "text": "Amoksycylina zostanie dopasowana do zawiesiny 250 mg/5 ml."
+      }
+    ]
+  }
+}

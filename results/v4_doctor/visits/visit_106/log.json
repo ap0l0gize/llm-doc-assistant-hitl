@@ -1,0 +1,116 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "prescription.0.substance",
+        "kind": "modified",
+        "before": "metformina",
+        "after": "empagliflozyna",
+        "chars_edited": 10,
+        "pointed_by_issue": false,
+        "has_note": true
+      },
+      {
+        "path": "prescription.0.strength",
+        "kind": "added",
+        "before": null,
+        "after": "10 mg",
+        "chars_edited": 5,
+        "pointed_by_issue": true,
+        "has_note": true
+      },
+      {
+        "path": "prescription.0.form",
+        "kind": "added",
+        "before": null,
+        "after": "tabletki powlekane",
+        "chars_edited": 18,
+        "pointed_by_issue": false,
+        "has_note": true
+      },
+      {
+        "path": "prescription.0.dosage",
+        "kind": "modified",
+        "before": "1000 mg 2 x dziennie, bez zmian",
+        "after": "1 tabletka raz dziennie rano",
+        "chars_edited": 21,
+        "pointed_by_issue": false,
+        "has_note": true
+      },
+      {
+        "path": "prescription.0.quantity",
+        "kind": "added",
+        "before": null,
+        "after": "3 opakowania po 30 tabletek",
+        "chars_edited": 27,
+        "pointed_by_issue": true,
+        "has_note": true
+      },
+      {
+        "path": "prescription.0.product",
+        "kind": "added",
+        "before": null,
+        "after": "Empagliflozin Reddy · 10 mg · Tabletki powlekane · RPL 100518412",
+        "chars_edited": 0,
+        "pointed_by_issue": true,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 81,
+    "doc_chars": 663,
+    "issues": [
+      {
+        "field": "prescription.0.strength",
+        "problem": "metformina: nie podano mocy"
+      },
+      {
+        "field": "prescription.0.quantity",
+        "problem": "metformina: nie podano ilości"
+      },
+      {
+        "field": "prescription.0.product",
+        "problem": "metformina: bez podanej mocy nie da się ustalić produktu - wybierz produkt"
+      }
+    ],
+    "doctor_notes": [
+      {
+        "path": "prescription.0",
+        "category": "recepta",
+        "severity": "istotny",
+        "source": "system",
+        "reason": "Na recepcie znalazła się metformina („zostawiamy, bez zmian”), a nowo dołożona empagliflozyna 10 mg (3 × 30 tabletek) w ogóle nie trafiła na receptę, choć zalecenia o niej mówią. Zły lek na recepcie – zamieniam na empagliflozynę."
+      }
+    ]
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "visit_note.history",
+        "kind": "modified",
+        "before": "Pacjent lat 61. Cukrzyca typu 2 od 8 lat. Nadciśnienie tętnicze. Leczenie: metformina 1000 mg 2x1 (2 g/dobę), perindopryl 5 mg 1x1. HbA1c z ostatniego tygodnia 8,1%, w marcu 7,6%. Kreatynina 1,1, eGFR 68. Glikemie na czczo w domu 140-160. Ostatnie badanie dna oka ponad rok temu.",
+        "after": "Pacjent lat 61. Cukrzyca typu 2 od 8 lat. Nadciśnienie tętnicze. Leczenie: metformina 1000 mg 2x1 (2 g/dobę), peryndopryl 5 mg 1x1. HbA1c z ostatniego tygodnia 8,1%, w marcu 7,6%. Kreatynina 1,1, eGFR 68. Glikemie na czczo w domu 140-160. Ostatnie badanie dna oka ponad rok temu.",
+        "chars_edited": 1,
+        "pointed_by_issue": false,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 1,
+    "doc_chars": 448,
+    "issues": [],
+    "doctor_notes": [
+      {
+        "path": "visit_note.history",
+        "category": "forma/język",
+        "severity": "kosmetyczny",
+        "source": "system",
+        "reason": "„perindopryl” zamiast polskiej nazwy „peryndopryl” (tak w dyktowaniu i w karcie pacjenta)."
+      }
+    ]
+  }
+]

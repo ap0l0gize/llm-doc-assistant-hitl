@@ -1,0 +1,32 @@
+{
+  "prescription": [
+    {
+      "substance": "amlodypina",
+      "brand_name": null,
+      "strength": "10 mg",
+      "form": "tabletki",
+      "dosage": "1 tabletka rano",
+      "quantity": "2 opakowania po 30 tabletek",
+      "product": "Adipine · 10 mg · Tabletki · RPL 100192114",
+      "candidates": [
+        "Amlopin 10 mg · 10 mg · Tabletki · RPL 100176612",
+        "Normodipine · 10 mg · Tabletki · RPL 100113563"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Od jutra przyjmuj tylko nową dawkę amlodypiny 10 mg: jedna tabletka rano. Dotychczasową amlodypinę 5 mg odstaw.",
+      "Atorwastatynę 20 mg przyjmuj bez zmian.",
+      "Ogranicz sól w diecie.",
+      "Codziennie spaceruj przez pół godziny.",
+      "Mierz ciśnienie rano i wieczorem przez dwa tygodnie i zapisuj wyniki.",
+      "Jeśli zauważysz obrzęki wokół kostek, zgłoś się do lekarza."
+    ],
+    "warning_signs": [
+      "Ciśnienie przekracza 180/110 mm Hg z bólem głowy, zaburzeniami widzenia lub bólem w klatce piersiowej: natychmiast zgłoś się na SOR."
+    ],
+    "follow_up": "Kontrola za cztery tygodnie. Zabierz dzienniczek pomiarów ciśnienia."
+  },
+  "doctor_notes": []
+}

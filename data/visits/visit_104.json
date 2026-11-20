@@ -1,0 +1,31 @@
+{
+  "visit_id": "visit_104",
+  "pesel": "61081406647",
+  "stage1_dictation": "Recepta: amlodypina dziesięć miligramów, tabletki, jedna tabletka rano, dwa opakowania po trzydzieści tabletek. Atorwastatynę dwadzieścia miligramów bez zmian. Zalecenia: dotychczasową amlodypinę pięć miligramów odstawić, od jutra tylko nowa dawka dziesięć miligramów. Ograniczyć sól, codziennie pół godziny spaceru, mierzyć ciśnienie rano i wieczorem przez dwa tygodnie i zapisywać. Możliwe obrzęki wokół kostek, wtedy zgłosić się. Kontrola za cztery tygodnie z dzienniczkiem pomiarów. Pilnie na SOR, gdyby ciśnienie przekroczyło sto osiemdziesiąt na sto dziesięć z bólem głowy, zaburzeniami widzenia albo bólem w klatce piersiowej.",
+  "stage2_dictation": "Pacjentka sześćdziesiąt pięć lat, z nadciśnieniem i hipercholesterolemią, leczona amlodypiną pięć miligramów i atorwastatyną. Pomiary domowe z ostatniego miesiąca średnio sto pięćdziesiąt sześć na dziewięćdziesiąt cztery. Bez bólów głowy, bez duszności, bez obrzęków. W badaniu ciśnienie sto pięćdziesiąt osiem na dziewięćdziesiąt sześć, powtórny pomiar sto pięćdziesiąt dwa na dziewięćdziesiąt cztery, tętno siedemdziesiąt dwa, miarowe. Osłuchowo serce i płuca bez zmian, bez obrzęków kończyn dolnych. Ostatni lipidogram: LDL dziewięćdziesiąt osiem. Rozpoznanie: nadciśnienie tętnicze niewyrównane, zwiększenie dawki amlodypiny.",
+  "benchmark": {
+    "title": "Nadciśnienie tętnicze niewyrównane – zwiększenie dawki amlodypiny",
+    "short_title": "Nadciśnienie – zmiana dawki",
+    "difficulty": "A",
+    "specialty": "kardiologia",
+    "features": [
+      "zmiana-dawki",
+      "kontynuacja-bez-recepty"
+    ],
+    "clinical_summary": "65-latka z nadciśnieniem niewyrównanym w pomiarach domowych i gabinetowych. Amlodypina 5 → 10 mg, atorwastatyna bez zmian (bez recepty), stara dawka do odstawienia.",
+    "hypotheses": [
+      {
+        "id": "H104-1",
+        "text": "Na recepcie znajdzie się tylko amlodypina 10 mg (atorwastatyna „bez zmian” nie)."
+      },
+      {
+        "id": "H104-2",
+        "text": "Zalecenie odstawienia dotychczasowej dawki 5 mg znajdzie się w zaleceniach."
+      },
+      {
+        "id": "H104-3",
+        "text": "Pomiary domowe i gabinetowe ciśnienia nie zostaną pomylone."
+      }
+    ]
+  }
+}

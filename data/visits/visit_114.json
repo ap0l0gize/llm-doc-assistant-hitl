@@ -1,0 +1,33 @@
+{
+  "visit_id": "visit_114",
+  "pesel": "24252007617",
+  "stage1_dictation": "Recepta: Gastrolit, proszek do sporządzania roztworu, jedna saszetka rozpuszczona w dwustu mililitrach przegotowanej wody, podawać małymi porcjami, łyżeczką co kilka minut, około pięćdziesięciu do stu mililitrów po każdym luźnym stolcu, jedno opakowanie. Paracetamol w czopkach sto dwadzieścia pięć miligramów, jeden czopek doraźnie przy gorączce powyżej trzydziestu ośmiu i pół, nie częściej niż co sześć godzin, maksymalnie cztery na dobę, jedno opakowanie. Zalecenia dla rodziców: kontynuować karmienie, lekkostrawne posiłki, nie podawać soków ani napojów gazowanych, myć ręce po zmianie pieluchy. Kontrola jutro, jeśli biegunka nie będzie się zmniejszać. Natychmiast do szpitala, jeśli dziecko nie chce pić, nie oddaje moczu przez sześć do ośmiu godzin, jest nadmiernie senne, płacze bez łez, pojawi się krew w stolcu albo wymioty uniemożliwiające picie.",
+  "stage2_dictation": "Chłopiec dwa i pół roku, masa ciała dwanaście kilogramów, tydzień temu w domu ważył dwanaście i pół. Od wczoraj biegunka, sześć luźnych stolców na dobę, bez krwi i śluzu, wczoraj wieczorem trzy razy wymiotował, dziś już nie. Gorączka do trzydziestu ośmiu i dziewięciu. Pije chętnie, oddaje mocz, ostatnio trzy godziny temu. W żłobku podobne zachorowania. W badaniu stan ogólny dobry, dziecko aktywne, błony śluzowe lekko suche, łzy obecne, nawrót kapilarny poniżej dwóch sekund, brzuch miękki, perystaltyka wzmożona. Temperatura trzydzieści osiem i dwa. Odwodnienie łagodne, około czterech procent. Rozpoznanie: ostry nieżyt żołądkowo-jelitowy, prawdopodobnie wirusowy, z łagodnym odwodnieniem.",
+  "benchmark": {
+    "title": "Ostry nieżyt żołądkowo-jelitowy z łagodnym odwodnieniem u 2,5-latka",
+    "short_title": "Biegunka u dziecka",
+    "difficulty": "B",
+    "specialty": "pediatria",
+    "features": [
+      "pediatria",
+      "dawka-wagowa",
+      "postac-nietabletkowa",
+      "wartosci-liczbowe"
+    ],
+    "clinical_summary": "Chłopiec 12 kg (tydzień temu 12,5 kg), biegunka i wymioty, odwodnienie ok. 4%. Doustny płyn nawadniający (Gastrolit, w rejestrze bez mocy), paracetamol w czopkach 125 mg.",
+    "hypotheses": [
+      {
+        "id": "H114-1",
+        "text": "Gastrolit nie zostanie wybrany automatycznie (produkt bez mocy w rejestrze) – system oznaczy wybór produktu."
+      },
+      {
+        "id": "H114-2",
+        "text": "Paracetamol zostanie dopasowany do czopków 125 mg, nie do tabletek ani zawiesiny."
+      },
+      {
+        "id": "H114-3",
+        "text": "Dwie masy ciała (12 kg obecnie, 12,5 kg tydzień temu) nie zostaną pomylone."
+      }
+    ]
+  }
+}

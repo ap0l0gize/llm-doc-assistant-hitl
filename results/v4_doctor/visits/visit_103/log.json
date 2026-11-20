@@ -1,0 +1,22 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": true,
+    "changes": [],
+    "chars_edited": 0,
+    "doc_chars": 475,
+    "issues": [],
+    "doctor_notes": []
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": true,
+    "changes": [],
+    "chars_edited": 0,
+    "doc_chars": 503,
+    "issues": [],
+    "doctor_notes": []
+  }
+]

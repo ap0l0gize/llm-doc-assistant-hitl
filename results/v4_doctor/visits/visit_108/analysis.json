@@ -1,0 +1,16 @@
+{
+  "visit_id": "visit_108",
+  "summary": "Leki i schematy dawkowania poprawne (prednizon, nie prednizolon; schemat Symbicortu), ale Symbicort wymagał ręcznego wyboru po fałszywym konflikcie nazwy handlowej, z objawów alarmowych zniknęło „pilnie na SOR”, a z wywiadu alergia na kwas acetylosalicylowy.",
+  "strengths": [
+    "Salbutamol dopasowany do aerozolu 100 mcg/dawkę, prednizon do prednizonu 20 mg.",
+    "Schemat „2 inhalacje 2 × dziennie przez 2 tygodnie, potem 1” zachowany.",
+    "Karta z kompletem parametrów zaostrzenia (PEF 280 l/min, 65% najlepszej wartości, saturacja 96%)."
+  ],
+  "weaknesses": [
+    "Fałszywy konflikt nazwy handlowej (spójnik „z” w „budezonid z formoterolem”).",
+    "Pominięte miejsce zgłoszenia przy objawach alarmowych (SOR).",
+    "Pominięta alergia na kwas acetylosalicylowy z karty pacjentki."
+  ],
+  "verdict": "istotne poprawki",
+  "ratings": {"dokładność": 4, "kompletność": 3, "zwięzłość": 5, "zrozumiałość dla pacjenta": 4, "spójność wewnętrzna": 5}
+}

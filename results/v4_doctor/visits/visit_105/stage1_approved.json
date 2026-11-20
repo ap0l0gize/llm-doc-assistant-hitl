@@ -1,0 +1,30 @@
+{
+  "prescription": [
+    {
+      "substance": "lewotyroksyna",
+      "brand_name": null,
+      "strength": "50 mikrogramów",
+      "form": "tabletki",
+      "dosage": "1 tabletka rano na czczo, 30 minut przed śniadaniem, popijać wodą",
+      "quantity": "2 opakowania",
+      "product": "Eltroxin · 50 mcg · Tabletki · RPL 100020086",
+      "candidates": [
+        "Letrox 50 · 50 mcg · Tabletki · RPL 100037307",
+        "Euthyrox N 50 · 50 mcg · Tabletki · RPL 100122266"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Lek z recepty przyjmować codziennie o tej samej porze: jedna tabletka rano na czczo, 30 minut przed śniadaniem, popijając wodą.",
+      "Nie przyjmować leku razem z kawą ani preparatami żelaza czy wapnia. Zachować odstęp co najmniej 4 godzin."
+    ],
+    "warning_signs": [
+      "Kołatanie serca.",
+      "Ból w klatce piersiowej.",
+      "Nasilony niepokój i bezsenność."
+    ],
+    "follow_up": "Badanie TSH za 6 do 8 tygodni, potem wizyta kontrolna z wynikiem."
+  },
+  "doctor_notes": []
+}

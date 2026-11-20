@@ -1,0 +1,21 @@
+{
+  "visit_id": "visit_111",
+  "summary": "Projekty kompletne, z poprawnym numerem kryzysowym i zachowanym zaprzeczeniem myśli samobójczych, ale zalecenie o prowadzeniu samochodu znów zmieniło sens („dopóki lekarz nie oceni” zamiast „dopóki pan nie zobaczy”).",
+  "strengths": [
+    "Numer Centrum Wsparcia złożony poprawnie z dyktowania słownego (800 70 2222), razem ze 112.",
+    "Zaprzeczenie myśli rezygnacyjnych i samobójczych zachowane; GAD-7 odnotowany.",
+    "Brak ilości hydroksyzyny oznaczony przez system."
+  ],
+  "weaknesses": [
+    "Zalecenie dotyczące prowadzenia samochodu przypisane ocenie lekarza zamiast obserwacji pacjenta.",
+    "Dopisana jednostka „filiżanek”."
+  ],
+  "verdict": "istotne poprawki",
+  "ratings": {
+    "dokładność": 3,
+    "kompletność": 5,
+    "zwięzłość": 4,
+    "zrozumiałość dla pacjenta": 4,
+    "spójność wewnętrzna": 5
+  }
+}

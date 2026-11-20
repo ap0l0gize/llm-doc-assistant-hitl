@@ -1,0 +1,107 @@
+{
+  "date": "2026-11-20",
+  "run_started": "2026-11-20",
+  "model": "anthropic:claude-haiku-5-5",
+  "drug_registry": "Rejestr_Produktow_Leczniczych_calosciowy_stan_na_dzien_20261110.csv",
+  "reviewer": "files",
+  "scenarios_sha256_at_run": "8b5b141f7eedec65a363cc770bde451ee3ca393d3e3bf665f634cd3eb8706501",
+  "scenarios_sha256_now": "8b5b141f7eedec65a363cc770bde451ee3ca393d3e3bf665f634cd3eb8706501",
+  "recoding": [],
+  "totals": {
+    "interventions": {
+      "drafts": 40,
+      "drafts_accepted_unchanged": 21,
+      "corrections": 28,
+      "by_document": {
+        "prescription": 15,
+        "patient_instructions": 6,
+        "visit_note": 7
+      },
+      "by_source": {
+        "system": 18,
+        "dyktowanie": 6,
+        "rejestr": 4
+      },
+      "by_detection": {
+        "uwaga systemu": 13,
+        "lekarz": 14,
+        "weryfikator": 1
+      },
+      "category_by_severity": {
+        "pominięcie": {
+          "istotny": 0,
+          "umiarkowany": 6,
+          "kosmetyczny": 1
+        },
+        "treść spoza dyktowania": {
+          "istotny": 0,
+          "umiarkowany": 0,
+          "kosmetyczny": 3
+        },
+        "błędny fakt": {
+          "istotny": 0,
+          "umiarkowany": 2,
+          "kosmetyczny": 0
+        },
+        "recepta": {
+          "istotny": 2,
+          "umiarkowany": 12,
+          "kosmetyczny": 0
+        },
+        "zalecenia": {
+          "istotny": 0,
+          "umiarkowany": 0,
+          "kosmetyczny": 0
+        },
+        "forma/język": {
+          "istotny": 0,
+          "umiarkowany": 0,
+          "kosmetyczny": 2
+        }
+      },
+      "fields_changed": 40,
+      "fields_by_kind": {
+        "modified": 18,
+        "added": 22
+      },
+      "fields_without_note": 0,
+      "chars_edited": 749,
+      "doc_chars": 25197,
+      "product_choices": 10,
+      "issues": 20,
+      "issues_without_change": 4
+    },
+    "by_difficulty": {
+      "A": {
+        "visits": 5,
+        "drafts_unchanged": "8/10",
+        "corrections": 3,
+        "significant": 0,
+        "system_caused": 2,
+        "fields_changed": 4
+      },
+      "B": {
+        "visits": 9,
+        "drafts_unchanged": "8/18",
+        "corrections": 14,
+        "significant": 1,
+        "system_caused": 10,
+        "fields_changed": 19
+      },
+      "C": {
+        "visits": 6,
+        "drafts_unchanged": "5/12",
+        "corrections": 11,
+        "significant": 1,
+        "system_caused": 6,
+        "fields_changed": 17
+      }
+    },
+    "verdicts": {
+      "istotne poprawki": 13,
+      "gotowy bez zmian": 6,
+      "drobne poprawki": 1
+    },
+    "failed_runs": 0
+  }
+}

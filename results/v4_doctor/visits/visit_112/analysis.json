@@ -1,0 +1,12 @@
+{
+  "visit_id": "visit_112",
+  "summary": "Oba projekty bez zmian: żel z ketoprofenem podany w procentach dopasowany do 25 mg/g, strona prawa spójna we wszystkich dokumentach, ostrzeżenie przed doustnymi NLPZ zachowane.",
+  "strengths": [
+    "„Dwa i pół procent” dopasowane do żelu 25 mg/g.",
+    "Prawe kolano w dawkowaniu, skierowaniu na RTG, wywiadzie, badaniu i rozpoznaniu; lewe opisane jako prawidłowe.",
+    "Żaden doustny NLPZ na recepcie; ostrzeżenie (choroba wrzodowa) w zaleceniach."
+  ],
+  "weaknesses": [],
+  "verdict": "gotowy bez zmian",
+  "ratings": {"dokładność": 5, "kompletność": 5, "zwięzłość": 5, "zrozumiałość dla pacjenta": 5, "spójność wewnętrzna": 5}
+}

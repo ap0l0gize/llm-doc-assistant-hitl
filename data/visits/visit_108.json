@@ -1,0 +1,33 @@
+{
+  "visit_id": "visit_108",
+  "pesel": "01270908745",
+  "stage1_dictation": "Recepta: Symbicort Turbuhaler, budezonid z formoterolem, sto sześćdziesiąt mikrogramów plus cztery i pół mikrograma na dawkę, proszek do inhalacji, na razie dwie inhalacje dwa razy dziennie przez dwa tygodnie, potem wracamy do jednej inhalacji dwa razy dziennie, jedno opakowanie. Do tego salbutamol aerozol, sto mikrogramów na dawkę, dwie dawki doraźnie przy duszności, nie częściej niż co cztery godziny, jedno opakowanie. Prednizon dwadzieścia miligramów, dwie tabletki rano po śniadaniu przez pięć dni, jedno opakowanie. Zalecenia: po każdej inhalacji Symbicortu wypłukać usta wodą, unikać dymu i zimnego powietrza, zapisywać, ile razy dziennie potrzebny jest salbutamol. Kontrola za tydzień. Pilnie na SOR, jeśli salbutamol nie pomaga albo trzeba go brać częściej niż co cztery godziny, przy duszności utrudniającej mówienie albo sinieniu ust.",
+  "stage2_dictation": "Pacjentka dwadzieścia pięć lat, astma od dzieciństwa, leczona Symbicortem, jedna inhalacja dwa razy dziennie. Od czterech dni, po infekcji wirusowej, nasilona duszność, świszczący oddech, nocne przebudzenia z kaszlem, salbutamol pożyczony od koleżanki potrzebny cztery do pięciu razy na dobę. W badaniu mówi pełnymi zdaniami, oddechy dwadzieścia na minutę, saturacja dziewięćdziesiąt sześć procent, tętno dziewięćdziesiąt osiem. Osłuchowo rozsiane świsty wydechowe, wydech przedłużony. PEF dwieście osiemdziesiąt litrów na minutę, około sześćdziesięciu pięciu procent wartości najlepszej. Rozpoznanie: umiarkowane zaostrzenie astmy oskrzelowej.",
+  "benchmark": {
+    "title": "Zaostrzenie astmy oskrzelowej",
+    "short_title": "Zaostrzenie astmy",
+    "difficulty": "B",
+    "specialty": "pulmonologia",
+    "features": [
+      "lek-zlozony",
+      "nazwa-handlowa",
+      "postac-nietabletkowa",
+      "jednostki-slownie"
+    ],
+    "clinical_summary": "25-latka z astmą, umiarkowane zaostrzenie po infekcji (PEF 65%). Symbicort w zwiększonej dawce z powrotem do dawki podstawowej, salbutamol doraźnie, prednizon przez 5 dni. Uczulenie na kwas acetylosalicylowy w karcie.",
+    "hypotheses": [
+      {
+        "id": "H108-1",
+        "text": "Symbicort (nazwa handlowa + budezonid z formoterolem) zostanie dopasowany do produktu 160 + 4,5 mcg/dawkę."
+      },
+      {
+        "id": "H108-2",
+        "text": "Prednizon zostanie dopasowany do prednizonu, nie do prednizolonu."
+      },
+      {
+        "id": "H108-3",
+        "text": "Schemat „2 inhalacje 2 razy dziennie przez 2 tygodnie, potem 1” zostanie zachowany."
+      }
+    ]
+  }
+}

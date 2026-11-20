@@ -1,0 +1,46 @@
+{
+  "prescription": [
+    {
+      "substance": "hydroksyzyna",
+      "brand_name": null,
+      "strength": "25 mg",
+      "form": "tabletki",
+      "dosage": "pół do jednej tabletki wieczorem doraźnie przy niepokoju lub problemach z zaśnięciem, nie więcej niż jedna tabletka na dobę",
+      "quantity": "1 opakowanie (30 tabletek)",
+      "product": "Hydroxyzinum PPH · 25 mg · Tabletki powlekane · RPL 100445779",
+      "candidates": [
+        "Hydroxyzinum VP · 25 mg · Tabletki powlekane · RPL 100030015",
+        "Hydroxyzine Orion · 25 mg · Tabletki powlekane · RPL 100356490"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Hydroksyzyna 25 mg, tabletki: pół do jednej tabletki wieczorem, doraźnie, przy niepokoju lub problemach z zaśnięciem. Nie więcej niż jedna tabletka na dobę.",
+      "Lek może powodować senność rano. Nie prowadzić samochodu, dopóki nie sprawdzi pan, jak lek na pana działa.",
+      "Nie pić alkoholu.",
+      "Higiena snu: kłaść się i wstawać o stałych porach, na godzinę przed snem nie korzystać z ekranów, kawę pić tylko do południa.",
+      "Skierowanie do psychologa na terapię poznawczo-behawioralną bezsenności."
+    ],
+    "warning_signs": [
+      "Myśli rezygnacyjne lub samobójcze: natychmiast zadzwonić pod numer 112 albo do Centrum Wsparcia pod numer 800 70 2222."
+    ],
+    "follow_up": "Kontrola za cztery tygodnie."
+  },
+  "doctor_notes": [
+    {
+      "path": "prescription.0.quantity",
+      "category": "recepta",
+      "severity": "umiarkowany",
+      "source": "dyktowanie",
+      "reason": "Nie podałem ilości hydroksyzyny (system to oznaczył); uzupełniam 1 opakowanie 30 tabletek."
+    },
+    {
+      "path": "patient_instructions.recommendations.1",
+      "category": "błędny fakt",
+      "severity": "umiarkowany",
+      "source": "system",
+      "reason": "Podyktowałem „dopóki pan nie zobaczy, jak lek działa”; projekt zmienił to na „dopóki lekarz nie oceni” – inne zalecenie co do prowadzenia samochodu. Przywracam sens dyktowania."
+    }
+  ]
+}

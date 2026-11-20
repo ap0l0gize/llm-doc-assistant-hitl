@@ -1,0 +1,418 @@
+% Raport z benchmarku asystenta dokumentacji wizyty z lekarzem w pętli (wersja 4).
+% Liczby i tabele pochodzą z fragmentów w generated/, budowanych z wyników przebiegu:
+%   python benchmark.py --summary-only --export results/v4_doctor
+%   python benchmark_report.py results/v4_doctor docs/benchmark/generated
+% W Overleaf: wgrać ten plik razem z katalogiem generated/ (kompilator pdfLaTeX).
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage[hidelinks]{hyperref}
+
+\input{generated/macros}
+% \input cannot be followed by \bottomrule inside a table; the TeX primitive can
+\makeatletter
+\newcommand*{\tabinput}[1]{\@@input #1 }
+\makeatother
+% \wizyta{106}: the visit number, linked to its description in the appendix
+\newcommand{\wizyta}[1]{\hyperref[wizyta:#1]{#1}}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{0pt}
+
+\title{Asystent dokumentacji wizyty z~lekarzem w~pętli\\[0.3em]
+       \large Benchmark interwencji lekarza -- wersja 4}
+\author{}
+\date{Przebieg: \runDate}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+System na podstawie dyktowania lekarza przygotowuje projekty recepty, zaleceń dla pacjenta i~wpisu do karty wizyty;
+lekarz każdy projekt poprawia i~zatwierdza, a~decyzje pozostają po jego stronie. Benchmark mierzy, \emph{jak bardzo lekarz musi ingerować}.
+Na \nVisits{} scenariuszach wizyt w~podstawowej opiece zdrowotnej na trzech poziomach trudności recenzent pełniący rolę lekarza
+zatwierdził bez zmian \nDraftsUnchanged{} z~\nDrafts{} projektów i~wprowadził \nCorrections{} poprawek
+(\nSevSignificant{} istotne, \nSevModerate{} umiarkowanych, \nSevCosmetic{} kosmetycznych), zmieniając \pCharsEdited\,\% tekstu.
+\nSrcSystem{} poprawek wynikało z~błędów systemu, \nSrcDictation{} z~niepełnego dyktowania, \nSrcRegistry{} z~ograniczeń danych rejestru leków.
+Uwagi deterministyczne do recepty wskazały wszystkie braki danych w~dyktowaniu (ilość, moc), natomiast weryfikator karty wizyty wykrył
+\nStageTwoSystemByVerifier{} z~\nStageTwoSystem{} błędów systemu w~karcie. Potwierdziło się \nHypothesesConfirmed{} z~\nHypotheses{}
+hipotez zapisanych przed przebiegiem; najważniejsze ustalenia to brak kontroli alergii, fałszywe konflikty nazw handlowych
+i~gubienie miejsca zgłoszenia przy objawach alarmowych.
+\end{abstract}
+
+\tableofcontents
+
+% ---------------------------------------------------------------------------
+\section{Cel i pytania}
+
+Asystent ma odciążyć lekarza w~pisaniu dokumentacji, nie przejmując jego decyzji. Miarą jego użyteczności jest więc
+praca, którą lekarz musi włożyć w~poprawienie projektów, oraz to, czy błędy, które przeoczyłby lekarz, mogłyby zaszkodzić pacjentowi.
+Benchmark odpowiada na pytania:
+\begin{enumerate}[label=P\arabic*.]
+  \item Jaka część projektów nadaje się do zatwierdzenia bez zmian?
+  \item Ile i~jakich poprawek wymaga lekarz (kategoria, waga) i~co spowodowało ich potrzebę: system, dyktowanie czy rejestr leków?
+  \item Na ile uwagi systemu (deterministyczne do recepty i~weryfikatora do karty) wskazują lekarzowi problemy?
+  \item Które cechy wizyty wiążą się z~większą liczbą poprawek?
+\end{enumerate}
+Benchmark nie mierzy czasu pracy ani nie porównuje wersji systemu; każdy scenariusz przebiega raz, z~lekarzem w~pętli.
+
+% ---------------------------------------------------------------------------
+\section{System}
+
+Przebieg wizyty jest grafem LangGraph z~dwoma punktami przeglądu przez lekarza:
+\begin{enumerate}[nosep]
+  \item wczytanie danych pacjenta (choroby przewlekłe, leki stałe, alergie);
+  \item \textbf{etap 1}: z~dyktowania równolegle agent recepty i~agent zaleceń; recepta jest dopasowywana do
+        Rejestru Produktów Leczniczych, a~braki i~niejednoznaczności trafiają do deterministycznych \emph{uwag systemu};
+  \item przegląd etapu 1 przez lekarza;
+  \item \textbf{etap 2}: dyktowanie wywiadu i~badania, agent karty wizyty (wywiad, badanie przedmiotowe, rozpoznanie),
+        weryfikator (model językowy) porównujący kartę z~dyktowaniem i~danymi pacjenta;
+  \item przegląd etapu 2; lekarz wpisuje kod ICD-10 (system go nie proponuje);
+  \item złożenie dokumentacji.
+\end{enumerate}
+Model: \texttt{\runModel}, odpowiedzi strukturalne według schematu JSON. Rejestr leków: \texttt{\runRegistry}.
+
+\paragraph{Dopasowanie leków.} Model wyodrębnia z~dyktowania substancję, nazwę handlową, moc, postać, dawkowanie i~ilość.
+Dopasowanie do rejestru jest deterministyczne: klucz pisowni łacińsko-polskiej (np.\ \emph{budesonidum}~/ \emph{budezonid}),
+jednostki zapisane słownie, stężenia (\% i~mg/g), moc na dawkę inhalacyjną, grupy postaci. Gdy produkt nie jest jednoznaczny
+(brak mocy, kilka postaci, sprzeczność nazwy handlowej z~substancją), system \emph{nie wybiera} i~prosi lekarza o~wybór.
+
+\paragraph{Przegląd.} Lekarz poprawia projekt zapisany jako edytowalny JSON i~opisuje każdą poprawkę w~polu \texttt{doctor\_notes}
+(kategoria, waga, źródło, uzasadnienie). Przy zatwierdzeniu sprawdzana jest poprawność dokumentu (produkt z~numerem w~rejestrze,
+dawkowanie, ilość, format kodu ICD-10). Po zatwierdzeniu wizyta przechodzi do kolejnego etapu -- poprawki nie wracają do modelu.
+Z~każdego etapu zostają oba pliki: projekt systemu (\texttt{stageN\_draft.json}) i~wersja zatwierdzona (\texttt{stageN\_approved.json}),
+a~\texttt{log.json} zawiera listę zmienionych pól, uwagi systemu i~uwagi lekarza.
+
+% ---------------------------------------------------------------------------
+\section{Metodyka}
+
+\subsection{Scenariusze}
+\nVisits{} niezależnych wizyt w~POZ (tab.~\ref{tab:scenariusze}), każda z~dyktowaniem etapu 1 (recepta, zalecenia) i~etapu 2 (karta).
+Dyktowania naśladują mowę lekarza: kolejność niezgodna z~polami dokumentów, w~poziomie C wtrącenia, autokorekty
+i~błędy rozpoznawania mowy. Poziomy trudności:
+\begin{itemize}[nosep]
+  \item \textbf{A -- podstawowe (5)}: uporządkowane dyktowanie, 0--1 lek, do 2 cech utrudniających;
+  \item \textbf{B -- typowe (9)}: naturalna kolejność, 1--5 leków (przedłużenia, preparaty złożone, inhalatory, żele, dziecko, ciąża);
+  \item \textbf{C -- trudne (6)}: dyktowanie jak z~rozpoznawania mowy, wielolekowość ze zmianami leczenia, sprzeczności z~kartą pacjenta.
+\end{itemize}
+Każdy scenariusz ma listę \emph{cech} z~katalogu (np.\ \texttt{autokorekta}, \texttt{lateralizacja}, \texttt{konflikt-alergii},
+\texttt{kontynuacja-bez-recepty}), co pozwala opisać, z~czym wiążą się poprawki.
+
+\begin{longtable}{@{}l c L{5.6cm} L{2.9cm} L{4.6cm}@{}}
+\caption{Scenariusze benchmarku.}\label{tab:scenariusze}\\
+\toprule
+Nr & Poz. & Przypadek & Dziedzina & Cechy \\
+\midrule
+\endfirsthead
+\toprule
+Nr & Poz. & Przypadek & Dziedzina & Cechy \\
+\midrule
+\endhead
+\tabinput{generated/scenarios.tex}
+\bottomrule
+\end{longtable}
+
+\subsection{Recenzent i procedura}
+Rolę lekarza pełnił model Claude (Anthropic), pracujący w~trybie plikowym: dla każdego etapu widział dane pacjenta,
+dyktowanie, projekt i~uwagi systemu, poprawiał projekt, opisywał każdą poprawkę i~zatwierdzał etap. Po obu etapach,
+przed obejrzeniem zestawień, wypełniał ocenę wizyty (\texttt{analysis.json}). Recenzent nie miał wglądu w~zestawienia
+w~trakcie przebiegu.
+
+\subsection{Jednostka analizy i~klasyfikacja}
+Jednostką jest \textbf{poprawka lekarza}: jedna uwaga w~\texttt{doctor\_notes}, opisująca \emph{jeden problem} projektu.
+Poprawka może zmienić kilka pól (zamiana leku zmienia substancję, moc, postać, dawkowanie i~produkt), a~dwa różne problemy
+w~tej samej pozycji to dwie poprawki. Każde zmienione pole jest przypisane do najbardziej szczegółowej uwagi, która je obejmuje.
+Klasyfikacja według klucza (\texttt{docs/benchmark/codebook.md}):
+\begin{itemize}[nosep]
+  \item \textbf{kategoria}: pominięcie, treść spoza dyktowania, błędny fakt, recepta, zalecenia, forma/język;
+  \item \textbf{waga} (skutek, gdyby lekarz nie poprawił): \emph{istotny} -- mógłby zaszkodzić albo zmienia kliniczny sens;
+        \emph{umiarkowany} -- wymaga poprawy, szkoda mało prawdopodobna; \emph{kosmetyczny} -- bez wpływu na treść;
+  \item \textbf{źródło}: \emph{system} (błąd asystenta), \emph{dyktowanie} (niepełne lub błędne dyktowanie),
+        \emph{rejestr} (dane rejestru nie pozwalają wybrać produktu);
+  \item \textbf{wykrycie} (wyznaczane automatycznie): \emph{uwaga systemu} lub \emph{weryfikator}, jeśli uwaga systemu
+        dotyczyła któregoś z~pól poprawki, w~przeciwnym razie \emph{lekarz}.
+\end{itemize}
+Wpisanie kodu ICD-10 nie jest poprawką. Liczba zmienionych pól i~znaków jest podawana dodatkowo.
+
+\subsection{Ocena wizyty}
+Po każdej wizycie recenzent opisywał mocne strony i~braki projektów, wydawał werdykt
+(\emph{gotowy bez zmian} / \emph{drobne poprawki} -- tylko kosmetyczne / \emph{istotne poprawki} -- co najmniej jedna
+umiarkowana lub istotna / \emph{nie do użycia}) i~oceniał projekty w~skali 1--5 według pięciu kryteriów wzorowanych na
+PDQI-9 (Physician Documentation Quality Instrument): dokładność, kompletność, zwięzłość, zrozumiałość dla pacjenta, spójność wewnętrzna.
+Werdykt nie rozróżnia źródła poprawki -- brak ilości w~dyktowaniu też daje \emph{istotne poprawki}.
+
+\subsection{Hipotezy}
+Przed uruchomieniem dla każdego scenariusza zapisano 3--4 hipotezy: gdzie system powinien sobie poradzić, a~gdzie
+spodziewano się trudności (np.\ fałszywy konflikt nazwy handlowej, brak ostrzeżenia o~alergii). Po przebiegu każdą hipotezę
+sprawdzono ręcznie na projektach systemu i~zapisano dowód. Skrót SHA-256 plików scenariuszy z~chwili uruchomienia
+(\texttt{\runFingerprint\ldots}) jest równy skrótowi po przebiegu.
+
+\subsection{Rezygnacja z~oceny automatycznej}
+Wcześniejsze wersje benchmarku porównywały projekty z~odpowiedzią wzorcową: oczekiwanymi lekami i~listą faktów wyszukiwanych
+jako frazy. W~języku polskim takie dopasowanie jest zawodne: fakt obecny w~dokumencie w~innej formie fleksyjnej
+(\emph{płukać} wobec \emph{płukanie}, \emph{kwasu foliowego} wobec \emph{kwas foliowy}) nie zostaje rozpoznany,
+a~poprawna negacja (\emph{zwolnienie lekarskie nie jest potrzebne}) liczy się jako fraza niedozwolona.
+Ocena wzorcowa mierzyła też system względem odpowiedzi autora scenariuszy, a~nie względem lekarza.
+Dlatego jedyną miarą jest przegląd lekarza: jego poprawki, ocena wizyty i~ręcznie sprawdzone hipotezy.
+
+% ---------------------------------------------------------------------------
+\section{Przebieg prac}
+
+\begin{enumerate}
+  \item \textbf{Wersje 1--3.} Dziesięć scenariuszy, ocena automatyczna, później przegląd z~lekarzem w~pętli. Krytyczna ocena
+        pokazała, że benchmark był za łatwy: dyktowania ułożone jak pola formularza, proste leki (tabletki, jedna substancja),
+        brak typowych zadań POZ (przedłużenia, zmiany dawek, odstawienia), efekt sufitu. Brakowało też przypisania przyczyny
+        poprawki (błąd systemu czy dyktowania) i~opisu trudności scenariuszy.
+  \item \textbf{Poprawki dopasowania leków} przed nowymi scenariuszami: jednostki słownie i~duże liczby, moc na dawkę,
+        stężenia, pisownia łacińsko-polska (\emph{s}/\emph{z}, \emph{-um}/\emph{-ow}), aliasy (\emph{kwas}~/ \emph{acidum});
+        testy na liście około 40 leków typowych dla POZ, niezależnej od scenariuszy.
+  \item \textbf{Benchmark v4}: 20 nowych scenariuszy na trzech poziomach, katalog cech, hipotezy, klucz klasyfikacji
+        ze \emph{źródłem} poprawki, ocena wizyty, eksport do CSV.
+  \item \textbf{Uporządkowanie metody}: (a)~usunięcie oceny automatycznej razem z~odpowiedziami wzorcowymi;
+        (b)~zachowanie projektu systemu obok wersji zatwierdzonej -- lekarz edytuje projekt w~miejscu, więc po zatwierdzeniu
+        projekt jest przywracany, a~wersja lekarza zapisywana osobno; (c)~poprawka lekarza jako jednostka analizy
+        z~zasadą \emph{jedna uwaga = jeden problem} zamiast liczenia zmienionych pól (zamiana antybiotyku to jedna poprawka,
+        nie sześć zmian). Usunięto też pliki i~kod, które służyły tylko ocenie automatycznej.
+  \item \textbf{Przebieg benchmarku} (\runDate): 20 wizyt, 40 przeglądów, eksport danych i~ten raport.
+\end{enumerate}
+
+% ---------------------------------------------------------------------------
+\section{Wyniki}
+
+\subsection{Skala interwencji}
+Bez zmian zatwierdzono \nDraftsUnchanged{} z~\nDrafts{} projektów. Lekarz wprowadził \nCorrections{} poprawek
+(\nFieldsChanged{} zmienionych pól, \nCharsEdited{} z~\nDocChars{} znaków, czyli \pCharsEdited\,\%), w~tym \nProductChoices{}
+wyborów produktu z~listy kandydatów. Poprawkę wynikającą z~błędu systemu o~wadze co najmniej umiarkowanej
+wymagało \nVisitsSystemModerate{} z~\nVisits{} wizyt. Liczba poprawek rośnie z~poziomem trudności (tab.~\ref{tab:poziomy},
+rys.~\ref{rys:poziomy}); poziom A pozostaje blisko sufitu i~pełni rolę kontrolną.
+
+\begin{table}[ht]
+\centering
+\caption{Interwencje według poziomu trudności.}\label{tab:poziomy}
+\small
+\begin{tabular}{@{}l r r r r r r r r@{}}
+\toprule
+Poziom & Wizyty & Bez zmian & Poprawki & na wizytę & z~winy systemu & na wizytę & Istotne & Pola \\
+\midrule
+\tabinput{generated/levels.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar stacked, bar width=22pt, width=9cm, height=5.5cm,
+             symbolic x coords={A,B,C}, xtick=data, ymin=0,
+             ylabel={poprawki na wizytę}, xlabel={poziom trudności},
+             legend style={at={(1.02,0.5)}, anchor=west, draw=none}, legend cell align=left]
+\tabinput{generated/level_chart.tex}
+\end{axis}
+\end{tikzpicture}
+\caption{Średnia liczba poprawek na wizytę według poziomu i~źródła.}\label{rys:poziomy}
+\end{figure}
+
+\subsection{Rodzaj i~waga poprawek}
+Większość poprawek dotyczyła recepty (tab.~\ref{tab:kategorie}): wyboru produktu, którego system słusznie nie wybrał sam,
+brakującej ilości z~dyktowania, a~w~dwóch przypadkach -- złego leku. Obie poprawki istotne dotyczyły recepty:
+w~wizycie~\wizyta{106} na recepcie znalazł się lek kontynuowany bez zmian zamiast nowo dołożonego (błąd systemu),
+w~wizycie~\wizyta{116} lekarz podyktował antybiotyk, na który pacjentka jest uczulona, a~system tego nie zasygnalizował.
+W~zaleceniach dominowały pominięcia (miejsce zgłoszenia przy objawach alarmowych, zmiany leczenia), w~karcie -- drobne
+dopiski spoza dyktowania i~pojedyncze zmiany sensu.
+
+\begin{table}[ht]
+\centering
+\caption{Poprawki według kategorii i~wagi.}\label{tab:kategorie}
+\begin{tabular}{@{}l r r r r@{}}
+\toprule
+Kategoria & istotny & umiarkowany & kosmetyczny & razem \\
+\midrule
+\tabinput{generated/categories.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Źródło poprawek i~uwagi systemu}
+\nSrcSystem{} poprawek wynikało z~błędów systemu, \nSrcDictation{} z~dyktowania, \nSrcRegistry{} z~danych rejestru
+(tab.~\ref{tab:zrodla}). Deterministyczne uwagi do recepty działały dobrze: z~\nIssuesStageOne{} uwag \nIssuesStageOneActed{}
+doprowadziło do zmiany (pozostałe dwie to uwagi o~mocy, rozwiązane razem z~wyborem produktu), a~każdy brak w~dyktowaniu
+(ilość, moc) został wskazany. Słabym ogniwem jest weryfikator karty: zgłosił \nIssuesStageTwo{} uwagi, z~których
+\nIssuesStageTwoActed{} była trafna, i~wykrył \nStageTwoSystemByVerifier{} z~\nStageTwoSystem{} błędów systemu w~karcie.
+Błędy, których nie wskazała żadna uwaga, znalazł lekarz (\nDetDoctor{} poprawek) -- w~tym błąd istotny z~wizyty~\wizyta{116}.
+Żaden produkt wybrany przez system samodzielnie nie okazał się błędny: każda niejednoznaczność skończyła się prośbą o~wybór.
+
+\begin{table}[ht]
+\centering
+\caption{Poprawki według źródła i~tego, kto wskazał problem.}\label{tab:zrodla}
+\begin{tabular}{@{}l r r r r@{}}
+\toprule
+Źródło & uwaga systemu & weryfikator & lekarz & razem \\
+\midrule
+\tabinput{generated/sources.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Cechy wizyt}
+Tabela~\ref{tab:cechy} zestawia średnią liczbę poprawek w~wizytach z~daną cechą. Najwięcej poprawek z~winy systemu
+towarzyszyło preparatom złożonym i~nazwom handlowym (fałszywe konflikty), wiekowi podeszłemu i~wielolekowości
+(zmiany leczenia w~zaleceniach), kontynuacji leku bez recepty. Cechy kojarzone z~ryzykiem błędu klinicznego --
+lateralizacja, dawkowanie wagowe u~dzieci, autokorekty, zaprzeczenia -- same nie wymagały ani jednej poprawki: strony,
+dawki wagowe, autokorekty i~zaprzeczenia zostały oddane bezbłędnie, a~poprawki w~tych wizytach dotyczyły innych elementów
+(np.\ miejsca zgłoszenia przy objawach alarmowych).
+Ze względu na małą liczbę wizyt na cechę (1--10) i~powiązanie cech z~poziomem zestawienie jest wyłącznie opisowe.
+
+\begin{longtable}{@{}l r r r@{}}
+\caption{Poprawki w~wizytach z~daną cechą (średnio na wizytę), malejąco według poprawek z~winy systemu.}\label{tab:cechy}\\
+\toprule
+Cecha & Wizyty & Poprawki & z~winy systemu \\
+\midrule
+\endfirsthead
+\toprule
+Cecha & Wizyty & Poprawki & z~winy systemu \\
+\midrule
+\endhead
+\tabinput{generated/features.tex}
+\bottomrule
+\end{longtable}
+
+\subsection{Ocena wizyt}
+\begin{table}[ht]
+\centering
+\caption{Średnie oceny projektów (1--5) i~werdykty według poziomu.}\label{tab:oceny}
+\small
+\begin{tabular}{@{}l r r r r r r r r r@{}}
+\toprule
+ & \multicolumn{5}{c}{oceny 1--5} & \multicolumn{4}{c}{werdykty} \\
+\cmidrule(lr){2-6}\cmidrule(l){7-10}
+Poziom & dokł. & kompl. & zwięzł. & zrozum. & spójn. & bez zmian & drobne & istotne & nie do użycia \\
+\midrule
+\tabinput{generated/ratings.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+Projekty oceniono wysoko (tab.~\ref{tab:oceny}); najniżej wypadła dokładność, obniżana przez pojedyncze zmiany sensu i~zły lek
+na recepcie. Żadnej wizyty nie oceniono jako \emph{nie do użycia}. Werdykt \emph{istotne poprawki} obejmuje także wizyty,
+w~których jedyną poprawką był brak ilości w~dyktowaniu lub wybór postaci, której rejestr nie rozstrzyga.
+
+\subsection{Hipotezy}
+Potwierdziło się \nHypothesesConfirmed{} z~\nHypotheses{} hipotez (tab.~\ref{tab:hipotezy}). Nie potwierdziły się:
+dopasowanie mocy zapisanej słownie (101), lek kontynuowany poza receptą (106), automatyczny wybór Symbicortu i~Xonvei (108, 113),
+pominięcie przedłużanych leków (107 -- przewidywane ryzyko się nie spełniło) oraz przewidywanie, że karta przemilczy sprzeczność
+w~wywiadzie o~alergii (116 -- karta ją odnotowała).
+
+\small
+\begin{longtable}{@{}l L{6.1cm} c L{6.2cm}@{}}
+\caption{Hipotezy zapisane przed przebiegiem i~ich weryfikacja.}\label{tab:hipotezy}\\
+\toprule
+Id & Hipoteza & Potw. & Dowód \\
+\midrule
+\endfirsthead
+\toprule
+Id & Hipoteza & Potw. & Dowód \\
+\midrule
+\endhead
+\tabinput{generated/hypotheses.tex}
+\bottomrule
+\end{longtable}
+\normalsize
+
+% ---------------------------------------------------------------------------
+\section{Ustalenia}
+
+\begin{enumerate}[label=U\arabic*.]
+  \item \textbf{Brak kontroli alergii} (wizyta~\wizyta{116}). Antybiotyk sprzeczny z~alergią w~karcie pacjentki przeszedł
+        bez żadnej uwagi systemu; to jedyny błąd, który mógłby bezpośrednio zaszkodzić pacjentowi.
+        Zalecenie: deterministyczna kontrola substancji z~recepty względem alergii w~danych pacjenta (z~grupami leków,
+        np.\ penicyliny).
+  \item \textbf{Zły lek na recepcie przy leku kontynuowanym} (\wizyta{106}). Lek \emph{zostawiamy bez zmian} trafił na receptę,
+        a~nowy lek z~niej wypadł, choć zalecenia o~nim mówią. W~pozostałych wizytach z~lekiem kontynuowanym (104, 113, 117) reguła
+        działała. Zalecenie: kontrola spójności recepty z~zaleceniami (lek wymieniony w~zaleceniach jako nowy, a~nieobecny na recepcie).
+  \item \textbf{Fałszywe konflikty nazwy handlowej} (\wizyta{108}, \wizyta{113}). Substancje połączone spójnikiem
+        \emph{z} (\emph{budezonid z~formoterolem}) nie są rozpoznawane jako skład preparatu złożonego. Błąd wystąpił w~obu takich
+        wizytach i~jest łatwy do usunięcia: normalizacja \emph{X z~Y} do \emph{X + Y} przed porównaniem.
+  \item \textbf{Moc zapisana słownie lub bez jednostki} (\wizyta{101}). Model niekonsekwentnie
+        zamienia liczebniki na liczby; parser rejestru wymaga liczby z~jednostką. Zalecenie: liczebniki w~parserze mocy
+        albo wymóg zapisu cyfrowego z~jednostką w~schemacie.
+  \item \textbf{Gubienie miejsca zgłoszenia przy objawach alarmowych} (\wizyta{108}, \wizyta{109}, \wizyta{120}).
+        Gdy objawy są rozbite na osobne punkty, podyktowane \emph{pilnie na SOR / do szpitala} znika. Zalecenie: osobne pole
+        na miejsce i~pilność zgłoszenia w~schemacie zaleceń.
+  \item \textbf{Zmiany sensu} (\wizyta{111}, \wizyta{117}): przeniesienie oceny działania leku z~pacjenta na lekarza,
+        dawka 402~mg z~\emph{czterysta, dwa, trzy razy dziennie}, a~także drobne dopiski spoza dyktowania (skróty, jednostki,
+        oceny typu \emph{stan ogólny dobry}).
+  \item \textbf{Zalecenia przy wielolekowości} (\wizyta{117}): zmiany leczenia (czasowe zwiększenie dawki, nowy lek,
+        kontynuacja leku poza receptą) nie trafiają do zaleceń dla pacjenta.
+  \item \textbf{Weryfikator nie jest siatką bezpieczeństwa}: wykrył \nStageTwoSystemByVerifier{} z~\nStageTwoSystem{} błędów
+        w~karcie, a~część jego uwag to fałszywe alarmy (np.\ błędne odczytanie autokorekty lekarza w~116).
+  \item \textbf{Mocne strony}: bez błędów w~lateralizacji, wartościach liczbowych (dwie temperatury, dwie masy ciała, wyniki
+        laboratoryjne), dawkowaniu wagowym u~dzieci (ostateczne 10,5~ml mimo liczenia na głos), zaprzeczeniach, autokorektach
+        i~wtrąceniach; pilne skierowania (110, 120) oddane wprost; żaden produkt nie został wybrany błędnie bez wiedzy lekarza.
+\end{enumerate}
+
+% ---------------------------------------------------------------------------
+\section{Ograniczenia}
+
+\begin{itemize}
+  \item \textbf{Brak miary zgodności.} Nie policzono zgodności klasyfikacji między recenzentami ($\kappa$ Cohena);
+        klucz klasyfikacji powstał z~myślą o~takim pomiarze.
+  \item \textbf{Mała próba i~jeden przebieg.} \nVisits{} wizyt, każda raz; model językowy nie jest deterministyczny,
+        więc wynik pojedynczej wizyty może się różnić między przebiegami. Analiza cech jest opisowa (1--10 wizyt na cechę, cechy powiązane z~poziomem).
+  \item \textbf{Warunki sztuczne.} Dyktowania są tekstem (bez rozpoznawania mowy), scenariusze i~dane pacjentów są fikcyjne,
+        użyto jednego modelu językowego.
+  \item \textbf{Werdykt} nie rozróżnia źródła poprawek, więc zawyża udział wizyt z~\emph{istotnymi poprawkami};
+        właściwszą miarą jakości systemu jest liczba poprawek z~winy systemu (\nSrcSystem{}).
+\end{itemize}
+
+% ---------------------------------------------------------------------------
+\section{Wnioski i~dalsze kroki}
+
+Asystent przygotowuje projekty, które w~połowie przypadków można zatwierdzić bez zmian, a~pozostałe wymagają zwykle jednej--dwóch
+poprawek, w~większości umiarkowanych i~wskazanych przez sam system. Projekty wiernie oddają dyktowanie, także chaotyczne,
+z~autokorektami i~liczeniem dawek na głos. Lekarz pozostaje jednak niezbędny: lek sprzeczny z~alergią (\wizyta{116}) znalazł sam,
+przy złym leku (\wizyta{106}) uwagi systemu wskazywały jedynie brak mocy i~ilości, a~nie sam błąd, a~weryfikator karty wykrywa niewiele. Najbardziej obiecujące zmiany systemu to deterministyczne
+kontrole: alergii względem karty pacjenta, spójności recepty z~zaleceniami, preparatów złożonych zapisanych ze spójnikiem
+\emph{z} oraz mocy zapisanej słownie. Kolejny etap badania powinien obejmować przegląd części wizyt przez lekarza
+(zgodność klasyfikacji) i~kilka przebiegów każdego scenariusza (zmienność modelu).
+
+% ---------------------------------------------------------------------------
+\appendix
+\section{Opisy wizyt}
+Dla każdej wizyty: scenariusz, ocena recenzenta (podsumowanie, werdykt, oceny), mocne strony, braki i~wszystkie poprawki
+z~klasyfikacją (kategoria / waga / źródło / kto wskazał) i~uzasadnieniem lekarza.
+
+{\sloppy
+\input{generated/visits}
+\par}
+
+\section{Dane i~odtworzenie}
+{\sloppy
+\begin{itemize}
+  \item \texttt{data/visits/visit\_101.json} \ldots{} \texttt{visit\_120.json} -- scenariusze (dyktowania, poziom, cechy, hipotezy);
+        \texttt{data/patients.json} -- dane pacjentów.
+  \item \texttt{results/v4\_doctor/} -- wyniki przebiegu: \texttt{visits.csv} (wizyta), \texttt{corrections.csv} (poprawka),
+        \texttt{field\_changes.csv} (zmienione pole), \texttt{issues.csv} (uwaga systemu), \texttt{features.csv} (wizyta $\times$ cecha),
+        \texttt{hypotheses.csv}, \texttt{run.json}; w~\texttt{visits/<wizyta>/} projekty i~wersje zatwierdzone obu etapów,
+        \texttt{log.json} i~\texttt{analysis.json}.
+\end{itemize}
+\par}
+Przebieg (lekarz zatwierdza etapy plikami \texttt{stageN.done} albo w~terminalu), zestawienie z~eksportem i~fragmenty tego raportu:
+\begin{verbatim}
+python benchmark.py
+python benchmark.py --summary-only --export results/v4_doctor
+python benchmark_report.py results/v4_doctor docs/benchmark/generated
+\end{verbatim}
+
+\end{document}

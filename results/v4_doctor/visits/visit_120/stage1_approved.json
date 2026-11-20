@@ -1,0 +1,60 @@
+{
+  "prescription": [
+    {
+      "substance": "walacyklowir",
+      "brand_name": null,
+      "strength": "1000 mg",
+      "form": "tabletki",
+      "dosage": "1 tabl. 3 razy dziennie przez 7 dni, od dziś",
+      "quantity": "21 tabletek",
+      "product": "Vaciclor 1000 mg · 1000 mg · Tabletki powlekane · RPL 100215157",
+      "candidates": []
+    },
+    {
+      "substance": "paracetamol",
+      "brand_name": null,
+      "strength": "500 mg",
+      "form": "tabletki",
+      "dosage": "2 tabl. do 4 razy na dobę",
+      "quantity": "1 opakowanie",
+      "product": "Paracetamol DOZ · 500 mg · Tabletki · RPL 100246778",
+      "candidates": [
+        "Paracetamol Accord · 500 mg · Tabletki · RPL 100350211",
+        "Paracetamol Hasco · 500 mg · Tabletki powlekane · RPL 100257121"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Dziś pilnie zgłosić się na ostry dyżur okulistyczny zgodnie ze skierowaniem.",
+      "Nie drapać zmian skórnych.",
+      "Nie dotykać oka ręką.",
+      "Używać osobnego ręcznika.",
+      "Do czasu przyschnięcia zmian unikać kontaktu z kobietami w ciąży i noworodkami."
+    ],
+    "warning_signs": [
+      "Pogorszenie widzenia.",
+      "Silny ból oka.",
+      "Światłowstręt.",
+      "Zaczerwienienie oka.",
+      "W takich sytuacjach natychmiast zgłosić się do szpitala."
+    ],
+    "follow_up": "Kontrola u lekarza za tydzień, po wizycie u okulisty."
+  },
+  "doctor_notes": [
+    {
+      "path": "prescription.0.dosage",
+      "category": "pominięcie",
+      "severity": "kosmetyczny",
+      "source": "system",
+      "reason": "Pominięte „zaczynamy dziś” – przy półpaścu ważne rozpoczęcie leczenia od razu."
+    },
+    {
+      "path": "patient_instructions.warning_signs",
+      "category": "pominięcie",
+      "severity": "umiarkowany",
+      "source": "system",
+      "reason": "Pominięte „natychmiast do szpitala” przy objawach zajęcia oka – pacjentka nie wie, gdzie i jak pilnie się zgłosić."
+    }
+  ]
+}

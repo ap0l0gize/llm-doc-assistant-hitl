@@ -1,0 +1,14 @@
+{
+  "visit_id": "visit_109",
+  "summary": "Recepta i karta bez zarzutu (strona prawa spójna, test ciążowy odnotowany); w objawach alarmowych ponownie zabrakło podyktowanego „pilnie do szpitala”.",
+  "strengths": [
+    "Cyprofloksacyna i paracetamol dopasowane poprawnie, z ilością 14 tabletek.",
+    "Strona prawa (Goldflam dodatni, ból) i lewa (Goldflam ujemny) bez zamiany; ujemny test ciążowy w wywiadzie.",
+    "Zalecenie o odstępie od wapnia, magnezu i żelaza zachowane."
+  ],
+  "weaknesses": [
+    "Pominięte miejsce zgłoszenia przy objawach alarmowych (szpital) – ten sam błąd co przy astmie (108)."
+  ],
+  "verdict": "istotne poprawki",
+  "ratings": {"dokładność": 5, "kompletność": 4, "zwięzłość": 5, "zrozumiałość dla pacjenta": 4, "spójność wewnętrzna": 5}
+}

@@ -1,0 +1,48 @@
+{
+  "prescription": [
+    {
+      "substance": "ketoprofen",
+      "brand_name": null,
+      "strength": "2,5%",
+      "form": "żel",
+      "dosage": "nakładać cienką warstwę na prawe kolano trzy razy dziennie przez dwa tygodnie",
+      "quantity": "1 tuba",
+      "product": "Ketoprofen LGO · 25 mg/g · Żel · RPL 100245069",
+      "candidates": [
+        "Ketoprofen Ziaja · 25 mg/g · Żel · RPL 100348266",
+        "Ketoprofenum Fastum · 25 mg/g · Żel · RPL 100408749"
+      ]
+    },
+    {
+      "substance": "paracetamol",
+      "brand_name": null,
+      "strength": "500 mg",
+      "form": "tabletki",
+      "dosage": "2 tabletki do trzech razy dziennie przy bólu, maksymalnie 6 tabletek na dobę",
+      "quantity": "2 opakowania",
+      "product": "Paracetamol DOZ · 500 mg · Tabletki · RPL 100246778",
+      "candidates": [
+        "Paracetamol Accord · 500 mg · Tabletki · RPL 100350211",
+        "Paracetamol Hasco · 500 mg · Tabletki powlekane · RPL 100257121"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Nie wystawiać posmarowanego miejsca na słońce.",
+      "Myć ręce po nałożeniu żelu.",
+      "Zmniejszyć masę ciała.",
+      "Wykonywać ćwiczenia wzmacniające mięsień czworogłowy.",
+      "Jeździć na rowerze stacjonarnym.",
+      "Wykonać RTG prawego kolana w dwóch projekcjach na stojąco.",
+      "Zgłosić się na fizjoterapię.",
+      "Nie przyjmować doustnie tabletek z ibuprofenem ani ketoprofenem ze względu na przebytą chorobę wrzodową."
+    ],
+    "warning_signs": [
+      "Kolano jest gorące, zaczerwienione lub mocno obrzęknięte.",
+      "Pojawiła się gorączka."
+    ],
+    "follow_up": "Kontrola za sześć tygodni z wynikiem RTG."
+  },
+  "doctor_notes": []
+}

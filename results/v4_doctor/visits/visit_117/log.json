@@ -1,0 +1,118 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "prescription.2.product",
+        "kind": "added",
+        "before": null,
+        "after": "Ramipril Krka · 5 mg · Tabletki · RPL 100300408",
+        "chars_edited": 0,
+        "pointed_by_issue": true,
+        "has_note": true
+      },
+      {
+        "path": "patient_instructions.recommendations.0",
+        "kind": "added",
+        "before": null,
+        "after": "Furosemid: przez tydzień 2 tabletki po 40 mg rano, potem z powrotem 1 tabletka rano.",
+        "chars_edited": 84,
+        "pointed_by_issue": false,
+        "has_note": true
+      },
+      {
+        "path": "patient_instructions.recommendations.1",
+        "kind": "added",
+        "before": null,
+        "after": "Nowy lek: spironolakton 25 mg, 1 tabletka rano.",
+        "chars_edited": 47,
+        "pointed_by_issue": false,
+        "has_note": true
+      },
+      {
+        "path": "patient_instructions.recommendations.2",
+        "kind": "added",
+        "before": null,
+        "after": "Bisoprolol 5 mg przyjmować bez zmian; ramipril 5 mg raz dziennie jak dotąd.",
+        "chars_edited": 75,
+        "pointed_by_issue": false,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 206,
+    "doc_chars": 896,
+    "issues": [
+      {
+        "field": "prescription.2.product",
+        "problem": "ramipril: lek występuje w tej mocy w kilku postaciach - wybierz produkt"
+      }
+    ],
+    "doctor_notes": [
+      {
+        "path": "prescription.2.product",
+        "category": "recepta",
+        "severity": "umiarkowany",
+        "source": "rejestr",
+        "reason": "Ramipril 5 mg występuje jako tabletki i kapsułki, postaci nie podałem – system słusznie nie wybrał; wybieram tabletki."
+      },
+      {
+        "path": "patient_instructions.recommendations",
+        "category": "pominięcie",
+        "severity": "umiarkowany",
+        "source": "system",
+        "reason": "Zalecenia pomijają podyktowane zmiany leczenia: czasowe zwiększenie furosemidu, nowy spironolakton i „bisoprolol bez zmian” (bisoprololu nie ma na recepcie, więc pacjent mógłby go odstawić). Dopisuję je na początku zaleceń."
+      }
+    ]
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "visit_note.history",
+        "kind": "modified",
+        "before": "Pacjent lat 79. Niewydolność serca z obniżoną frakcją wyrzutową (EF 35% w ostatnim echu), przewlekła choroba nerek. Od tygodnia narastające obrzęki podudzi, duszność przy wejściu na I piętro (wcześniej duszność przy wejściu na III piętro). Śpi na dwóch poduszkach (wcześniej na jednej). Przyrost masy ciała o 3 kg w ciągu tygodnia, aktualnie 87 kg. Od miesiąca przyjmuje ibuprofen 402 mg 3 razy dziennie z powodu bólu stawów kolanowych.",
+        "after": "Pacjent lat 79. Niewydolność serca z obniżoną frakcją wyrzutową (EF 35% w ostatnim echu), przewlekła choroba nerek. Od tygodnia narastające obrzęki podudzi, duszność przy wejściu na I piętro (wcześniej wchodził na III piętro). Śpi na dwóch poduszkach (wcześniej na jednej). Przyrost masy ciała o 3 kg w ciągu tygodnia, aktualnie 87 kg. Od miesiąca przyjmuje ibuprofen 400 mg 2–3 razy dziennie z powodu bólu stawów kolanowych.",
+        "chars_edited": 21,
+        "pointed_by_issue": false,
+        "has_note": true
+      },
+      {
+        "path": "visit_note.diagnosis",
+        "kind": "modified",
+        "before": "Zaostrzenie przewlekłej niewydolności serca, NYHA III, prawdopodobnie po NLPZ.",
+        "after": "Zaostrzenie przewlekłej niewydolności serca, NYHA III, prawdopodobnie po NLPZ. Leczenie ambulatoryjne z intensyfikacją diuretyku.",
+        "chars_edited": 51,
+        "pointed_by_issue": true,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 72,
+    "doc_chars": 777,
+    "issues": [
+      {
+        "field": "visit_note.diagnosis",
+        "problem": "Brakuje informacji z dyktowania o planie leczenia: leczenie ambulatoryjne z intensyfikacją diuretyku."
+      }
+    ],
+    "doctor_notes": [
+      {
+        "path": "visit_note.history",
+        "category": "błędny fakt",
+        "severity": "umiarkowany",
+        "source": "system",
+        "reason": "„Ibuprofen czterysta, dwa, trzy razy dziennie” to 400 mg 2–3 razy dziennie; model wpisał dawkę 402 mg. Weryfikator tego nie zgłosił. Przy okazji: „wcześniej wchodził na trzecie” zmienione na „wcześniej duszność na III piętrze” – przywracam sens dyktowania."
+      },
+      {
+        "path": "visit_note.diagnosis",
+        "category": "pominięcie",
+        "severity": "umiarkowany",
+        "source": "system",
+        "reason": "Pominięty podyktowany plan: leczenie ambulatoryjne z intensyfikacją diuretyku (wskazał weryfikator)."
+      }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "visit_id": "visit_115",
+  "summary": "Mimo chaotycznego dyktowania (wtrącenia, autokorekty, fonetycznie zapisana nazwa handlowa) recepta i zalecenia bez zmian; w karcie powtórzony błąd rodzaju gramatycznego („zatokiem”).",
+  "strengths": [
+    "„Amoksyklaw” rozpoznany jako Amoksiklav 875 + 125 mg.",
+    "Obie autokorekty uwzględnione: 10 dni zamiast 7 i dwa opakowania zamiast jednego.",
+    "Wtrącenia nie trafiły do dokumentów; „nie wiem jakie” oddane neutralnie jako „nazwy nieznane”."
+  ],
+  "weaknesses": [
+    "Błąd rodzaju gramatycznego w badaniu."
+  ],
+  "verdict": "drobne poprawki",
+  "ratings": {
+    "dokładność": 5,
+    "kompletność": 5,
+    "zwięzłość": 5,
+    "zrozumiałość dla pacjenta": 5,
+    "spójność wewnętrzna": 5
+  }
+}

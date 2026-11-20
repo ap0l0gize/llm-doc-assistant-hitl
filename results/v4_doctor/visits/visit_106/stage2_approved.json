@@ -1,0 +1,17 @@
+{
+  "visit_note": {
+    "history": "Pacjent lat 61. Cukrzyca typu 2 od 8 lat. Nadciśnienie tętnicze. Leczenie: metformina 1000 mg 2x1 (2 g/dobę), peryndopryl 5 mg 1x1. HbA1c z ostatniego tygodnia 8,1%, w marcu 7,6%. Kreatynina 1,1, eGFR 68. Glikemie na czczo w domu 140-160. Ostatnie badanie dna oka ponad rok temu.",
+    "physical_examination": "Masa ciała 94 kg, BMI 31,2. Ciśnienie tętnicze 136/84 mmHg. Stopy bez zmian troficznych, czucie wibracji zachowane.",
+    "diagnosis": "Cukrzyca typu 2 niewyrównana. Intensyfikacja leczenia.",
+    "icd10": "E11.9"
+  },
+  "doctor_notes": [
+    {
+      "path": "visit_note.history",
+      "category": "forma/język",
+      "severity": "kosmetyczny",
+      "source": "system",
+      "reason": "„perindopryl” zamiast polskiej nazwy „peryndopryl” (tak w dyktowaniu i w karcie pacjenta)."
+    }
+  ]
+}

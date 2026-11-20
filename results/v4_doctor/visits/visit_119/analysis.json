@@ -1,0 +1,14 @@
+{
+  "visit_id": "visit_119",
+  "summary": "Autokorekty w obu etapach rozwiązane poprawnie (strona prawa, rezygnacja z ibuprofenu i zwolnienia), karta kompletna łącznie z decyzją „bez wskazań do RTG”; jedyna poprawka to wybór produktu przy niepodanej mocy żelu.",
+  "strengths": [
+    "Korekta strony „lewą… nie, prawą” zastosowana konsekwentnie; lewy staw opisany jako bez zmian.",
+    "Odwołany ibuprofen i odwołane zwolnienie nie pojawiły się w żadnym dokumencie.",
+    "Kryteria ottawskie z decyzją „brak wskazań do RTG”; brak mocy żelu oznaczony do wyboru."
+  ],
+  "weaknesses": [
+    "Objawy alarmowe bez słowa „pilnie” (znaczenie niesie samo pole, ale pacjent nie dostaje polecenia działania)."
+  ],
+  "verdict": "istotne poprawki",
+  "ratings": {"dokładność": 5, "kompletność": 5, "zwięzłość": 5, "zrozumiałość dla pacjenta": 4, "spójność wewnętrzna": 5}
+}

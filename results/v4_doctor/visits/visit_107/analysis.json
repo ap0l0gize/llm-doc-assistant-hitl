@@ -1,0 +1,14 @@
+{
+  "visit_id": "visit_107",
+  "summary": "Przedłużenie pięciu leków przewlekłych bez błędów modelu: wszystkie na recepcie z właściwymi ilościami, ketoprofen i paracetamol poza receptą; jedyne interwencje to wybór postaci dwóch leków, których rejestr nie rozstrzyga.",
+  "strengths": [
+    "Reguła o lekach kontynuowanych nie spowodowała pominięcia przedłużanych leków (wszystkie 5 na recepcie).",
+    "Ilości opakowań przypisane do właściwych pozycji.",
+    "Ketoprofen jako zalecenie odstawienia, paracetamol tylko w zaleceniach; karta z kompletem wyników laboratoryjnych."
+  ],
+  "weaknesses": [
+    "Dwie pozycje wymagały ręcznego wyboru postaci (metformina, lewotyroksyna) – ograniczenie danych rejestru przy niepodanej postaci."
+  ],
+  "verdict": "istotne poprawki",
+  "ratings": {"dokładność": 5, "kompletność": 5, "zwięzłość": 5, "zrozumiałość dla pacjenta": 4, "spójność wewnętrzna": 5}
+}

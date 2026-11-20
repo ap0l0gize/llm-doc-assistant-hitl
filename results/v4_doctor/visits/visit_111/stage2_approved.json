@@ -1,0 +1,17 @@
+{
+  "visit_note": {
+    "history": "Pacjent lat 31, informatyk. Od 3 miesięcy trudności z zasypianiem, budzenie się w nocy. Napięcie i zamartwianie się sprawami zawodowymi, kołatania serca w sytuacjach stresowych. Nastrój raczej wyrównany, zainteresowania zachowane, bez myśli rezygnacyjnych i samobójczych. Alkohol okazjonalnie, kawa 4-5 dziennie, ostatnia wieczorem. Nie przyjmuje leków. GAD-7: 12 punktów. Choroby przewlekłe: brak. Leki stałe: brak. Alergie: brak zgłoszonych.",
+    "physical_examination": "Pacjent przytomny, spokojny, logiczny kontakt, nastrój lekko obniżony, napęd prawidłowy. Tętno 84/min, ciśnienie tętnicze 128/80 mmHg. TSH w normie.",
+    "diagnosis": "Zaburzenia lękowe uogólnione. Bezsenność.",
+    "icd10": "F41.1"
+  },
+  "doctor_notes": [
+    {
+      "path": "visit_note.history",
+      "category": "treść spoza dyktowania",
+      "severity": "kosmetyczny",
+      "source": "system",
+      "reason": "Dopisana jednostka „filiżanek” przy kawie, której nie było w dyktowaniu."
+    }
+  ]
+}

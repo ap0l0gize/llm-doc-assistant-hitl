@@ -1,0 +1,16 @@
+{
+  "visit_id": "visit_120",
+  "summary": "Najważniejszy element wizyty – pilne skierowanie na ostry dyżur okulistyczny tego samego dnia – zachowany wprost, recepta dopasowana automatycznie, karta bez zarzutu; w zaleceniach pominięte „natychmiast do szpitala” przy objawach ocznych i „zaczynamy dziś” przy walacyklowirze.",
+  "strengths": [
+    "Pilne skierowanie „dziś” na ostry dyżur okulistyczny na pierwszym miejscu zaleceń; kontrola po okuliście oddzielona.",
+    "Moce z jednostkami (1000 mg, 500 mg) – produkty wybrane automatycznie.",
+    "Karta kompletna mimo wtrąceń: objaw Hutchinsona, zakres V1, strona prawa, zaprzeczenia, eGFR 62."
+  ],
+  "weaknesses": [
+    "Pominięte miejsce zgłoszenia przy objawach alarmowych (szpital) – powtarzalny błąd (108, 109).",
+    "Pominięte „zaczynamy dziś”.",
+    "Weryfikator zgłosił dopisanie strony „prawe” przy łzawieniu – wniosek zgodny z kontekstem, fałszywy alarm."
+  ],
+  "verdict": "istotne poprawki",
+  "ratings": {"dokładność": 5, "kompletność": 4, "zwięzłość": 5, "zrozumiałość dla pacjenta": 4, "spójność wewnętrzna": 5}
+}

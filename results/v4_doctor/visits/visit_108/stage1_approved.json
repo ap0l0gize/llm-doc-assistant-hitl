@@ -1,0 +1,82 @@
+{
+  "prescription": [
+    {
+      "substance": "budezonid z formoterolem",
+      "brand_name": "Symbicort Turbuhaler",
+      "strength": "160 mikrogramów + 4,5 mikrograma na dawkę",
+      "form": "proszek do inhalacji",
+      "dosage": "2 inhalacje 2 razy dziennie przez 2 tygodnie, potem 1 inhalacja 2 razy dziennie",
+      "quantity": "1 opakowanie",
+      "product": "Symbicort Turbuhaler · (160 mcg + 4,5 mcg)/dawkę inh. · Proszek do inhalacji · RPL 100249452",
+      "candidates": [
+        "Symbicort Turbuhaler · (80 mcg + 4,5 mcg)/dawkę inh. · Proszek do inhalacji · RPL 100249392",
+        "Symbicort Turbuhaler · (160 mcg + 4,5 mcg)/dawkę inh. · Proszek do inhalacji · RPL 100249452",
+        "Symbicort Turbuhaler · (320 mcg + 9 mcg)/dawkę inh. · Proszek do inhalacji · RPL 100249469"
+      ]
+    },
+    {
+      "substance": "salbutamol",
+      "brand_name": null,
+      "strength": "100 mikrogramów na dawkę",
+      "form": "aerozol",
+      "dosage": "2 dawki doraźnie przy duszności, nie częściej niż co 4 godziny",
+      "quantity": "1 opakowanie",
+      "product": "Aspulmo · 100 mcg/dawkę inh. · Aerozol inhalacyjny, zawiesina · RPL 100242562",
+      "candidates": [
+        "Buventol Easyhaler · 100 mcg/dawkę · Proszek do inhalacji · RPL 100130857",
+        "Ventolin · 100 mcg/dawkę inh. · Aerozol inhalacyjny, zawiesina · RPL 100089356"
+      ]
+    },
+    {
+      "substance": "prednizon",
+      "brand_name": null,
+      "strength": "20 mg",
+      "form": "tabletki",
+      "dosage": "2 tabletki rano po śniadaniu przez 5 dni",
+      "quantity": "1 opakowanie",
+      "product": "Encorton · 20 mg · Tabletki · RPL 100084821",
+      "candidates": [
+        "Esotkaleno · 20 mg · Tabletki · RPL 100453904",
+        "Medoxa · 20 mg · Tabletki · RPL 100453838"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Po każdej inhalacji leku Symbicort wypłukać usta wodą.",
+      "Unikać dymu i zimnego powietrza.",
+      "Zapisywać, ile razy dziennie potrzebny jest salbutamol."
+    ],
+    "warning_signs": [
+      "Salbutamol nie pomaga na duszność.",
+      "Salbutamol trzeba brać częściej niż co cztery godziny.",
+      "Duszność utrudniająca mówienie.",
+      "Sinienie ust.",
+      "W każdej z tych sytuacji pilnie zgłosić się na SOR."
+    ],
+    "follow_up": "Kontrola za tydzień."
+  },
+  "doctor_notes": [
+    {
+      "path": "prescription.0.product",
+      "category": "recepta",
+      "severity": "umiarkowany",
+      "source": "system",
+      "reason": "Fałszywy konflikt nazwy handlowej: substancje zapisane „budezonid z formoterolem” (spójnik „z”), a Symbicort to właśnie budezonid + formoterol. Wybieram 160/4,5 mcg."
+    },
+    {
+      "path": "patient_instructions.recommendations.1",
+      "category": "treść spoza dyktowania",
+      "severity": "kosmetyczny",
+      "source": "system",
+      "reason": "Podyktowałem „unikać dymu”; model zawęził do „dymu papierosowego”."
+    },
+    {
+      "path": "patient_instructions.warning_signs",
+      "category": "pominięcie",
+      "severity": "umiarkowany",
+      "source": "system",
+      "reason": "Pominięte „pilnie na SOR” – pacjentka nie wie, gdzie się zgłosić przy objawach zaostrzenia."
+    }
+  ]
+}

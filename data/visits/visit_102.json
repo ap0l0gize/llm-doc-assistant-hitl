@@ -1,0 +1,31 @@
+{
+  "visit_id": "visit_102",
+  "pesel": "89110307826",
+  "stage1_dictation": "Recepta: lewofloksacyna, krople do oczu pięć miligramów na mililitr, po jednej kropli do obu oczu co dwie godziny w ciągu dnia przez pierwsze dwa dni, potem cztery razy dziennie, łącznie siedem dni, jedno opakowanie. Zalecenia: nie nosić soczewek kontaktowych do końca leczenia i jeszcze dwa dni po, przemywać powieki przegotowaną wodą, osobny ręcznik, często myć ręce. Kontrola, jeśli po trzech dniach nie będzie poprawy. Pilnie, gdyby pojawił się ból oka, światłowstręt albo pogorszenie widzenia.",
+  "stage2_dictation": "Pacjentka trzydzieści siedem lat, nosi soczewki kontaktowe. Od dwóch dni zaczerwienienie obu oczu, najpierw prawego, potem lewego, ropna wydzielina, rano sklejone powieki. Bez bólu oka, bez światłowstrętu, ostrość widzenia niezaburzona. W badaniu przekrwienie spojówek obu oczu, ropna wydzielina w worku spojówkowym, rogówki przejrzyste, źrenice równe, prawidłowo reagują na światło. Rozpoznanie: ostre bakteryjne zapalenie spojówek obu oczu.",
+  "benchmark": {
+    "title": "Bakteryjne zapalenie spojówek obu oczu",
+    "short_title": "Zapalenie spojówek",
+    "difficulty": "A",
+    "specialty": "okulistyka",
+    "features": [
+      "postac-nietabletkowa",
+      "zaprzeczenia"
+    ],
+    "clinical_summary": "37-latka nosząca soczewki kontaktowe, ropna wydzielina obu oczu bez bólu i światłowstrętu. Lewofloksacyna w kroplach do oczu ze schematem malejącym.",
+    "hypotheses": [
+      {
+        "id": "H102-1",
+        "text": "Krople do oczu zostaną dopasowane do produktu w postaci kropli do oczu (nie innej postaci lewofloksacyny)."
+      },
+      {
+        "id": "H102-2",
+        "text": "Schemat malejący (co 2 godziny przez 2 dni, potem 4 razy dziennie) zostanie zachowany w dawkowaniu."
+      },
+      {
+        "id": "H102-3",
+        "text": "Zaprzeczenia (bez bólu, bez światłowstrętu) pozostaną zaprzeczeniami w karcie."
+      }
+    ]
+  }
+}

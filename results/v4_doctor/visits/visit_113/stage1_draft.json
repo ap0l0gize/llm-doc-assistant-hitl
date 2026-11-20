@@ -1,0 +1,36 @@
+{
+  "prescription": [
+    {
+      "substance": "doksylamina z pirydoksyną",
+      "brand_name": "Xonvea",
+      "strength": "10 mg + 10 mg",
+      "form": "tabletki dojelitowe",
+      "dosage": "na początek 2 tabletki wieczorem przed snem; jeśli po dwóch dniach nadal będą wymioty w ciągu dnia, dodatkowo 1 tabletka rano",
+      "quantity": "1 opakowanie",
+      "product": null,
+      "candidates": [
+        "Xonvea · 10 mg + 10 mg · Tabletki dojelitowe · RPL 100433440"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Jeść małe porcje co dwie, trzy godziny.",
+      "Rano, przed wstaniem z łóżka, zjeść suche pieczywo.",
+      "Unikać zapachów, które nasilają nudności.",
+      "Pić małymi łykami.",
+      "Kontynuować przyjmowanie kwasu foliowego.",
+      "Lek może powodować senność, dlatego nie prowadzić samochodu po jego przyjęciu."
+    ],
+    "warning_signs": [
+      "Wymioty uniemożliwiające picie przez dobę.",
+      "Zawroty głowy przy wstawaniu.",
+      "Ciemny, skąpy mocz.",
+      "Ból brzucha.",
+      "Krwawienie z dróg rodnych.",
+      "W tych przypadkach pilnie zgłosić się do szpitala."
+    ],
+    "follow_up": "Kontrola za tydzień."
+  },
+  "doctor_notes": []
+}

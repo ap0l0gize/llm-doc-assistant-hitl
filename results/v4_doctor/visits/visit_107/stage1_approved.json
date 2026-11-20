@@ -1,0 +1,99 @@
+{
+  "prescription": [
+    {
+      "substance": "telmisartan",
+      "brand_name": null,
+      "strength": "80 mg",
+      "form": null,
+      "dosage": "1 raz dziennie rano",
+      "quantity": "3 opakowania po 28",
+      "product": "Telmisartan EGIS · 80 mg · Tabletki powlekane · RPL 100291610",
+      "candidates": [
+        "Telmisartan Orion · 80 mg · Tabletki · RPL 100380672",
+        "Telmisartan Actavis · 80 mg · Tabletki · RPL 100265066"
+      ]
+    },
+    {
+      "substance": "amlodypina",
+      "brand_name": null,
+      "strength": "5 mg",
+      "form": null,
+      "dosage": "1 raz dziennie",
+      "quantity": "3 opakowania po 30",
+      "product": "Adipine · 5 mg · Tabletki · RPL 100192120",
+      "candidates": [
+        "Amlopin 5 mg · 5 mg · Tabletki · RPL 100176552",
+        "Normodipine · 5 mg · Tabletki · RPL 100113540"
+      ]
+    },
+    {
+      "substance": "atorwastatyna",
+      "brand_name": null,
+      "strength": "40 mg",
+      "form": null,
+      "dosage": "1 wieczorem",
+      "quantity": "3 opakowania po 28",
+      "product": "Atorvastatin Krka · 40 mg · Tabletki powlekane · RPL 100279387",
+      "candidates": [
+        "Atorvastatin Medreg · 40 mg · Tabletki powlekane · RPL 100409772",
+        "Atorvastatin Genoptim · 40 mg · Tabletki powlekane · RPL 100253838"
+      ]
+    },
+    {
+      "substance": "metformina",
+      "brand_name": null,
+      "strength": "1000 mg",
+      "form": null,
+      "dosage": "2 razy dziennie",
+      "quantity": "4 opakowania po 60",
+      "product": "Etform · 1000 mg · Tabletki powlekane · RPL 100356254",
+      "candidates": [
+        "Etform · 1000 mg · Tabletki powlekane · RPL 100356254",
+        "Etform SR · 1000 mg · Tabletki o przedłużonym uwalnianiu · RPL 100421158"
+      ]
+    },
+    {
+      "substance": "lewotyroksyna",
+      "brand_name": null,
+      "strength": "75 mikrogramów",
+      "form": null,
+      "dosage": "rano na czczo",
+      "quantity": "2 opakowania po 50 tabletek",
+      "product": "Euthyrox N 75 · 75 mcg · Tabletki · RPL 100122303",
+      "candidates": [
+        "Euthyrox N 75 · 75 mcg · Tabletki · RPL 100122303",
+        "Tirosint Sol · 75 mcg · Roztwór doustny w pojemniku jednodawkowym · RPL 100409430"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Kontrolować ciśnienie krwi w domu.",
+      "Jeść regularne posiłki.",
+      "Odstawić ketoprofen, który brała pani doraźnie na kolana, ze względu na nerki.",
+      "Przy bólu stosować tylko paracetamol.",
+      "Przed następną wizytą wykonać badania: kreatynina, potas, HbA1c, TSH, lipidogram."
+    ],
+    "warning_signs": [
+      "Zawroty głowy z omdleniem.",
+      "Obrzęki nóg."
+    ],
+    "follow_up": "Wizyta za trzy miesiące, z wynikami badań."
+  },
+  "doctor_notes": [
+    {
+      "path": "prescription.3.product",
+      "category": "recepta",
+      "severity": "umiarkowany",
+      "source": "rejestr",
+      "reason": "Metformina 1000 mg jest w rejestrze jako tabletki powlekane i tabletki o przedłużonym uwalnianiu; postaci nie podałam – wybieram tabletki powlekane (dotychczasowe leczenie 2 × dziennie)."
+    },
+    {
+      "path": "prescription.4.product",
+      "category": "recepta",
+      "severity": "umiarkowany",
+      "source": "rejestr",
+      "reason": "Lewotyroksyna 75 mcg jest w rejestrze jako tabletki i roztwór doustny; wybieram tabletki."
+    }
+  ]
+}

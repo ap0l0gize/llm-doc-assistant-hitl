@@ -1,0 +1,9 @@
+{
+  "visit_note": {
+    "history": "Pacjentka 58-letnia. Nadciśnienie tętnicze. Leki stałe: estradiol + dydrogesteron (hormonalna terapia zastępcza) 1x1; bisoprolol 2,5 mg 1x1. Alergie: brak zgłoszonych. Na hormonalnej terapii zastępczej od 2 lat. Tydzień temu podróż samolotem trwająca 12 godzin. Od 3 dni ból i obrzęk lewej łydki, nasilający się przy chodzeniu. Bez duszności, bez bólu w klatce piersiowej, bez krwioplucia.",
+    "physical_examination": "Obwód lewej łydki 39 cm, prawej 36 cm. Obrzęk ciastowaty lewej łydki, tkliwość wzdłuż żył głębokich, ucieplenie. Tętno 88. Saturacja 97%. Ciśnienie tętnicze 130/80 mmHg. Skala Wellsa 3 pkt, wysokie prawdopodobieństwo.",
+    "diagnosis": "Podejrzenie zakrzepicy żył głębokich lewej kończyny dolnej. Pilnie skierowana na SOR.",
+    "icd10": "I80.2"
+  },
+  "doctor_notes": []
+}

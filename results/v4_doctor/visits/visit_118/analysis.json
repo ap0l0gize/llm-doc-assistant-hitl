@@ -1,0 +1,12 @@
+{
+  "visit_id": "visit_118",
+  "summary": "Bardzo dobre projekty przy trudnym dyktowaniu: z liczenia dawki na głos zachowana ostateczna objętość 10,5 ml, zawiesiny dopasowane poprawnie, strona lewa bez pomyłki; jedyna poprawka to brakująca ilość ibuprofenu z dyktowania.",
+  "strengths": [
+    "Ostateczna objętość amoksycyliny 10,5 ml (nie 10,8 ml z obliczeń); zawiesina 250 mg/5 ml.",
+    "Brak ilości ibuprofenu oznaczony przez system.",
+    "Karta bez nadinterpretacji („pije”), strona lewa, dwie temperatury i parametry oddechowe przepisane bez błędów."
+  ],
+  "weaknesses": [],
+  "verdict": "istotne poprawki",
+  "ratings": {"dokładność": 5, "kompletność": 5, "zwięzłość": 5, "zrozumiałość dla pacjenta": 5, "spójność wewnętrzna": 5}
+}

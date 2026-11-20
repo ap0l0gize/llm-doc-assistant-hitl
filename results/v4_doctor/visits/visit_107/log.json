@@ -1,0 +1,65 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "prescription.3.product",
+        "kind": "added",
+        "before": null,
+        "after": "Etform · 1000 mg · Tabletki powlekane · RPL 100356254",
+        "chars_edited": 0,
+        "pointed_by_issue": true,
+        "has_note": true
+      },
+      {
+        "path": "prescription.4.product",
+        "kind": "added",
+        "before": null,
+        "after": "Euthyrox N 75 · 75 mcg · Tabletki · RPL 100122303",
+        "chars_edited": 0,
+        "pointed_by_issue": true,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 0,
+    "doc_chars": 760,
+    "issues": [
+      {
+        "field": "prescription.3.product",
+        "problem": "metformina: lek występuje w tej mocy w kilku postaciach - wybierz produkt"
+      },
+      {
+        "field": "prescription.4.product",
+        "problem": "lewotyroksyna: lek występuje w tej mocy w kilku postaciach - wybierz produkt"
+      }
+    ],
+    "doctor_notes": [
+      {
+        "path": "prescription.3.product",
+        "category": "recepta",
+        "severity": "umiarkowany",
+        "source": "rejestr",
+        "reason": "Metformina 1000 mg jest w rejestrze jako tabletki powlekane i tabletki o przedłużonym uwalnianiu; postaci nie podałam – wybieram tabletki powlekane (dotychczasowe leczenie 2 × dziennie)."
+      },
+      {
+        "path": "prescription.4.product",
+        "category": "recepta",
+        "severity": "umiarkowany",
+        "source": "rejestr",
+        "reason": "Lewotyroksyna 75 mcg jest w rejestrze jako tabletki i roztwór doustny; wybieram tabletki."
+      }
+    ]
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": true,
+    "changes": [],
+    "chars_edited": 0,
+    "doc_chars": 636,
+    "issues": [],
+    "doctor_notes": []
+  }
+]

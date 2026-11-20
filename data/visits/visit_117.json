@@ -1,0 +1,40 @@
+{
+  "visit_id": "visit_117",
+  "pesel": "47030302136",
+  "stage1_dictation": "Dobra, to zmieniamy leczenie. Furosemid, ma pan czterdzieści rano, to teraz dwie tabletki po czterdzieści rano przez tydzień, potem wracamy do jednej, recepta na dwa opakowania po trzydzieści. Dokładamy spironolakton dwadzieścia pięć miligramów raz dziennie rano, jedno opakowanie. Bisoprolol zostaje, pięć miligramów, bez zmian, ma pan zapas. Ramipril pięć miligramów raz dziennie, ten przedłużam, trzy opakowania po dwadzieścia osiem. I bardzo ważne: ibuprofen, który pan bierze na stawy, odstawiamy całkowicie, przy bólu paracetamol. Zalecenia: codziennie rano ważyć się na czczo i zapisywać, jak przybędzie więcej niż dwa kilo w trzy dni, dzwonić. Płyny do półtora litra na dobę, mało soli. Badania za tydzień: potas, sód, kreatynina, bo dokładamy spironolakton. Kontrola za tydzień z wynikami. Pilnie na SOR przy duszności w spoczynku, duszności w nocy zmuszającej do siadania, bólu w klatce piersiowej, omdleniu.",
+  "stage2_dictation": "Pacjent siedemdziesiąt dziewięć lat, niewydolność serca z obniżoną frakcją wyrzutową, w ostatnim echu EF trzydzieści pięć procent, przewlekła choroba nerek. Od tygodnia narastające obrzęki podudzi, duszność przy wejściu na pierwsze piętro, wcześniej wchodził na trzecie. Śpi na dwóch poduszkach, wcześniej na jednej. Przybór masy ciała trzy kilogramy w tydzień, teraz osiemdziesiąt siedem kilogramów. Od miesiąca bierze ibuprofen czterysta dwa, trzy razy dziennie na kolana. W badaniu ciśnienie sto czterdzieści na osiemdziesiąt pięć, tętno osiemdziesiąt osiem, miarowe, saturacja dziewięćdziesiąt cztery procent. Trzeszczenia u podstawy obu płuc, obrzęki podudzi do połowy goleni, ciastowate, symetryczne. Wyniki sprzed tygodnia: kreatynina jeden i cztery dziesiąte, eGFR czterdzieści dwa, potas cztery i jedna dziesiąta, NT-proBNP dwa tysiące czterysta. Rozpoznanie: zaostrzenie przewlekłej niewydolności serca, NYHA trzy, prawdopodobnie po NLPZ, leczenie ambulatoryjne z intensyfikacją diuretyku.",
+  "benchmark": {
+    "title": "Zaostrzenie niewydolności serca u 79-latka – wiele zmian leczenia",
+    "short_title": "Niewydolność serca",
+    "difficulty": "C",
+    "specialty": "kardiologia / geriatria",
+    "features": [
+      "polipragmazja",
+      "zmiana-dawki",
+      "odstawienie",
+      "kontynuacja-bez-recepty",
+      "przedluzenie-recepty",
+      "wiek-podeszly",
+      "wartosci-liczbowe"
+    ],
+    "clinical_summary": "79-latek z HFrEF (EF 35%), przyrost masy 3 kg, NYHA III, prawdopodobnie po NLPZ. W jednym dyktowaniu: zwiększenie furosemidu na tydzień, nowy spironolakton, bisoprolol bez zmian (bez recepty), przedłużenie ramiprilu, odstawienie ibuprofenu, kontrola potasu.",
+    "hypotheses": [
+      {
+        "id": "H117-1",
+        "text": "Bisoprolol („bez zmian, ma zapas”), ibuprofen (odstawiony) i paracetamol nie trafią na receptę."
+      },
+      {
+        "id": "H117-2",
+        "text": "Ramipril („przedłużam”) trafi na receptę mimo reguły o lekach kontynuowanych."
+      },
+      {
+        "id": "H117-3",
+        "text": "Czasowe zwiększenie furosemidu (2 tabletki przez tydzień, potem 1) zostanie zachowane."
+      },
+      {
+        "id": "H117-4",
+        "text": "Brak postaci ramiprilu (kapsułki i tabletki w rejestrze) zostanie oznaczony do wyboru przez lekarza."
+      }
+    ]
+  }
+}

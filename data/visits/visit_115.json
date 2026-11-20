@@ -1,0 +1,40 @@
+{
+  "visit_id": "visit_115",
+  "pesel": "81012505193",
+  "stage1_dictation": "Dobra, to recepta, yyy, amoksyklaw, ten osiemset siedemdziesiąt pięć plus sto dwadzieścia pięć, jedna tabletka co dwanaście godzin, przez, przez siedem dni... nie, przez dziesięć dni, jedno opakowanie czternaście tabletek, nie, dwa opakowania po czternaście. Do tego spray do nosa, mometazon pięćdziesiąt mikrogramów na dawkę, dwie dawki do każdej dziurki raz dziennie rano, jedno opakowanie. I, eee, zalecenia: płukanie nosa solą fizjologiczną dwa razy dziennie, dużo pić, głowa wyżej przy spaniu. Antybiotyk brać z jedzeniem, bo może być biegunka, jak będzie bardzo duża albo z krwią, to dzwonić. Kontrola za dziesięć dni, po antybiotyku. Pilnie, gdyby obrzęk wokół oka, zaburzenia widzenia, bardzo silny ból głowy albo sztywność karku.",
+  "stage2_dictation": "Pacjent czterdzieści pięć lat, yyy, od, od dwunastu dni katar i zatkany nos, po pięciu dniach była poprawa, a od trzech dni znowu gorzej, gorączka trzydzieści osiem i pięć, ropna wydzielina z nosa, ból twarzy po prawej stronie, nasila się przy pochylaniu. Wcześniej brał tylko leki bez recepty na zatoki, nie wiem jakie. W badaniu, eee, temperatura trzydzieści osiem i jeden, tkliwość uciskowa nad prawą zatoką szczękową, lewa niebolesna, ropna wydzielina na tylnej ścianie gardła, śluzówka nosa obrzęknięta. Bez obrzęku powiek, ruchomość gałek ocznych pełna. Rozpoznanie: ostre bakteryjne zapalenie zatok przynosowych, prawostronne, szczękowe.",
+  "benchmark": {
+    "title": "Ostre bakteryjne zapalenie zatok – dyktowanie z rozpoznawania mowy",
+    "short_title": "Zapalenie zatok (STT)",
+    "difficulty": "C",
+    "specialty": "laryngologia",
+    "features": [
+      "dyktowanie-chaotyczne",
+      "blad-rozpoznawania-mowy",
+      "lek-zlozony",
+      "autokorekta",
+      "nazwa-handlowa",
+      "jednostki-slownie",
+      "postac-nietabletkowa"
+    ],
+    "clinical_summary": "45-latek, przebieg dwufazowy z gorączką i ropną wydzieliną – kryteria bakteryjnego zapalenia zatok. Dyktowanie jak z transkrypcji mowy: wtrącenia, autokorekty (7 → 10 dni, 1 → 2 opakowania), nazwa handlowa zapisana fonetycznie („amoksyklaw”). Amoksycylina z kwasem klawulanowym i mometazon donosowo.",
+    "hypotheses": [
+      {
+        "id": "H115-1",
+        "text": "„Amoksyklaw” (zapis fonetyczny) zostanie rozpoznany jako Amoksiklav 875 mg + 125 mg."
+      },
+      {
+        "id": "H115-2",
+        "text": "Autokorekty zostaną uwzględnione: 10 dni i 2 opakowania (nie 7 dni i 1 opakowanie)."
+      },
+      {
+        "id": "H115-3",
+        "text": "Wtrącenia („yyy”, „eee”, „nie wiem jakie”) nie trafią do dokumentów."
+      },
+      {
+        "id": "H115-4",
+        "text": "Mometazon zostanie dopasowany do aerozolu do nosa 50 mcg/dawkę."
+      }
+    ]
+  }
+}

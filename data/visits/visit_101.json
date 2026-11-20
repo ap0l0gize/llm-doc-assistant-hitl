@@ -1,0 +1,30 @@
+{
+  "visit_id": "visit_101",
+  "pesel": "98051214372",
+  "stage1_dictation": "Recepta: fenoksymetylpenicylina, jeden milion jednostek, tabletki, jedna tabletka trzy razy dziennie przez dziesięć dni. Paracetamol pięćset miligramów, tabletki, jedna do dwóch tabletek doraźnie przy bólu lub gorączce, maksymalnie osiem tabletek na dobę, jedno opakowanie. Zalecenia: antybiotyk przyjmować pełne dziesięć dni, nawet po ustąpieniu objawów, dużo płynów, płukanie gardła, zwolnienie lekarskie na pięć dni. Kontrola tylko w razie braku poprawy po trzech dniach. Pilnie zgłosić się, jeśli pojawi się szczękościsk, narastający jednostronny obrzęk gardła, trudności w połykaniu śliny albo duszność.",
+  "stage2_dictation": "Pacjent dwadzieścia osiem lat. Od dwóch dni silny ból gardła, gorączka do trzydziestu dziewięciu, bez kaszlu i bez kataru. W badaniu temperatura trzydzieści osiem i siedem, migdałki powiększone, przekrwione, z wysiękiem, węzły chłonne szyjne przednie powiększone i bolesne. Skala Centora-McIsaaca cztery punkty. Szybki test na antygen paciorkowca dodatni. Rozpoznanie: ostre paciorkowcowe zapalenie gardła i migdałków.",
+  "benchmark": {
+    "title": "Ostre paciorkowcowe zapalenie gardła i migdałków",
+    "short_title": "Angina paciorkowcowa",
+    "difficulty": "A",
+    "specialty": "choroby zakaźne / laryngologia",
+    "features": [
+      "brak-ilosci"
+    ],
+    "clinical_summary": "28-latek, Centor/McIsaac 4 pkt, dodatni szybki test na antygen paciorkowca. Fenoksymetylpenicylina przez 10 dni, paracetamol doraźnie. Lekarz nie podaje ilości antybiotyku.",
+    "hypotheses": [
+      {
+        "id": "H101-1",
+        "text": "System oznaczy brak ilości fenoksymetylpenicyliny (uwaga do recepty)."
+      },
+      {
+        "id": "H101-2",
+        "text": "Moc „jeden milion jednostek” zostanie dopasowana do produktu 1 000 000 j.m."
+      },
+      {
+        "id": "H101-3",
+        "text": "Poza ilością leku projekty nie będą wymagały poprawek."
+      }
+    ]
+  }
+}

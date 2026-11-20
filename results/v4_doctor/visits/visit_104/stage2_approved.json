@@ -1,0 +1,9 @@
+{
+  "visit_note": {
+    "history": "Pacjentka lat 65, z nadciśnieniem tętniczym i hipercholesterolemią, leczona amlodypiną 5 mg 1x1 rano i atorwastatyną 20 mg 1x1 wieczorem. Pomiary domowe z ostatniego miesiąca: średnio 156/94 mmHg. Neguje bóle głowy, duszność, obrzęki.",
+    "physical_examination": "Ciśnienie tętnicze 158/96 mmHg, pomiar powtórny 152/94 mmHg. Tętno 72/min, miarowe. Osłuchowo serce i płuca bez zmian. Obrzęki kończyn dolnych nieobecne. Ostatni lipidogram: LDL 98.",
+    "diagnosis": "Nadciśnienie tętnicze niewyrównane. Zwiększenie dawki amlodypiny.",
+    "icd10": "I10"
+  },
+  "doctor_notes": []
+}

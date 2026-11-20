@@ -1,0 +1,49 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "prescription.0.product",
+        "kind": "added",
+        "before": null,
+        "after": "Voltaren MAX · 23,2 mg/g · Żel · RPL 100276667",
+        "chars_edited": 0,
+        "pointed_by_issue": true,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 0,
+    "doc_chars": 565,
+    "issues": [
+      {
+        "field": "prescription.0.strength",
+        "problem": "diklofenak: nie podano mocy"
+      },
+      {
+        "field": "prescription.0.product",
+        "problem": "diklofenak: bez podanej mocy nie da się ustalić produktu - wybierz produkt"
+      }
+    ],
+    "doctor_notes": [
+      {
+        "path": "prescription.0.product",
+        "category": "recepta",
+        "severity": "umiarkowany",
+        "source": "dyktowanie",
+        "reason": "Nie podałem mocy żelu; system słusznie poprosił o wybór. Jedyny kandydat to Voltaren MAX 23,2 mg/g – wybieram go."
+      }
+    ]
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": true,
+    "changes": [],
+    "chars_edited": 0,
+    "doc_chars": 674,
+    "issues": [],
+    "doctor_notes": []
+  }
+]

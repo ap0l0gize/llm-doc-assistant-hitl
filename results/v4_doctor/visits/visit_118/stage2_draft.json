@@ -1,0 +1,9 @@
+{
+  "visit_note": {
+    "history": "Dziewczynka, 2 lata i 8 miesięcy, masa ciała 12 kg. Od 3 dni gorączka do 39,7°C, kaszel mokry. Od wczoraj przyspieszony oddech, zmniejszone spożycie pokarmów, pije. Szczepiona zgodnie z kalendarzem szczepień.",
+    "physical_examination": "Temperatura 39,1°C, częstość oddechów 38/min, saturacja 94%, tętno 140/min. Bez zaciągania międzyżebrzy, bez stękania. Osłuchowo nad dolnym polem lewego płuca trzeszczenia i osłabiony szmer pęcherzykowy; prawe płuco bez zmian. Stan ogólny średni, dziecko aktywne, pije.",
+    "diagnosis": "Pozaszpitalne zapalenie płuc lewostronne, leczenie ambulatoryjne, kontrola za 48 godzin.",
+    "icd10": null
+  },
+  "doctor_notes": []
+}

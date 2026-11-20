@@ -1,0 +1,46 @@
+{
+  "prescription": [
+    {
+      "substance": null,
+      "brand_name": "Amoksyklaw",
+      "strength": "875 mg + 125 mg",
+      "form": "tabletki",
+      "dosage": "1 tabl. co 12 godzin przez 10 dni",
+      "quantity": "2 opakowania po 14 tabletek",
+      "product": "Amoksiklav · 875 mg + 125 mg · Tabletki powlekane · RPL 100085909",
+      "candidates": [
+        "Co-amoxiclav Bluefish · 875 mg + 125 mg · Tabletki powlekane · RPL 100219267"
+      ]
+    },
+    {
+      "substance": "mometazon",
+      "brand_name": null,
+      "strength": "50 mikrogramów na dawkę",
+      "form": "spray do nosa",
+      "dosage": "2 dawki do każdego nozdrza raz dziennie rano",
+      "quantity": "1 opakowanie",
+      "product": "Mometazon Doppelherz · 50 mcg/dawkę · Aerozol do nosa, zawiesina · RPL 100486667",
+      "candidates": [
+        "Momester Nasal · 50 mcg/dawkę · Aerozol do nosa, zawiesina · RPL 100382671",
+        "Momester · 50 mcg/dawkę · Aerozol do nosa, zawiesina · RPL 100327548"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Płukanie nosa solą fizjologiczną dwa razy dziennie.",
+      "Dużo pić.",
+      "Podczas snu trzymać głowę wyżej.",
+      "Antybiotyk przyjmować z jedzeniem."
+    ],
+    "warning_signs": [
+      "Biegunka bardzo duża albo z krwią - zadzwonić do lekarza.",
+      "Obrzęk wokół oka - pilnie zgłosić się do lekarza.",
+      "Zaburzenia widzenia - pilnie zgłosić się do lekarza.",
+      "Bardzo silny ból głowy - pilnie zgłosić się do lekarza.",
+      "Sztywność karku - pilnie zgłosić się do lekarza."
+    ],
+    "follow_up": "Kontrola za dziesięć dni, po zakończeniu antybiotyku."
+  },
+  "doctor_notes": []
+}

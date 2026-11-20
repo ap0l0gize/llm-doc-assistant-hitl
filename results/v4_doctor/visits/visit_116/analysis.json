@@ -1,0 +1,15 @@
+{
+  "visit_id": "visit_116",
+  "summary": "Projekty wiernie oddały dyktowanie, łącznie z błędem lekarza: amoksycylina dla pacjentki uczulonej na amoksycylinę, bez żadnego ostrzeżenia systemu. Karta tym razem jawnie odnotowała sprzeczność między wypowiedzią pacjentki a kartą.",
+  "strengths": [
+    "Recepta i zalecenia zgodne z dyktowaniem mimo wtrąceń; brak ilości amoksycyliny oznaczony.",
+    "Wywiad zestawia wprost zaprzeczenie pacjentki i alergię z karty, bez cichego „godzenia” sprzeczności.",
+    "Autokorekta „nie pytałem, nie, przepraszam…” oddana poprawnie."
+  ],
+  "weaknesses": [
+    "Brak jakiejkolwiek uwagi systemu o sprzeczności przepisywanego leku z alergią w karcie – błąd istotny wykrył dopiero lekarz.",
+    "Uwaga weryfikatora błędnie odczytała autokorektę lekarza (fałszywy alarm)."
+  ],
+  "verdict": "istotne poprawki",
+  "ratings": {"dokładność": 4, "kompletność": 5, "zwięzłość": 5, "zrozumiałość dla pacjenta": 5, "spójność wewnętrzna": 3}
+}

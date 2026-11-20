@@ -1,0 +1,21 @@
+visit_id,stage,field,problem,acted_on
+visit_101,1,prescription.0.quantity,fenoksymetylpenicylina: nie podano ilości,True
+visit_101,1,prescription.0.product,fenoksymetylpenicylina: w rejestrze nie ma produktu o mocy 1 milion jednostek - sprawdź moc i wybierz produkt,True
+visit_106,1,prescription.0.strength,metformina: nie podano mocy,True
+visit_106,1,prescription.0.quantity,metformina: nie podano ilości,True
+visit_106,1,prescription.0.product,metformina: bez podanej mocy nie da się ustalić produktu - wybierz produkt,True
+visit_107,1,prescription.3.product,metformina: lek występuje w tej mocy w kilku postaciach - wybierz produkt,True
+visit_107,1,prescription.4.product,lewotyroksyna: lek występuje w tej mocy w kilku postaciach - wybierz produkt,True
+visit_108,1,prescription.0.product,budezonid z formoterolem: nazwa handlowa Symbicort Turbuhaler to produkt innej substancji (Budesonidum + Formoteroli fumaras dihydricus) niż podyktowana - wybierz produkt,True
+visit_111,1,prescription.0.quantity,hydroksyzyna: nie podano ilości,True
+visit_113,1,prescription.0.product,doksylamina z pirydoksyną: nazwa handlowa Xonvea to produkt innej substancji (Doxylamini hydrogenosuccinas + Pyridoxini hydrochloridum) niż podyktowana - wybierz produkt,True
+visit_114,1,prescription.0.strength,Gastrolit: nie podano mocy,False
+visit_114,1,prescription.0.product,Gastrolit: bez podanej mocy nie da się ustalić produktu - wybierz produkt,True
+visit_116,1,prescription.0.quantity,amoksycylina: nie podano ilości,True
+visit_116,2,visit_note.history,"Dyktowanie nie zawiera wywiadu o alergiach: lekarz przyznaje, że nie pytał o uczulenia, a pacjentka zaprzeczyła uczuleniom. Karta przedstawia to jako ustalenie wywiadu i nie zaznacza, że alergie nie były zweryfikowane. Nie wskazuje też wprost sprzeczności między zaprzeczeniem pacjentki a alergią na amoksycylinę z danych pacjenta.",False
+visit_117,1,prescription.2.product,ramipril: lek występuje w tej mocy w kilku postaciach - wybierz produkt,True
+visit_117,2,visit_note.diagnosis,Brakuje informacji z dyktowania o planie leczenia: leczenie ambulatoryjne z intensyfikacją diuretyku.,True
+visit_118,1,prescription.1.quantity,ibuprofen: nie podano ilości,True
+visit_119,1,prescription.0.strength,diklofenak: nie podano mocy,False
+visit_119,1,prescription.0.product,diklofenak: bez podanej mocy nie da się ustalić produktu - wybierz produkt,True
+visit_120,2,visit_note.history,"Karta podaje, że łzawi oko prawe, a w dyktowaniu jest tylko „oko lekko łzawi” bez wskazania strony. Określenie strony nie pochodzi z dyktowania.",False

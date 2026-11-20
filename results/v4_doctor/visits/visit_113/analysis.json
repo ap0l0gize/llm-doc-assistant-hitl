@@ -1,0 +1,14 @@
+{
+  "visit_id": "visit_113",
+  "summary": "Zalecenia i karta bez zarzutu, warunkowe dawkowanie zachowane; jedyna poprawka to ręczny wybór Xonvei po fałszywym konflikcie nazwy handlowej (substancje połączone spójnikiem „z”).",
+  "strengths": [
+    "Warunkowe dawkowanie (2 tabletki wieczorem, ewentualnie dodatkowo 1 rano) przepisane dokładnie.",
+    "Kwas foliowy („kontynuować”) poza receptą, w zaleceniach.",
+    "Objawy alarmowe ze wskazaniem szpitala; PUQE i ciała ketonowe w karcie."
+  ],
+  "weaknesses": [
+    "Fałszywy konflikt nazwy handlowej dla Xonvei – ten sam wzorzec co przy Symbicorcie (108)."
+  ],
+  "verdict": "istotne poprawki",
+  "ratings": {"dokładność": 4, "kompletność": 5, "zwięzłość": 5, "zrozumiałość dla pacjenta": 5, "spójność wewnętrzna": 5}
+}

@@ -1,0 +1,62 @@
+{
+  "prescription": [
+    {
+      "substance": "furosemid",
+      "brand_name": null,
+      "strength": "40 mg",
+      "form": "tabletki",
+      "dosage": "2 tabl. rano przez 7 dni, potem 1 tabl. rano",
+      "quantity": "2 opakowania po 30",
+      "product": "Furosemid Medreg · 40 mg · Tabletki · RPL 100427899",
+      "candidates": [
+        "Furosemid Promedo · 40 mg · Tabletki · RPL 100492596",
+        "Furosemidum Polpharma · 40 mg · Tabletki · RPL 100025422"
+      ]
+    },
+    {
+      "substance": "spironolakton",
+      "brand_name": null,
+      "strength": "25 mg",
+      "form": null,
+      "dosage": "1 raz dziennie rano",
+      "quantity": "1 opakowanie",
+      "product": "Spironolactone Medreg · 25 mg · Tabletki powlekane · RPL 100439603",
+      "candidates": [
+        "Spironol · 25 mg · Tabletki · RPL 100062682",
+        "Verospiron · 25 mg · Tabletki · RPL 100016883"
+      ]
+    },
+    {
+      "substance": "ramipril",
+      "brand_name": null,
+      "strength": "5 mg",
+      "form": null,
+      "dosage": "1 raz dziennie",
+      "quantity": "3 opakowania po 28",
+      "product": null,
+      "candidates": [
+        "Ramipril Krka · 5 mg · Tabletki · RPL 100300408",
+        "Polpril · 5 mg · Kapsułki twarde · RPL 100174910"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Codziennie rano, na czczo, ważyć się i zapisywać wynik.",
+      "Pić do półtora litra płynów na dobę.",
+      "Ograniczyć sól w diecie.",
+      "Całkowicie odstawić ibuprofen, który pacjent przyjmuje na stawy.",
+      "Przy bólu stosować paracetamol.",
+      "Za tydzień wykonać badania: potas, sód, kreatynina."
+    ],
+    "warning_signs": [
+      "Przyrost masy ciała o więcej niż 2 kg w ciągu 3 dni - zadzwonić do lekarza.",
+      "Duszność w spoczynku - pilnie zgłosić się na SOR.",
+      "Duszność w nocy zmuszająca do siadania - pilnie zgłosić się na SOR.",
+      "Ból w klatce piersiowej - pilnie zgłosić się na SOR.",
+      "Omdlenie - pilnie zgłosić się na SOR."
+    ],
+    "follow_up": "Za tydzień kontrola z wynikami badań: potas, sód, kreatynina."
+  },
+  "doctor_notes": []
+}

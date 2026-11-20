@@ -1,0 +1,44 @@
+{
+  "prescription": [
+    {
+      "substance": "cyprofloksacyna",
+      "brand_name": null,
+      "strength": "500 mg",
+      "form": "tabletki",
+      "dosage": "1 tabletka co 12 godzin przez 7 dni",
+      "quantity": "1 opakowanie (14 tabletek)",
+      "product": "Proxacin 500 · 500 mg · Tabletki powlekane · RPL 100120586",
+      "candidates": [
+        "Cipronex · 500 mg · Tabletki powlekane · RPL 100014565",
+        "Ciprinol · 500 mg · Tabletki powlekane · RPL 100014482"
+      ]
+    },
+    {
+      "substance": "paracetamol",
+      "brand_name": null,
+      "strength": "500 mg",
+      "form": null,
+      "dosage": "1 do 2 tabletek doraźnie przy gorączce",
+      "quantity": "1 opakowanie",
+      "product": "Paracetamol DOZ · 500 mg · Tabletki · RPL 100246778",
+      "candidates": [
+        "Paracetamol Accord · 500 mg · Tabletki · RPL 100350211",
+        "Paracetamol Hasco · 500 mg · Tabletki powlekane · RPL 100257121"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Dużo pić, około dwóch litrów dziennie.",
+      "Nie popijać antybiotyku mlekiem ani nie przyjmować go razem z preparatami wapnia, magnezu i żelaza. Zachować odstęp dwóch godzin.",
+      "Odebrać wynik posiewu pojutrze. Lekarz może zmienić antybiotyk."
+    ],
+    "warning_signs": [
+      "Gorączka nie spadnie po czterdziestu ośmiu godzinach.",
+      "Pojawią się wymioty, które uniemożliwiają przyjmowanie leków.",
+      "Ból bardzo się nasili."
+    ],
+    "follow_up": "Kontrola za trzy dni. Wcześniej zadzwonić telefonicznie z wynikiem posiewu."
+  },
+  "doctor_notes": []
+}

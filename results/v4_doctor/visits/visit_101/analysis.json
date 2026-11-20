@@ -1,0 +1,15 @@
+{
+  "visit_id": "visit_101",
+  "summary": "Zalecenia i karta wierne dyktowaniu; recepta wymagała ręcznego wyboru antybiotyku, bo model zapisał moc słownie („1 milion jednostek”), a dyktowanie nie podało ilości.",
+  "strengths": [
+    "Brak ilości fenoksymetylpenicyliny oznaczony przez system.",
+    "Objawy alarmowe (szczękościsk, jednostronny obrzęk gardła, ślinienie, duszność) przepisane kompletnie.",
+    "Karta: obie temperatury (39 w wywiadzie, 38,7 w badaniu) i skala Centora przypisane poprawnie."
+  ],
+  "weaknesses": [
+    "Moc zapisana słownie – rejestr nie znalazł produktu mimo jednoznacznego dyktowania.",
+    "Dopisany skrót „(GAS)” w badaniu, którego nie dyktowano; weryfikator go nie zgłosił."
+  ],
+  "verdict": "istotne poprawki",
+  "ratings": {"dokładność": 4, "kompletność": 5, "zwięzłość": 4, "zrozumiałość dla pacjenta": 5, "spójność wewnętrzna": 5}
+}

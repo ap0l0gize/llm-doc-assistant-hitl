@@ -1,0 +1,95 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "prescription.0.product",
+        "kind": "added",
+        "before": null,
+        "after": "Symbicort Turbuhaler · (160 mcg + 4,5 mcg)/dawkę inh. · Proszek do inhalacji · RPL 100249452",
+        "chars_edited": 0,
+        "pointed_by_issue": true,
+        "has_note": true
+      },
+      {
+        "path": "patient_instructions.recommendations.1",
+        "kind": "modified",
+        "before": "Unikać dymu papierosowego i zimnego powietrza.",
+        "after": "Unikać dymu i zimnego powietrza.",
+        "chars_edited": 14,
+        "pointed_by_issue": false,
+        "has_note": true
+      },
+      {
+        "path": "patient_instructions.warning_signs.4",
+        "kind": "added",
+        "before": null,
+        "after": "W każdej z tych sytuacji pilnie zgłosić się na SOR.",
+        "chars_edited": 51,
+        "pointed_by_issue": false,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 65,
+    "doc_chars": 812,
+    "issues": [
+      {
+        "field": "prescription.0.product",
+        "problem": "budezonid z formoterolem: nazwa handlowa Symbicort Turbuhaler to produkt innej substancji (Budesonidum + Formoteroli fumaras dihydricus) niż podyktowana - wybierz produkt"
+      }
+    ],
+    "doctor_notes": [
+      {
+        "path": "prescription.0.product",
+        "category": "recepta",
+        "severity": "umiarkowany",
+        "source": "system",
+        "reason": "Fałszywy konflikt nazwy handlowej: substancje zapisane „budezonid z formoterolem” (spójnik „z”), a Symbicort to właśnie budezonid + formoterol. Wybieram 160/4,5 mcg."
+      },
+      {
+        "path": "patient_instructions.recommendations.1",
+        "category": "treść spoza dyktowania",
+        "severity": "kosmetyczny",
+        "source": "system",
+        "reason": "Podyktowałem „unikać dymu”; model zawęził do „dymu papierosowego”."
+      },
+      {
+        "path": "patient_instructions.warning_signs",
+        "category": "pominięcie",
+        "severity": "umiarkowany",
+        "source": "system",
+        "reason": "Pominięte „pilnie na SOR” – pacjentka nie wie, gdzie się zgłosić przy objawach zaostrzenia."
+      }
+    ]
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "visit_note.history",
+        "kind": "modified",
+        "before": "Pacjentka lat dwadzieścia pięć. Astma oskrzelowa od dzieciństwa, leczona Symbicortem, 1 inhalacja 2 razy dziennie. Od czterech dni, po infekcji wirusowej, nasilona duszność, świszczący oddech, nocne przebudzenia z kaszlem. Salbutamol pożyczony od koleżanki stosowany 4-5 razy na dobę.",
+        "after": "Pacjentka lat dwadzieścia pięć. Astma oskrzelowa od dzieciństwa, leczona Symbicortem, 1 inhalacja 2 razy dziennie. Alergia: kwas acetylosalicylowy (duszność). Od czterech dni, po infekcji wirusowej, nasilona duszność, świszczący oddech, nocne przebudzenia z kaszlem. Salbutamol pożyczony od koleżanki stosowany 4-5 razy na dobę.",
+        "chars_edited": 44,
+        "pointed_by_issue": false,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 44,
+    "doc_chars": 506,
+    "issues": [],
+    "doctor_notes": [
+      {
+        "path": "visit_note.history",
+        "category": "pominięcie",
+        "severity": "umiarkowany",
+        "source": "system",
+        "reason": "Pominięta alergia na kwas acetylosalicylowy z karty pacjentki (duszność) – istotna przy zaostrzeniu astmy."
+      }
+    ]
+  }
+]

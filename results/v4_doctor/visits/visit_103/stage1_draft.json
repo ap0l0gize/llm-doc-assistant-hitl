@@ -1,0 +1,22 @@
+{
+  "prescription": [],
+  "patient_instructions": {
+    "recommendations": [
+      "Antybiotyk nie jest potrzebny, ponieważ jest to infekcja wirusowa.",
+      "Pij dużo płynów.",
+      "Nawilżaj powietrze w pomieszczeniu.",
+      "Przy gorączce można stosować paracetamol, który masz w domu.",
+      "Rzuć palenie.",
+      "Kaszel może utrzymywać się nawet do trzech tygodni.",
+      "Zwolnienie lekarskie na trzy dni."
+    ],
+    "warning_signs": [
+      "Duszność.",
+      "Ból w klatce piersiowej.",
+      "Krwioplucie.",
+      "Gorączka powyżej 39 stopni Celsjusza."
+    ],
+    "follow_up": "Zgłoś się na kontrolę, jeśli kaszel utrzyma się dłużej niż trzy tygodnie albo gorączka utrzyma się dłużej niż trzy dni."
+  },
+  "doctor_notes": []
+}

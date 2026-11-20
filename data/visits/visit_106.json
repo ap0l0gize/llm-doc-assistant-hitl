@@ -1,0 +1,32 @@
+{
+  "visit_id": "visit_106",
+  "pesel": "64120107159",
+  "stage1_dictation": "Dobrze, to tak. Metforminę zostawiamy, tysiąc dwa razy dziennie, bez zmian. Dokładamy empagliflozynę dziesięć miligramów raz dziennie rano, recepta na trzy opakowania po trzydzieści tabletek. Proszę pić więcej wody, możliwe częstsze oddawanie moczu, dbać o higienę okolic intymnych, bo rośnie ryzyko infekcji grzybiczych. W razie wymiotów, biegunki albo gdy nie może pan jeść i pić, empagliflozynę na ten czas odstawić. Skierowanie do okulisty na badanie dna oka, w tym roku jeszcze nie było. Kontrola za trzy miesiące z HbA1c i kreatyniną. Pilnie, jeśli pojawią się bóle brzucha z nudnościami i wymiotami, przyspieszony oddech albo duża senność.",
+  "stage2_dictation": "Pacjent sześćdziesiąt jeden lat, cukrzyca typu drugiego od ośmiu lat, nadciśnienie. Na metforminie dwa gramy na dobę i peryndoprylu. HbA1c z zeszłego tygodnia osiem i jedna dziesiąta procenta, w marcu było siedem i sześć. Kreatynina jeden i jedna dziesiąta, eGFR sześćdziesiąt osiem. Glikemie na czczo w domu sto czterdzieści do stu sześćdziesięciu. Ostatnie badanie dna oka ponad rok temu. W badaniu masa ciała dziewięćdziesiąt cztery kilogramy, BMI trzydzieści jeden i dwie dziesiąte, ciśnienie sto trzydzieści sześć na osiemdziesiąt cztery. Stopy bez zmian troficznych, czucie wibracji zachowane. Rozpoznanie: cukrzyca typu drugiego niewyrównana, intensyfikacja leczenia.",
+  "benchmark": {
+    "title": "Cukrzyca typu 2 niewyrównana – dołączenie empagliflozyny",
+    "short_title": "Cukrzyca – intensyfikacja",
+    "difficulty": "B",
+    "specialty": "diabetologia",
+    "features": [
+      "kontynuacja-bez-recepty",
+      "wartosci-liczbowe",
+      "zaprzeczenia"
+    ],
+    "clinical_summary": "61-latek z cukrzycą typu 2, HbA1c 8,1% (wcześniej 7,6%). Metformina bez zmian, nowa empagliflozyna, zasady postępowania w dniach choroby, skierowanie na badanie dna oka. Dyktowanie w naturalnej kolejności, bez nagłówków.",
+    "hypotheses": [
+      {
+        "id": "H106-1",
+        "text": "Metformina („zostawiamy, bez zmian”) nie trafi na receptę; empagliflozyna tak."
+      },
+      {
+        "id": "H106-2",
+        "text": "Zasada odstawienia empagliflozyny przy wymiotach/biegunce znajdzie się w zaleceniach."
+      },
+      {
+        "id": "H106-3",
+        "text": "Wartości HbA1c (8,1% obecnie, 7,6% w marcu) nie zostaną zamienione."
+      }
+    ]
+  }
+}

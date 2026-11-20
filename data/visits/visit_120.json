@@ -1,0 +1,35 @@
+{
+  "visit_id": "visit_120",
+  "pesel": "47090906384",
+  "stage1_dictation": "Walacyklowir tysiąc, jedna tabletka trzy razy dziennie przez siedem dni, dwadzieścia jeden tabletek, zaczynamy dziś. Na ból paracetamol pięćset, dwie tabletki do czterech razy na dobę, jedno opakowanie. I najważniejsze: skierowanie pilne do okulisty dziś, na ostry dyżur okulistyczny, bo zajęty czubek nosa, objaw Hutchinsona. Zalecenia: zmian nie drapać, nie dotykać oka ręką, osobny ręcznik, do przyschnięcia zmian unikać kontaktu z kobietami w ciąży i noworodkami. Kontrola u mnie za tydzień, po wizycie u okulisty. Natychmiast do szpitala, gdyby pogorszyło się widzenie, pojawił się silny ból oka, światłowstręt albo zaczerwienienie oka.",
+  "stage2_dictation": "Pacjentka siedemdziesiąt dziewięć lat, eee, od trzech dni ból i pieczenie prawej połowy czoła, od wczoraj pęcherzyki na czole i, yyy, na powiece górnej prawej, dziś zauważyła zmianę na czubku nosa. Oko lekko łzawi, widzi dobrze, bez bólu gałki ocznej, bez światłowstrętu. W badaniu na skórze prawej połowy czoła i powieki górnej prawej grupy pęcherzyków na rumieniowym podłożu, w zakresie pierwszej gałęzi nerwu trójdzielnego, pojedynczy pęcherzyk na czubku nosa, objaw Hutchinsona dodatni. Spojówka prawego oka lekko przekrwiona, ostrość wzroku orientacyjnie zachowana, lewa strona twarzy bez zmian. eGFR sprzed miesiąca sześćdziesiąt dwa. Rozpoznanie: półpasiec oczny prawostronny, pierwsza gałąź nerwu trójdzielnego, z objawem Hutchinsona, skierowana pilnie do okulisty.",
+  "benchmark": {
+    "title": "Półpasiec oczny z objawem Hutchinsona – pilne skierowanie do okulisty",
+    "short_title": "Półpasiec oczny",
+    "difficulty": "C",
+    "specialty": "dermatologia / okulistyka / stany pilne",
+    "features": [
+      "pilne-skierowanie",
+      "wiek-podeszly",
+      "wartosci-liczbowe",
+      "zaprzeczenia",
+      "dyktowanie-chaotyczne",
+      "lateralizacja"
+    ],
+    "clinical_summary": "79-latka z półpaścem w zakresie V1 po prawej, objaw Hutchinsona dodatni. Walacyklowir, paracetamol, pilne skierowanie do okulisty tego samego dnia, kontrola za tydzień po konsultacji. Dyktowanie z wtrąceniami.",
+    "hypotheses": [
+      {
+        "id": "H120-1",
+        "text": "Pilne skierowanie do okulisty „dziś” znajdzie się w zaleceniach jako pilne (nie jako zwykłe skierowanie)."
+      },
+      {
+        "id": "H120-2",
+        "text": "Kontrola „za tydzień po okuliście” nie zostanie pomylona z pilnym skierowaniem."
+      },
+      {
+        "id": "H120-3",
+        "text": "Zaprzeczenia dotyczące oka (bez bólu, bez światłowstrętu) zostaną zachowane."
+      }
+    ]
+  }
+}

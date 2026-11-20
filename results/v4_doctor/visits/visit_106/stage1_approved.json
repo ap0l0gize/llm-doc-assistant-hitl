@@ -1,0 +1,40 @@
+{
+  "prescription": [
+    {
+      "substance": "empagliflozyna",
+      "brand_name": null,
+      "strength": "10 mg",
+      "form": "tabletki powlekane",
+      "dosage": "1 tabletka raz dziennie rano",
+      "quantity": "3 opakowania po 30 tabletek",
+      "product": "Empagliflozin Reddy · 10 mg · Tabletki powlekane · RPL 100518412",
+      "candidates": []
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Metforminę przyjmuje pan bez zmian, 1000 mg dwa razy dziennie.",
+      "Dodajemy empagliflozynę 10 mg, jedna tabletka raz dziennie rano. Recepta na trzy opakowania po 30 tabletek.",
+      "Proszę pić więcej wody.",
+      "Może pan częściej oddawać mocz.",
+      "Proszę dbać o higienę okolic intymnych, ponieważ rośnie ryzyko infekcji grzybiczych.",
+      "W razie wymiotów, biegunki albo gdy nie może pan jeść i pić, proszę na ten czas odstawić empagliflozynę.",
+      "Skierowanie do okulisty na badanie dna oka (w tym roku badanie jeszcze nie było)."
+    ],
+    "warning_signs": [
+      "Bóle brzucha z nudnościami i wymiotami.",
+      "Przyspieszony oddech.",
+      "Duża senność."
+    ],
+    "follow_up": "Kontrola za trzy miesiące, z badaniem HbA1c i kreatyniny."
+  },
+  "doctor_notes": [
+    {
+      "path": "prescription.0",
+      "category": "recepta",
+      "severity": "istotny",
+      "source": "system",
+      "reason": "Na recepcie znalazła się metformina („zostawiamy, bez zmian”), a nowo dołożona empagliflozyna 10 mg (3 × 30 tabletek) w ogóle nie trafiła na receptę, choć zalecenia o niej mówią. Zły lek na recepcie – zamieniam na empagliflozynę."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "prescription.0.dosage",
+        "kind": "modified",
+        "before": "1 tabl. 3 razy dziennie przez 7 dni",
+        "after": "1 tabl. 3 razy dziennie przez 7 dni, od dziś",
+        "chars_edited": 9,
+        "pointed_by_issue": false,
+        "has_note": true
+      },
+      {
+        "path": "patient_instructions.warning_signs.4",
+        "kind": "added",
+        "before": null,
+        "after": "W takich sytuacjach natychmiast zgłosić się do szpitala.",
+        "chars_edited": 56,
+        "pointed_by_issue": false,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 65,
+    "doc_chars": 598,
+    "issues": [],
+    "doctor_notes": [
+      {
+        "path": "prescription.0.dosage",
+        "category": "pominięcie",
+        "severity": "kosmetyczny",
+        "source": "system",
+        "reason": "Pominięte „zaczynamy dziś” – przy półpaścu ważne rozpoczęcie leczenia od razu."
+      },
+      {
+        "path": "patient_instructions.warning_signs",
+        "category": "pominięcie",
+        "severity": "umiarkowany",
+        "source": "system",
+        "reason": "Pominięte „natychmiast do szpitala” przy objawach zajęcia oka – pacjentka nie wie, gdzie i jak pilnie się zgłosić."
+      }
+    ]
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": true,
+    "changes": [],
+    "chars_edited": 0,
+    "doc_chars": 813,
+    "issues": [
+      {
+        "field": "visit_note.history",
+        "problem": "Karta podaje, że łzawi oko prawe, a w dyktowaniu jest tylko „oko lekko łzawi” bez wskazania strony. Określenie strony nie pochodzi z dyktowania."
+      }
+    ],
+    "doctor_notes": []
+  }
+]

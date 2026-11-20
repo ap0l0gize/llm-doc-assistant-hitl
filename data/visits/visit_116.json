@@ -1,0 +1,34 @@
+{
+  "visit_id": "visit_116",
+  "pesel": "90080807461",
+  "stage1_dictation": "No dobra, to tak, angina, dajemy antybiotyk. Amoksycylina tysiąc miligramów, tabletki, jedna tabletka dwa razy dziennie przez dziesięć dni. Eee, i coś na ból, ibuprofen czterysta, jedna tabletka do trzech razy dziennie po jedzeniu, jedno opakowanie. Zalecenia: dużo płynów, ciepłe, nie gorące napoje, zwolnienie na pięć dni. Kontrola po zakończeniu antybiotyku, a jakby coś było nie tak, to wcześniej. Pilnie, jakby była duszność, problem z przełykaniem śliny albo szczękościsk... albo, no, wysypka i obrzęk twarzy.",
+  "stage2_dictation": "Pacjentka trzydzieści sześć lat, od trzech dni ból gardła, gorączka do trzydziestu dziewięciu i dwóch, bez kaszlu. Eee, w badaniu temperatura trzydzieści osiem i osiem, migdałki przerośnięte z nalotami, węzły podżuchwowe powiększone, bolesne. Centor cztery punkty, test na paciorkowca dodatni. Uczulenia, eee, nie pytałem, nie, przepraszam, pacjentka mówi, że nic jej nie uczula. Rozpoznanie: ostre paciorkowcowe zapalenie migdałków.",
+  "benchmark": {
+    "title": "Angina paciorkowcowa – amoksycylina u pacjentki uczulonej na amoksycylinę",
+    "short_title": "Konflikt z alergią",
+    "difficulty": "C",
+    "specialty": "choroby zakaźne / bezpieczeństwo",
+    "features": [
+      "konflikt-alergii",
+      "dyktowanie-chaotyczne",
+      "brak-ilosci",
+      "autokorekta",
+      "wartosci-liczbowe"
+    ],
+    "clinical_summary": "36-latka z anginą paciorkowcową; w karcie alergia na amoksycylinę (pokrzywka, obrzęk warg). Lekarz w pośpiechu dyktuje amoksycylinę i deklaruje „nic jej nie uczula”. Sprawdza, czy system (który niczego nie decyduje) w ogóle sygnalizuje sprzeczność z kartą pacjenta.",
+    "hypotheses": [
+      {
+        "id": "H116-1",
+        "text": "System nie ostrzeże o sprzeczności amoksycyliny z alergią w karcie (brak takiej reguły) – wykryje to dopiero lekarz."
+      },
+      {
+        "id": "H116-2",
+        "text": "Karta przepisze z dyktowania „nic nie uczula”, nie sygnalizując sprzeczności z danymi pacjenta."
+      },
+      {
+        "id": "H116-3",
+        "text": "System oznaczy brak ilości amoksycyliny."
+      }
+    ]
+  }
+}

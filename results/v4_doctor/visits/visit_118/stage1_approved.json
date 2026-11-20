@@ -1,0 +1,55 @@
+{
+  "prescription": [
+    {
+      "substance": "amoksycylina",
+      "brand_name": null,
+      "strength": "250 mg/5 ml",
+      "form": "zawiesina",
+      "dosage": "10,5 ml dwa razy dziennie przez 7 dni",
+      "quantity": "2 butelki po 100 ml",
+      "product": "Ospamox · 250 mg/5 ml · Proszek do sporządzania zawiesiny doustnej · RPL 100157916",
+      "candidates": [
+        "Hiconcil · 250 mg/5 ml · Proszek do sporządzania zawiesiny doustnej · RPL 100028981"
+      ]
+    },
+    {
+      "substance": "ibuprofen",
+      "brand_name": null,
+      "strength": "100 mg/5 ml",
+      "form": "zawiesina",
+      "dosage": "6 ml doraźnie przy gorączce, nie częściej niż co 8 godzin",
+      "quantity": "1 butelka 100 ml",
+      "product": "Kidofen · 100 mg/5 ml · Zawiesina doustna · RPL 100048802",
+      "candidates": [
+        "Ibuprofen Farmalider · 20 mg/ml · Zawiesina doustna · RPL 100300093",
+        "Ibuprofen Alkaloid - INT · 100 mg/5 ml · Zawiesina doustna · RPL 100404007"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Podawać antybiotyk zgodnie z receptą przez pełne 7 dni, nawet jeśli dziecko poczuje się lepiej.",
+      "Zapewnić dziecku dużo płynów.",
+      "Mierzyć temperaturę i liczyć oddechy w spoczynku.",
+      "Lek przeciwgorączkowy z recepty podawać doraźnie przy gorączce, nie częściej niż co 8 godzin."
+    ],
+    "warning_signs": [
+      "Szybkie oddychanie, powyżej 40 oddechów na minutę.",
+      "Zaciąganie międzyżebrzy.",
+      "Sinienie wokół ust.",
+      "Odmowa picia.",
+      "Senność.",
+      "W takich przypadkach natychmiast zgłosić się do szpitala."
+    ],
+    "follow_up": "Kontrola za 48 godzin, obowiązkowo."
+  },
+  "doctor_notes": [
+    {
+      "path": "prescription.1.quantity",
+      "category": "recepta",
+      "severity": "umiarkowany",
+      "source": "dyktowanie",
+      "reason": "Nie podałem ilości ibuprofenu (system to oznaczył); uzupełniam 1 butelkę 100 ml."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "prescription": [],
+  "patient_instructions": {
+    "recommendations": [
+      "Dziś, bez zwlekania, udaj się na szpitalny oddział ratunkowy z pilnym skierowaniem, w związku z podejrzeniem zakrzepicy żył głębokich lewej kończyny dolnej. Na SOR zostanie wykonane badanie USG dopplerowskie oraz oznaczenie D-dimerów.",
+      "Nie masuj łydki.",
+      "Ogranicz chodzenie do koniecznego.",
+      "Hormonalną terapię zastępczą wstrzymaj do czasu wyjaśnienia sprawy."
+    ],
+    "warning_signs": [
+      "Nagła duszność.",
+      "Ból w klatce piersiowej.",
+      "Krwioplucie.",
+      "W razie wystąpienia powyższych objawów natychmiast zadzwoń pod numer 112."
+    ],
+    "follow_up": "Wizyta kontrolna po wypisie z SOR, z dokumentacją."
+  },
+  "doctor_notes": []
+}

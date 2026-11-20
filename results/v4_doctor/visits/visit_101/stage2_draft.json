@@ -1,0 +1,9 @@
+{
+  "visit_note": {
+    "history": "Pacjent lat 28. Od 2 dni silny ból gardła, gorączka do 39°C. Bez kaszlu i bez kataru.",
+    "physical_examination": "Temperatura 38,7°C. Migdałki powiększone, przekrwione, z wysiękiem. Węzły chłonne szyjne przednie powiększone i bolesne. Skala Centora-McIsaaca: 4 punkty. Szybki test na antygen paciorkowca (GAS): dodatni.",
+    "diagnosis": "Ostre paciorkowcowe zapalenie gardła i migdałków.",
+    "icd10": null
+  },
+  "doctor_notes": []
+}

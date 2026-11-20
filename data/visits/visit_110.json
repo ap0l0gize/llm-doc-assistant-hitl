@@ -1,0 +1,38 @@
+{
+  "visit_id": "visit_110",
+  "pesel": "68100504427",
+  "stage1_dictation": "Recepty nie wystawiam. Skierowanie pilne na szpitalny oddział ratunkowy z podejrzeniem zakrzepicy żył głębokich lewej kończyny dolnej, do wykonania USG dopplerowskiego i oznaczenia D-dimerów jeszcze dziś. Zalecenia: jechać dziś, nie czekać do jutra, nie masować łydki, ograniczyć chodzenie do koniecznego. Hormonalną terapię zastępczą wstrzymać do czasu wyjaśnienia. Wizyta kontrolna po wypisie z SOR, z dokumentacją. Natychmiast dzwonić na sto dwanaście, gdyby pojawiła się nagła duszność, ból w klatce piersiowej albo krwioplucie.",
+  "stage2_dictation": "Pacjentka pięćdziesiąt osiem lat, na hormonalnej terapii zastępczej od dwóch lat. Tydzień temu dwunastogodzinna podróż samolotem. Od trzech dni ból i obrzęk lewej łydki, nasilający się przy chodzeniu. Bez duszności, bez bólu w klatce piersiowej, bez krwioplucia. W badaniu obwód lewej łydki trzydzieści dziewięć centymetrów, prawej trzydzieści sześć, obrzęk ciastowaty lewej łydki, tkliwość wzdłuż żył głębokich, ucieplenie. Tętno osiemdziesiąt osiem, saturacja dziewięćdziesiąt siedem procent, ciśnienie sto trzydzieści na osiemdziesiąt. Skala Wellsa trzy punkty, wysokie prawdopodobieństwo. Rozpoznanie: podejrzenie zakrzepicy żył głębokich lewej kończyny dolnej, pilnie skierowana na SOR.",
+  "benchmark": {
+    "title": "Podejrzenie zakrzepicy żył głębokich lewej łydki",
+    "short_title": "Podejrzenie zakrzepicy",
+    "difficulty": "B",
+    "specialty": "angiologia / stany pilne",
+    "features": [
+      "pilne-skierowanie",
+      "bez-lekow",
+      "lateralizacja",
+      "wartosci-liczbowe",
+      "odstawienie"
+    ],
+    "clinical_summary": "58-latka na HTZ, po długim locie, ból i obrzęk lewej łydki (39 vs 36 cm), Wells 3. Bez leków, pilne skierowanie na SOR (USG doppler, D-dimery), wstrzymanie HTZ, kontrola po wypisie.",
+    "hypotheses": [
+      {
+        "id": "H110-1",
+        "text": "Recepta pozostanie pusta."
+      },
+      {
+        "id": "H110-2",
+        "text": "Obwody łydek (lewa 39 cm, prawa 36 cm) nie zostaną zamienione."
+      },
+      {
+        "id": "H110-3",
+        "text": "Wstrzymanie HTZ znajdzie się w zaleceniach."
+      },
+      {
+        "id": "H110-4",
+        "text": "Termin kontroli („po wypisie z SOR”) nie zostanie pomylony ze skierowaniem na SOR."
+      }
+    ]
+  }
+}

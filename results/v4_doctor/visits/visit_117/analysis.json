@@ -1,0 +1,16 @@
+{
+  "visit_id": "visit_117",
+  "summary": "Recepta przy czterech jednoczesnych zmianach leczenia bezbłędna; słabe były zalecenia (brak podyktowanych zmian leczenia, w tym kontynuacji bisoprololu) i karta (dawka ibuprofenu 402 mg, pominięty plan leczenia).",
+  "strengths": [
+    "Na recepcie dokładnie trzy właściwe leki: czasowo zwiększony furosemid, nowy spironolakton, przedłużony ramipril; bisoprolol i ibuprofen poza receptą.",
+    "Postać ramiprilu słusznie oznaczona do wyboru.",
+    "Karta kompletna co do parametrów (EF 35%, przyrost 3 kg, NT-proBNP 2400, eGFR 42, NYHA III)."
+  ],
+  "weaknesses": [
+    "Zalecenia bez zmian leczenia – u 79-latka bisoprolol „bez zmian” nie pojawia się w żadnym dokumencie dla pacjenta.",
+    "„Czterysta, dwa, trzy razy dziennie” odczytane jako dawka 402 mg; weryfikator tego nie zgłosił.",
+    "Pominięty plan „leczenie ambulatoryjne z intensyfikacją diuretyku” (wskazał weryfikator)."
+  ],
+  "verdict": "istotne poprawki",
+  "ratings": {"dokładność": 3, "kompletność": 3, "zwięzłość": 5, "zrozumiałość dla pacjenta": 3, "spójność wewnętrzna": 4}
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "prescription.0.quantity",
+        "kind": "added",
+        "before": null,
+        "after": "1 opakowanie (30 tabletek)",
+        "chars_edited": 26,
+        "pointed_by_issue": true,
+        "has_note": true
+      },
+      {
+        "path": "patient_instructions.recommendations.1",
+        "kind": "modified",
+        "before": "Lek może powodować senność rano. Nie prowadzić samochodu, dopóki lekarz nie oceni, jak lek działa.",
+        "after": "Lek może powodować senność rano. Nie prowadzić samochodu, dopóki nie sprawdzi pan, jak lek na pana działa.",
+        "chars_edited": 22,
+        "pointed_by_issue": false,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 48,
+    "doc_chars": 823,
+    "issues": [
+      {
+        "field": "prescription.0.quantity",
+        "problem": "hydroksyzyna: nie podano ilości"
+      }
+    ],
+    "doctor_notes": [
+      {
+        "path": "prescription.0.quantity",
+        "category": "recepta",
+        "severity": "umiarkowany",
+        "source": "dyktowanie",
+        "reason": "Nie podałem ilości hydroksyzyny (system to oznaczył); uzupełniam 1 opakowanie 30 tabletek."
+      },
+      {
+        "path": "patient_instructions.recommendations.1",
+        "category": "błędny fakt",
+        "severity": "umiarkowany",
+        "source": "system",
+        "reason": "Podyktowałem „dopóki pan nie zobaczy, jak lek działa”; projekt zmienił to na „dopóki lekarz nie oceni” – inne zalecenie co do prowadzenia samochodu. Przywracam sens dyktowania."
+      }
+    ]
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "visit_note.history",
+        "kind": "modified",
+        "before": "Pacjent lat 31, informatyk. Od 3 miesięcy trudności z zasypianiem, budzenie się w nocy. Napięcie i zamartwianie się sprawami zawodowymi, kołatania serca w sytuacjach stresowych. Nastrój raczej wyrównany, zainteresowania zachowane, bez myśli rezygnacyjnych i samobójczych. Alkohol okazjonalnie, kawa 4-5 filiżanek dziennie, ostatnia wieczorem. Nie przyjmuje leków. GAD-7: 12 punktów. Choroby przewlekłe: brak. Leki stałe: brak. Alergie: brak zgłoszonych.",
+        "after": "Pacjent lat 31, informatyk. Od 3 miesięcy trudności z zasypianiem, budzenie się w nocy. Napięcie i zamartwianie się sprawami zawodowymi, kołatania serca w sytuacjach stresowych. Nastrój raczej wyrównany, zainteresowania zachowane, bez myśli rezygnacyjnych i samobójczych. Alkohol okazjonalnie, kawa 4-5 dziennie, ostatnia wieczorem. Nie przyjmuje leków. GAD-7: 12 punktów. Choroby przewlekłe: brak. Leki stałe: brak. Alergie: brak zgłoszonych.",
+        "chars_edited": 10,
+        "pointed_by_issue": false,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 10,
+    "doc_chars": 642,
+    "issues": [],
+    "doctor_notes": [
+      {
+        "path": "visit_note.history",
+        "category": "treść spoza dyktowania",
+        "severity": "kosmetyczny",
+        "source": "system",
+        "reason": "Dopisana jednostka „filiżanek” przy kawie, której nie było w dyktowaniu."
+      }
+    ]
+  }
+]

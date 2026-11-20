@@ -219,8 +219,65 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Project
+# ===== Project =====
+
+# Secrets: API keys and credentials (only the empty template .env.example is committed)
+.env*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.secret
+secrets.*
+credentials*.json
+service-account*.json
+.netrc
+.npmrc
+
+# Local Claude Code settings and session data
+.claude/
+
+# Working outputs of visits and benchmark runs (drafts, logs, run log with patient data);
+# the results kept in the repository are exported to results/
 out/
+
 # Drug registry export, downloaded with: python -m src.drugs
 data/Rejestr_Produktow_Leczniczych_*.csv
+data/*.csv
+data/*.zip
+
+# Dictation recordings (voice may identify a person) and speech-to-text model caches
+*.wav
+*.mp3
+*.m4a
+*.ogg
+*.flac
+*.webm
+*.aac
+models/
+.cache/
+
+# LaTeX build files (the report PDF is built on Overleaf)
+*.aux
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.lof
+*.lot
+docs/benchmark/*.log
+docs/benchmark/*.pdf
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+*~
 .DS_Store
+Thumbs.db
+desktop.ini

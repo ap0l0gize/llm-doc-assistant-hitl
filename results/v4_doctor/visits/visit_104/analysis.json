@@ -1,0 +1,12 @@
+{
+  "visit_id": "visit_104",
+  "summary": "Oba projekty bez zmian: na recepcie tylko nowa dawka amlodypiny, zmiana dawki jasno wyjaśniona pacjentce, pomiary domowe i gabinetowe rozdzielone.",
+  "strengths": [
+    "Atorwastatyna „bez zmian” poza receptą, ujęta w zaleceniach.",
+    "Odstawienie dotychczasowej amlodypiny 5 mg wprost w zaleceniach.",
+    "Pomiar domowy (156/94) w wywiadzie, dwa pomiary gabinetowe w badaniu."
+  ],
+  "weaknesses": [],
+  "verdict": "gotowy bez zmian",
+  "ratings": {"dokładność": 5, "kompletność": 5, "zwięzłość": 5, "zrozumiałość dla pacjenta": 5, "spójność wewnętrzna": 5}
+}

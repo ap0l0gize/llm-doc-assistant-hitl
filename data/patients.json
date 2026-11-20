@@ -5,8 +5,12 @@
     "last_name": "Kowalski",
     "date_of_birth": "1980-01-01",
     "address": "ul. Lipowa 5, 30-001 Kraków",
-    "chronic_conditions": ["nadciśnienie tętnicze"],
-    "regular_medications": ["ramipril 5 mg 1x1"],
+    "chronic_conditions": [
+      "nadciśnienie tętnicze"
+    ],
+    "regular_medications": [
+      "ramipril 5 mg 1x1"
+    ],
     "allergies": []
   },
   {
@@ -15,8 +19,277 @@
     "last_name": "Nowak",
     "date_of_birth": "1965-05-22",
     "address": "ul. Długa 12/4, 00-238 Warszawa",
-    "chronic_conditions": ["cukrzyca typu 2", "niedoczynność tarczycy"],
-    "regular_medications": ["metformina 850 mg 2x1", "lewotyroksyna 50 mcg 1x1 na czczo"],
-    "allergies": ["penicylina"]
+    "chronic_conditions": [
+      "cukrzyca typu 2",
+      "niedoczynność tarczycy"
+    ],
+    "regular_medications": [
+      "metformina 850 mg 2x1",
+      "lewotyroksyna 50 mcg 1x1 na czczo"
+    ],
+    "allergies": [
+      "penicylina"
+    ]
+  },
+  {
+    "pesel": "98051214372",
+    "first_name": "Piotr",
+    "last_name": "Zając",
+    "date_of_birth": "1998-05-12",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [],
+    "regular_medications": [],
+    "allergies": []
+  },
+  {
+    "pesel": "89110307826",
+    "first_name": "Ewa",
+    "last_name": "Krawczyk",
+    "date_of_birth": "1989-11-03",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [],
+    "regular_medications": [],
+    "allergies": []
+  },
+  {
+    "pesel": "85022011553",
+    "first_name": "Tomasz",
+    "last_name": "Pawlak",
+    "date_of_birth": "1985-02-20",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [
+      "palenie tytoniu (15 paczkolat)"
+    ],
+    "regular_medications": [],
+    "allergies": []
+  },
+  {
+    "pesel": "61081406647",
+    "first_name": "Grażyna",
+    "last_name": "Michalska",
+    "date_of_birth": "1961-08-14",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [
+      "nadciśnienie tętnicze",
+      "hipercholesterolemia"
+    ],
+    "regular_medications": [
+      "amlodypina 5 mg 1x1 rano",
+      "atorwastatyna 20 mg 1x1 wieczorem"
+    ],
+    "allergies": []
+  },
+  {
+    "pesel": "79033004329",
+    "first_name": "Monika",
+    "last_name": "Zawadzka",
+    "date_of_birth": "1979-03-30",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [],
+    "regular_medications": [],
+    "allergies": []
+  },
+  {
+    "pesel": "64120107159",
+    "first_name": "Krzysztof",
+    "last_name": "Wróbel",
+    "date_of_birth": "1964-12-01",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [
+      "cukrzyca typu 2 (od 2018)",
+      "nadciśnienie tętnicze"
+    ],
+    "regular_medications": [
+      "metformina 1000 mg 2x1",
+      "peryndopryl 5 mg 1x1"
+    ],
+    "allergies": []
+  },
+  {
+    "pesel": "52011707264",
+    "first_name": "Janina",
+    "last_name": "Dudek",
+    "date_of_birth": "1952-01-17",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [
+      "nadciśnienie tętnicze",
+      "cukrzyca typu 2",
+      "niedoczynność tarczycy",
+      "hipercholesterolemia",
+      "choroba zwyrodnieniowa stawów kolanowych",
+      "przewlekła choroba nerek G3a"
+    ],
+    "regular_medications": [
+      "telmisartan 80 mg 1x1",
+      "amlodypina 5 mg 1x1",
+      "atorwastatyna 40 mg 1x1 wieczorem",
+      "metformina 1000 mg 2x1",
+      "lewotyroksyna 75 mcg 1x1 na czczo",
+      "ketoprofen 100 mg doraźnie"
+    ],
+    "allergies": []
+  },
+  {
+    "pesel": "01270908745",
+    "first_name": "Natalia",
+    "last_name": "Jabłońska",
+    "date_of_birth": "2001-07-09",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [
+      "astma oskrzelowa"
+    ],
+    "regular_medications": [
+      "budezonid + formoterol (Symbicort Turbuhaler 160/4,5) 1 inhalacja 2x1"
+    ],
+    "allergies": [
+      "kwas acetylosalicylowy (duszność)"
+    ]
+  },
+  {
+    "pesel": "93042209381",
+    "first_name": "Karolina",
+    "last_name": "Majewska",
+    "date_of_birth": "1993-04-22",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [],
+    "regular_medications": [],
+    "allergies": []
+  },
+  {
+    "pesel": "68100504427",
+    "first_name": "Barbara",
+    "last_name": "Olszewska",
+    "date_of_birth": "1968-10-05",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [
+      "nadciśnienie tętnicze"
+    ],
+    "regular_medications": [
+      "estradiol + dydrogesteron (hormonalna terapia zastępcza) 1x1",
+      "bisoprolol 2,5 mg 1x1"
+    ],
+    "allergies": []
+  },
+  {
+    "pesel": "95091105915",
+    "first_name": "Adrian",
+    "last_name": "Stępień",
+    "date_of_birth": "1995-09-11",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [],
+    "regular_medications": [],
+    "allergies": []
+  },
+  {
+    "pesel": "58062807355",
+    "first_name": "Henryk",
+    "last_name": "Malinowski",
+    "date_of_birth": "1958-06-28",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [
+      "choroba wrzodowa żołądka w wywiadzie (2015)"
+    ],
+    "regular_medications": [],
+    "allergies": []
+  },
+  {
+    "pesel": "97021403186",
+    "first_name": "Aleksandra",
+    "last_name": "Górska",
+    "date_of_birth": "1997-02-14",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [
+      "ciąża (10. tydzień), pierwsza"
+    ],
+    "regular_medications": [
+      "kwas foliowy 0,4 mg 1x1"
+    ],
+    "allergies": []
+  },
+  {
+    "pesel": "24252007617",
+    "first_name": "Oliwier",
+    "last_name": "Sikora",
+    "date_of_birth": "2024-05-20",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [],
+    "regular_medications": [],
+    "allergies": []
+  },
+  {
+    "pesel": "81012505193",
+    "first_name": "Robert",
+    "last_name": "Baran",
+    "date_of_birth": "1981-01-25",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [],
+    "regular_medications": [],
+    "allergies": []
+  },
+  {
+    "pesel": "90080807461",
+    "first_name": "Magdalena",
+    "last_name": "Kubiak",
+    "date_of_birth": "1990-08-08",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [],
+    "regular_medications": [],
+    "allergies": [
+      "amoksycylina (pokrzywka, obrzęk warg, 2019)"
+    ]
+  },
+  {
+    "pesel": "47030302136",
+    "first_name": "Zbigniew",
+    "last_name": "Witkowski",
+    "date_of_birth": "1947-03-03",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [
+      "niewydolność serca z obniżoną frakcją wyrzutową (EF 35%)",
+      "nadciśnienie tętnicze",
+      "przewlekła choroba nerek G3b",
+      "choroba zwyrodnieniowa stawów kolanowych"
+    ],
+    "regular_medications": [
+      "furosemid 40 mg 1x1 rano",
+      "bisoprolol 5 mg 1x1",
+      "ramipril 5 mg 1x1",
+      "ibuprofen 400 mg doraźnie"
+    ],
+    "allergies": []
+  },
+  {
+    "pesel": "24230209644",
+    "first_name": "Lena",
+    "last_name": "Walczak",
+    "date_of_birth": "2024-03-02",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [],
+    "regular_medications": [],
+    "allergies": []
+  },
+  {
+    "pesel": "00311905271",
+    "first_name": "Kacper",
+    "last_name": "Lis",
+    "date_of_birth": "2000-11-19",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [],
+    "regular_medications": [],
+    "allergies": []
+  },
+  {
+    "pesel": "47090906384",
+    "first_name": "Wanda",
+    "last_name": "Kołodziej",
+    "date_of_birth": "1947-09-09",
+    "address": "ul. Testowa 1, 30-001 Kraków",
+    "chronic_conditions": [
+      "nadciśnienie tętnicze"
+    ],
+    "regular_medications": [
+      "amlodypina 10 mg 1x1"
+    ],
+    "allergies": []
   }
 ]

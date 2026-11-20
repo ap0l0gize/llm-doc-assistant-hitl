@@ -1,0 +1,36 @@
+{
+  "prescription": [
+    {
+      "substance": "metformina",
+      "brand_name": null,
+      "strength": null,
+      "form": null,
+      "dosage": "1000 mg 2 x dziennie, bez zmian",
+      "quantity": null,
+      "product": null,
+      "candidates": [
+        "Etform · 1000 mg · Tabletki powlekane · RPL 100356254",
+        "Etform 500 · 500 mg · Tabletki powlekane · RPL 100208766",
+        "Etform 850 · 850 mg · Tabletki powlekane · RPL 100208789"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Metforminę przyjmuje pan bez zmian, 1000 mg dwa razy dziennie.",
+      "Dodajemy empagliflozynę 10 mg, jedna tabletka raz dziennie rano. Recepta na trzy opakowania po 30 tabletek.",
+      "Proszę pić więcej wody.",
+      "Może pan częściej oddawać mocz.",
+      "Proszę dbać o higienę okolic intymnych, ponieważ rośnie ryzyko infekcji grzybiczych.",
+      "W razie wymiotów, biegunki albo gdy nie może pan jeść i pić, proszę na ten czas odstawić empagliflozynę.",
+      "Skierowanie do okulisty na badanie dna oka (w tym roku badanie jeszcze nie było)."
+    ],
+    "warning_signs": [
+      "Bóle brzucha z nudnościami i wymiotami.",
+      "Przyspieszony oddech.",
+      "Duża senność."
+    ],
+    "follow_up": "Kontrola za trzy miesiące, z badaniem HbA1c i kreatyniny."
+  },
+  "doctor_notes": []
+}

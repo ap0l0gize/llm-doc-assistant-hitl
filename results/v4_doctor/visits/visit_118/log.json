@@ -1,0 +1,45 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "prescription.1.quantity",
+        "kind": "added",
+        "before": null,
+        "after": "1 butelka 100 ml",
+        "chars_edited": 16,
+        "pointed_by_issue": true,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 16,
+    "doc_chars": 785,
+    "issues": [
+      {
+        "field": "prescription.1.quantity",
+        "problem": "ibuprofen: nie podano ilości"
+      }
+    ],
+    "doctor_notes": [
+      {
+        "path": "prescription.1.quantity",
+        "category": "recepta",
+        "severity": "umiarkowany",
+        "source": "dyktowanie",
+        "reason": "Nie podałem ilości ibuprofenu (system to oznaczył); uzupełniam 1 butelkę 100 ml."
+      }
+    ]
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": true,
+    "changes": [],
+    "chars_edited": 0,
+    "doc_chars": 565,
+    "issues": [],
+    "doctor_notes": []
+  }
+]

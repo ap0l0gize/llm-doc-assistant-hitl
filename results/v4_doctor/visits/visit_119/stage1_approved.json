@@ -1,0 +1,40 @@
+{
+  "prescription": [
+    {
+      "substance": "diklofenak",
+      "brand_name": "Voltaren Max",
+      "strength": null,
+      "form": "żel",
+      "dosage": "nakładać na staw skokowy trzy razy dziennie przez siedem dni",
+      "quantity": "1 tuba",
+      "product": "Voltaren MAX · 23,2 mg/g · Żel · RPL 100276667",
+      "candidates": [
+        "Voltaren MAX · 23,2 mg/g · Żel · RPL 100276667"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Przez pierwsze trzy dni przykładaj zimne okłady na staw skokowy po 15 minut, kilka razy dziennie, przez tkaninę (nie bezpośrednio na skórę).",
+      "Trzymaj nogę uniesioną wyżej.",
+      "W ciągu dnia noś opaskę elastyczną na stawie skokowym.",
+      "Chodź, obciążając nogę w granicach bólu.",
+      "Przez dwa tygodnie nie biegaj i nie graj w piłkę."
+    ],
+    "warning_signs": [
+      "Stopa zrobi się zimna lub blada.",
+      "Stopa zdrętwieje.",
+      "Nie będzie można w ogóle stanąć na nodze."
+    ],
+    "follow_up": "Zgłoś się na kontrolę tylko wtedy, jeśli po tygodniu nie będzie poprawy."
+  },
+  "doctor_notes": [
+    {
+      "path": "prescription.0.product",
+      "category": "recepta",
+      "severity": "umiarkowany",
+      "source": "dyktowanie",
+      "reason": "Nie podałem mocy żelu; system słusznie poprosił o wybór. Jedyny kandydat to Voltaren MAX 23,2 mg/g – wybieram go."
+    }
+  ]
+}

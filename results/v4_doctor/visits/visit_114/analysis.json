@@ -1,0 +1,14 @@
+{
+  "visit_id": "visit_114",
+  "summary": "Projekty wierne i kompletne; jedyna interwencja to ręczny wybór Gastrolitu, który w rejestrze nie ma mocy (system słusznie poprosił o wybór).",
+  "strengths": [
+    "Paracetamol dopasowany do czopków 125 mg, nie do innej postaci.",
+    "Dwie masy ciała (12 kg obecnie, 12,5 kg tydzień temu) i dwie temperatury (38,9 w wywiadzie, 38,2 w badaniu) przypisane poprawnie.",
+    "Objawy odwodnienia wymagające szpitala wymienione kompletnie, ze wskazaniem szpitala."
+  ],
+  "weaknesses": [
+    "Produkt bez mocy w rejestrze nie może być wybrany automatycznie nawet przy jednoznacznej nazwie handlowej."
+  ],
+  "verdict": "istotne poprawki",
+  "ratings": {"dokładność": 5, "kompletność": 5, "zwięzłość": 5, "zrozumiałość dla pacjenta": 5, "spójność wewnętrzna": 5}
+}

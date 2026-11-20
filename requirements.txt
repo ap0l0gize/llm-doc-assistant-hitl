@@ -5,5 +5,6 @@ langchain-openai
 pydantic>=2
 rapidfuzz
 python-dotenv
+pytest  # tests/ only
 # optional, only when the input is an audio recording instead of text:
 # faster-whisper

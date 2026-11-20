@@ -1,0 +1,9 @@
+{
+  "visit_note": {
+    "history": "Pacjent lat 79. Niewydolność serca z obniżoną frakcją wyrzutową (EF 35% w ostatnim echu), przewlekła choroba nerek. Od tygodnia narastające obrzęki podudzi, duszność przy wejściu na I piętro (wcześniej duszność przy wejściu na III piętro). Śpi na dwóch poduszkach (wcześniej na jednej). Przyrost masy ciała o 3 kg w ciągu tygodnia, aktualnie 87 kg. Od miesiąca przyjmuje ibuprofen 402 mg 3 razy dziennie z powodu bólu stawów kolanowych.",
+    "physical_examination": "Ciśnienie tętnicze 140/85 mmHg, tętno 88/min, miarowe, saturacja 94%. Trzeszczenia u podstawy obu płuc. Obrzęki podudzi do połowy goleni, ciastowate, symetryczne. Wyniki badań sprzed tygodnia: kreatynina 1,4 mg/dl, eGFR 42, potas 4,1 mmol/l, NT-proBNP 2400 pg/ml.",
+    "diagnosis": "Zaostrzenie przewlekłej niewydolności serca, NYHA III, prawdopodobnie po NLPZ.",
+    "icd10": null
+  },
+  "doctor_notes": []
+}

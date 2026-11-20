@@ -1,0 +1,15 @@
+{
+  "visit_id": "visit_106",
+  "summary": "Zalecenia i karta poprawne, ale recepta zawierała zły lek: kontynuowaną bez zmian metforminę zamiast nowo dołożonej empagliflozyny, której na recepcie w ogóle nie było.",
+  "strengths": [
+    "Zalecenia kompletne, z zasadą odstawienia empagliflozyny przy wymiotach i biegunce oraz skierowaniem do okulisty.",
+    "Wartości HbA1c (8,1% obecnie, 7,6% w marcu), eGFR i glikemie przepisane bez pomyłek.",
+    "Uwagi systemu (brak mocy i ilości metforminy) zwróciły uwagę na błędną pozycję recepty."
+  ],
+  "weaknesses": [
+    "Recepta odwrócona względem dyktowania: lek „bez zmian” na recepcie, nowy lek pominięty – niespójność z zaleceniami, które mówią o recepcie na empagliflozynę.",
+    "Łacińska pisownia „perindopryl” w wywiadzie."
+  ],
+  "verdict": "istotne poprawki",
+  "ratings": {"dokładność": 2, "kompletność": 3, "zwięzłość": 5, "zrozumiałość dla pacjenta": 5, "spójność wewnętrzna": 2}
+}

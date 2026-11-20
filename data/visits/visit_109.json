@@ -1,0 +1,32 @@
+{
+  "visit_id": "visit_109",
+  "pesel": "93042209381",
+  "stage1_dictation": "Recepta: cyprofloksacyna pięćset miligramów, tabletki, jedna tabletka co dwanaście godzin przez siedem dni, jedno opakowanie czternaście tabletek. Paracetamol pięćset miligramów, jedna do dwóch tabletek doraźnie przy gorączce, jedno opakowanie. Zalecenia: dużo pić, około dwóch litrów dziennie, nie popijać antybiotyku mlekiem ani nie brać go razem z preparatami wapnia, magnezu i żelaza, odstęp dwie godziny. Wynik posiewu odebrać pojutrze, mogę zmienić antybiotyk. Kontrola za trzy dni, wcześniej telefonicznie z wynikiem posiewu. Pilnie do szpitala, jeśli gorączka nie spadnie po czterdziestu ośmiu godzinach, pojawią się wymioty uniemożliwiające przyjmowanie leków albo ból bardzo się nasili.",
+  "stage2_dictation": "Pacjentka trzydzieści trzy lata. Od dwóch dni gorączka do trzydziestu dziewięciu i pół z dreszczami, ból w prawej okolicy lędźwiowej, wcześniej przez trzy dni pieczenie przy oddawaniu moczu i częstomocz. Nudności, bez wymiotów. Test ciążowy z moczu ujemny. W badaniu temperatura trzydzieści dziewięć i jeden, tętno sto osiem, ciśnienie sto osiemnaście na siedemdziesiąt pięć. Objaw Goldflama dodatni po stronie prawej, po lewej ujemny. Brzuch miękki, tkliwość w prawym podżebrzu bez objawów otrzewnowych. Badanie ogólne moczu: leukocyturia, azotyny dodatnie, krwinkomocz. Pobrano posiew moczu. CRP sto dwadzieścia osiem. Rozpoznanie: ostre odmiedniczkowe zapalenie nerek prawostronne, bez cech powikłań, leczenie ambulatoryjne.",
+  "benchmark": {
+    "title": "Ostre odmiedniczkowe zapalenie nerek prawostronne",
+    "short_title": "Odmiedniczkowe zapalenie nerek",
+    "difficulty": "B",
+    "specialty": "nefrologia / infekcje",
+    "features": [
+      "wartosci-liczbowe",
+      "zaprzeczenia",
+      "lateralizacja"
+    ],
+    "clinical_summary": "33-latka z gorączką, dreszczami i bólem prawej okolicy lędźwiowej, dodatni Goldflam po prawej, CRP 128, test ciążowy ujemny. Cyprofloksacyna ambulatoryjnie, posiew, kontrola za 3 dni.",
+    "hypotheses": [
+      {
+        "id": "H109-1",
+        "text": "Strona (prawa: Goldflam dodatni, ból) nie zostanie zamieniona z lewą (Goldflam ujemny)."
+      },
+      {
+        "id": "H109-2",
+        "text": "Ujemny test ciążowy zostanie odnotowany w karcie."
+      },
+      {
+        "id": "H109-3",
+        "text": "Zalecenie o odstępie od wapnia, magnezu i żelaza zostanie zachowane."
+      }
+    ]
+  }
+}

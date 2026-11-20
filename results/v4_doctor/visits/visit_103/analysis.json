@@ -1,0 +1,12 @@
+{
+  "visit_id": "visit_103",
+  "summary": "Oba projekty bez zmian: pusta recepta mimo wzmianki o paracetamolu, zaprzeczenia i niepewność rozpoznania zachowane.",
+  "strengths": [
+    "Recepta pusta – paracetamol „który pacjent ma w domu” tylko w zaleceniach.",
+    "Zaprzeczenia (bez duszności, bólu w klatce, krwioplucia, trzeszczeń) zachowane.",
+    "Rozpoznanie z zastrzeżeniem „najpewniej wirusowe”; dwie temperatury przypisane poprawnie."
+  ],
+  "weaknesses": [],
+  "verdict": "gotowy bez zmian",
+  "ratings": {"dokładność": 5, "kompletność": 5, "zwięzłość": 5, "zrozumiałość dla pacjenta": 5, "spójność wewnętrzna": 5}
+}

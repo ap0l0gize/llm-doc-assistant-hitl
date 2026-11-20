@@ -1,0 +1,40 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": true,
+    "changes": [],
+    "chars_edited": 0,
+    "doc_chars": 779,
+    "issues": [],
+    "doctor_notes": []
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "visit_note.physical_examination",
+        "kind": "modified",
+        "before": "Temperatura 38,1°C. Tkliwość uciskowa nad prawym zatokiem szczękowym; lewy zatok szczękowy niebolesny. Ropna wydzielina na tylnej ścianie gardła. Śluzówka nosa obrzęknięta. Brak obrzęku powiek. Ruchomość gałek ocznych pełna.",
+        "after": "Temperatura 38,1°C. Tkliwość uciskowa nad prawą zatoką szczękową; lewa zatoka szczękowa niebolesna. Ropna wydzielina na tylnej ścianie gardła. Śluzówka nosa obrzęknięta. Brak obrzęku powiek. Ruchomość gałek ocznych pełna.",
+        "chars_edited": 11,
+        "pointed_by_issue": false,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 11,
+    "doc_chars": 560,
+    "issues": [],
+    "doctor_notes": [
+      {
+        "path": "visit_note.physical_examination",
+        "category": "forma/język",
+        "severity": "kosmetyczny",
+        "source": "system",
+        "reason": "Błąd językowy: „nad prawym zatokiem szczękowym; lewy zatok” zamiast „nad prawą zatoką szczękową; lewa zatoka”."
+      }
+    ]
+  }
+]

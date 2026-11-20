@@ -1,0 +1,40 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "patient_instructions.warning_signs.3",
+        "kind": "added",
+        "before": null,
+        "after": "W takich sytuacjach pilnie zgłosić się do szpitala.",
+        "chars_edited": 51,
+        "pointed_by_issue": false,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 51,
+    "doc_chars": 707,
+    "issues": [],
+    "doctor_notes": [
+      {
+        "path": "patient_instructions.warning_signs",
+        "category": "pominięcie",
+        "severity": "umiarkowany",
+        "source": "system",
+        "reason": "Pominięte „pilnie do szpitala” – przy odmiedniczkowym zapaleniu nerek pacjentka musi wiedzieć, że chodzi o szpital, nie o kontrolę."
+      }
+    ]
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": true,
+    "changes": [],
+    "chars_edited": 0,
+    "doc_chars": 678,
+    "issues": [],
+    "doctor_notes": []
+  }
+]

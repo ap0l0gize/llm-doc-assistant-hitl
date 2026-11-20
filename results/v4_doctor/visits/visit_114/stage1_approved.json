@@ -1,0 +1,60 @@
+{
+  "prescription": [
+    {
+      "substance": null,
+      "brand_name": "Gastrolit",
+      "strength": null,
+      "form": "proszek do sporządzania roztworu",
+      "dosage": "jedna saszetka rozpuszczona w 200 ml przegotowanej wody, podawać małymi porcjami łyżeczką co kilka minut, około 50-100 ml po każdym luźnym stolcu",
+      "quantity": "jedno opakowanie",
+      "product": "Gastrolit · - · Proszek do sporządzania roztworu · RPL 100026019",
+      "candidates": [
+        "Gastrolit · - · Proszek do sporządzania roztworu · RPL 100026019",
+        "Gastrovit MultiActive · - · Płyn doustny · RPL 100186467",
+        "Gastrovit TraviComplex · - · Płyn doustny · RPL 100022323"
+      ]
+    },
+    {
+      "substance": "paracetamol",
+      "brand_name": null,
+      "strength": "125 mg",
+      "form": "czopki",
+      "dosage": "jeden czopek doraźnie przy gorączce powyżej 38,5°C, nie częściej niż co 6 godzin, maksymalnie 4 na dobę",
+      "quantity": "jedno opakowanie",
+      "product": "Paracetamol Hasco · 125 mg · Czopki doodbytnicze · RPL 100097367",
+      "candidates": [
+        "Paracetamol Farmina · 125 mg · Czopki · RPL 100051365",
+        "Gemipar 125 · 125 mg · Czopki · RPL 100139628"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Kontynuować karmienie dziecka.",
+      "Podawać lekkostrawne posiłki.",
+      "Nie podawać soków ani napojów gazowanych.",
+      "Myć ręce po każdej zmianie pieluchy.",
+      "Podawać płyn nawadniający z recepty małymi porcjami, łyżeczką co kilka minut, około 50-100 ml po każdym luźnym stolcu.",
+      "Przy gorączce powyżej 38,5°C podać czopek przeciwgorączkowy z recepty, nie częściej niż co 6 godzin, maksymalnie 4 w ciągu doby."
+    ],
+    "warning_signs": [
+      "Dziecko nie chce pić.",
+      "Dziecko nie oddaje moczu przez 6 do 8 godzin.",
+      "Dziecko jest nadmiernie senne.",
+      "Dziecko płacze bez łez.",
+      "W stolcu pojawiła się krew.",
+      "Wymioty uniemożliwiają picie.",
+      "Natychmiast zgłosić się do szpitala."
+    ],
+    "follow_up": "Kontrola jutro, jeśli biegunka nie będzie się zmniejszać."
+  },
+  "doctor_notes": [
+    {
+      "path": "prescription.0.product",
+      "category": "recepta",
+      "severity": "umiarkowany",
+      "source": "rejestr",
+      "reason": "Gastrolit ma w rejestrze moc „-” (produkt złożony), więc system bez mocy nie wybiera produktu; jedyny Gastrolit na liście – wybieram go."
+    }
+  ]
+}

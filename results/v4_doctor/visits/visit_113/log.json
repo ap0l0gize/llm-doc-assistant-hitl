@@ -1,0 +1,45 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "prescription.0.product",
+        "kind": "added",
+        "before": null,
+        "after": "Xonvea · 10 mg + 10 mg · Tabletki dojelitowe · RPL 100433440",
+        "chars_edited": 0,
+        "pointed_by_issue": true,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 0,
+    "doc_chars": 666,
+    "issues": [
+      {
+        "field": "prescription.0.product",
+        "problem": "doksylamina z pirydoksyną: nazwa handlowa Xonvea to produkt innej substancji (Doxylamini hydrogenosuccinas + Pyridoxini hydrochloridum) niż podyktowana - wybierz produkt"
+      }
+    ],
+    "doctor_notes": [
+      {
+        "path": "prescription.0.product",
+        "category": "recepta",
+        "severity": "umiarkowany",
+        "source": "system",
+        "reason": "Fałszywy konflikt nazwy handlowej: substancje zapisane „doksylamina z pirydoksyną” (spójnik „z”), a Xonvea to właśnie doksylamina + pirydoksyna. Wybieram Xonvea."
+      }
+    ]
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": true,
+    "changes": [],
+    "chars_edited": 0,
+    "doc_chars": 648,
+    "issues": [],
+    "doctor_notes": []
+  }
+]

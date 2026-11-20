@@ -1,0 +1,102 @@
+[
+  {
+    "stage": 1,
+    "reviewer": "files",
+    "accepted_unchanged": false,
+    "changes": [
+      {
+        "path": "prescription.0.substance",
+        "kind": "modified",
+        "before": "amoksycylina",
+        "after": "klarytromycyna",
+        "chars_edited": 10,
+        "pointed_by_issue": false,
+        "has_note": true
+      },
+      {
+        "path": "prescription.0.strength",
+        "kind": "modified",
+        "before": "1000 mg",
+        "after": "250 mg",
+        "chars_edited": 3,
+        "pointed_by_issue": false,
+        "has_note": true
+      },
+      {
+        "path": "prescription.0.form",
+        "kind": "modified",
+        "before": "tabletki",
+        "after": "tabletki powlekane",
+        "chars_edited": 10,
+        "pointed_by_issue": false,
+        "has_note": true
+      },
+      {
+        "path": "prescription.0.dosage",
+        "kind": "modified",
+        "before": "1 tabletka 2 razy dziennie przez 10 dni",
+        "after": "1 tabletka 2 razy dziennie co 12 godzin przez 10 dni",
+        "chars_edited": 13,
+        "pointed_by_issue": false,
+        "has_note": true
+      },
+      {
+        "path": "prescription.0.quantity",
+        "kind": "added",
+        "before": null,
+        "after": "20 tabletek",
+        "chars_edited": 11,
+        "pointed_by_issue": true,
+        "has_note": true
+      },
+      {
+        "path": "prescription.0.product",
+        "kind": "modified",
+        "before": "Amoxicillin MIP Pharma · 1000 mg · Tabletki · RPL 100279499",
+        "after": "Klarmin · 250 mg · Tabletki powlekane · RPL 100120238",
+        "chars_edited": 0,
+        "pointed_by_issue": false,
+        "has_note": true
+      }
+    ],
+    "chars_edited": 47,
+    "doc_chars": 486,
+    "issues": [
+      {
+        "field": "prescription.0.quantity",
+        "problem": "amoksycylina: nie podano ilości"
+      }
+    ],
+    "doctor_notes": [
+      {
+        "path": "prescription.0",
+        "category": "recepta",
+        "severity": "istotny",
+        "source": "dyktowanie",
+        "reason": "W karcie pacjentki alergia na amoksycylinę (pokrzywka, obrzęk warg – reakcja natychmiastowa); podyktowałem amoksycylinę przez pomyłkę. System nie zasygnalizował sprzeczności z kartą. Zmieniam na klarytromycynę 250 mg 2 × dziennie przez 10 dni."
+      },
+      {
+        "path": "prescription.0.quantity",
+        "category": "recepta",
+        "severity": "umiarkowany",
+        "source": "dyktowanie",
+        "reason": "Nie podałem ilości antybiotyku (system to oznaczył); uzupełniam 20 tabletek."
+      }
+    ]
+  },
+  {
+    "stage": 2,
+    "reviewer": "files",
+    "accepted_unchanged": true,
+    "changes": [],
+    "chars_edited": 0,
+    "doc_chars": 467,
+    "issues": [
+      {
+        "field": "visit_note.history",
+        "problem": "Dyktowanie nie zawiera wywiadu o alergiach: lekarz przyznaje, że nie pytał o uczulenia, a pacjentka zaprzeczyła uczuleniom. Karta przedstawia to jako ustalenie wywiadu i nie zaznacza, że alergie nie były zweryfikowane. Nie wskazuje też wprost sprzeczności między zaprzeczeniem pacjentki a alergią na amoksycylinę z danych pacjenta."
+      }
+    ],
+    "doctor_notes": []
+  }
+]

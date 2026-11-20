@@ -1,0 +1,45 @@
+{
+  "prescription": [
+    {
+      "substance": "amoksycylina",
+      "brand_name": null,
+      "strength": "1000 mg",
+      "form": "tabletki",
+      "dosage": "1 tabletka 2 razy dziennie przez 10 dni",
+      "quantity": null,
+      "product": "Amoxicillin MIP Pharma · 1000 mg · Tabletki · RPL 100279499",
+      "candidates": [
+        "Amoxicillin Aurovitas · 1000 mg · Tabletki powlekane · RPL 100423737",
+        "Amotaks · 1 g · Tabletki · RPL 100005313"
+      ]
+    },
+    {
+      "substance": "ibuprofen",
+      "brand_name": null,
+      "strength": "400 mg",
+      "form": null,
+      "dosage": "1 tabletka do 3 razy dziennie po jedzeniu",
+      "quantity": "1 opakowanie",
+      "product": "Ibuprofen TZF · 400 mg · Tabletki powlekane · RPL 100424205",
+      "candidates": [
+        "Ibuprofen Zentiva · 400 mg · Tabletki powlekane · RPL 100432660",
+        "Ibuprofen Dr. Max · 400 mg · Tabletki powlekane · RPL 100317834"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Pić dużo płynów.",
+      "Pić napoje ciepłe, nie gorące.",
+      "Zwolnienie lekarskie na pięć dni."
+    ],
+    "warning_signs": [
+      "Duszność.",
+      "Problem z przełykaniem śliny.",
+      "Szczękościsk.",
+      "Wysypka i obrzęk twarzy."
+    ],
+    "follow_up": "Kontrola po zakończeniu antybiotyku; wcześniej, jeśli wystąpi coś niepokojącego."
+  },
+  "doctor_notes": []
+}

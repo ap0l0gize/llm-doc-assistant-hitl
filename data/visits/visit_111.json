@@ -1,0 +1,32 @@
+{
+  "visit_id": "visit_111",
+  "pesel": "95091105915",
+  "stage1_dictation": "Hydroksyzyna dwadzieścia pięć miligramów, tabletki, pół do jednej tabletki wieczorem doraźnie przy niepokoju lub problemach z zaśnięciem, nie więcej niż jedna tabletka na dobę. Może powodować senność rano, więc nie prowadzić samochodu, dopóki pan nie zobaczy, jak lek działa. Bez alkoholu. Higiena snu: stałe pory, bez ekranów godzinę przed snem, kawa tylko do południa. Skierowanie do psychologa na terapię poznawczo-behawioralną bezsenności. Kontrola za cztery tygodnie. Gdyby pojawiły się myśli rezygnacyjne albo samobójcze, natychmiast kontakt: sto dwanaście albo Centrum Wsparcia osiemset, siedemdziesiąt, dwa dwa dwa dwa.",
+  "stage2_dictation": "Pacjent trzydzieści jeden lat, informatyk. Od trzech miesięcy trudności z zasypianiem, budzi się w nocy, napięcie i zamartwianie się sprawami w pracy, kołatania serca w sytuacjach stresowych. Nastrój raczej wyrównany, zainteresowania zachowane, bez myśli rezygnacyjnych i samobójczych. Alkohol okazjonalnie, kawa cztery do pięciu dziennie, ostatnia wieczorem. Nie przyjmuje leków. GAD-7 dwanaście punktów. W badaniu przytomny, spokojny, logiczny kontakt, nastrój lekko obniżony, napęd prawidłowy. Tętno osiemdziesiąt cztery, ciśnienie sto dwadzieścia osiem na osiemdziesiąt. TSH w normie. Rozpoznanie: zaburzenia lękowe uogólnione, bezsenność.",
+  "benchmark": {
+    "title": "Zaburzenia lękowe uogólnione z bezsennością",
+    "short_title": "Lęk i bezsenność",
+    "difficulty": "B",
+    "specialty": "psychiatria",
+    "features": [
+      "zaprzeczenia",
+      "brak-ilosci",
+      "wartosci-liczbowe"
+    ],
+    "clinical_summary": "31-latek z 3-miesięcznym lękiem i bezsennością, GAD-7 12 pkt, bez myśli samobójczych. Hydroksyzyna doraźnie (bez podanej ilości), higiena snu, skierowanie na CBT-I, numery kryzysowe. Dyktowanie bez nagłówka „Recepta”.",
+    "hypotheses": [
+      {
+        "id": "H111-1",
+        "text": "System oznaczy brak ilości hydroksyzyny."
+      },
+      {
+        "id": "H111-2",
+        "text": "Zaprzeczenie myśli samobójczych zostanie zachowane w karcie."
+      },
+      {
+        "id": "H111-3",
+        "text": "Numer Centrum Wsparcia (800 70 2222) zostanie poprawnie złożony z dyktowania słownego."
+      }
+    ]
+  }
+}

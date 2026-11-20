@@ -1,0 +1,24 @@
+{
+  "visit_note": {
+    "history": "Pacjent lat 79. Niewydolność serca z obniżoną frakcją wyrzutową (EF 35% w ostatnim echu), przewlekła choroba nerek. Od tygodnia narastające obrzęki podudzi, duszność przy wejściu na I piętro (wcześniej wchodził na III piętro). Śpi na dwóch poduszkach (wcześniej na jednej). Przyrost masy ciała o 3 kg w ciągu tygodnia, aktualnie 87 kg. Od miesiąca przyjmuje ibuprofen 400 mg 2–3 razy dziennie z powodu bólu stawów kolanowych.",
+    "physical_examination": "Ciśnienie tętnicze 140/85 mmHg, tętno 88/min, miarowe, saturacja 94%. Trzeszczenia u podstawy obu płuc. Obrzęki podudzi do połowy goleni, ciastowate, symetryczne. Wyniki badań sprzed tygodnia: kreatynina 1,4 mg/dl, eGFR 42, potas 4,1 mmol/l, NT-proBNP 2400 pg/ml.",
+    "diagnosis": "Zaostrzenie przewlekłej niewydolności serca, NYHA III, prawdopodobnie po NLPZ. Leczenie ambulatoryjne z intensyfikacją diuretyku.",
+    "icd10": "I50.0"
+  },
+  "doctor_notes": [
+    {
+      "path": "visit_note.history",
+      "category": "błędny fakt",
+      "severity": "umiarkowany",
+      "source": "system",
+      "reason": "„Ibuprofen czterysta, dwa, trzy razy dziennie” to 400 mg 2–3 razy dziennie; model wpisał dawkę 402 mg. Weryfikator tego nie zgłosił. Przy okazji: „wcześniej wchodził na trzecie” zmienione na „wcześniej duszność na III piętrze” – przywracam sens dyktowania."
+    },
+    {
+      "path": "visit_note.diagnosis",
+      "category": "pominięcie",
+      "severity": "umiarkowany",
+      "source": "system",
+      "reason": "Pominięty podyktowany plan: leczenie ambulatoryjne z intensyfikacją diuretyku (wskazał weryfikator)."
+    }
+  ]
+}

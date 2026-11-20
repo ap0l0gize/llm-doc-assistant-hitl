@@ -1,0 +1,34 @@
+{
+  "visit_id": "visit_107",
+  "pesel": "52011707264",
+  "stage1_dictation": "Przedłużamy leki stałe na trzy miesiące. Telmisartan osiemdziesiąt miligramów, raz dziennie rano, trzy opakowania po dwadzieścia osiem. Amlodypina pięć miligramów raz dziennie, trzy opakowania po trzydzieści. Atorwastatyna czterdzieści miligramów wieczorem, trzy opakowania po dwadzieścia osiem. Metformina tysiąc miligramów dwa razy dziennie, cztery opakowania po sześćdziesiąt. Lewotyroksyna siedemdziesiąt pięć mikrogramów rano na czczo, dwa opakowania po pięćdziesiąt tabletek. Ketoprofen, który pani brała doraźnie na kolana, odstawiamy ze względu na nerki, przy bólu tylko paracetamol. Zalecenia: kontrola ciśnienia w domu, regularne posiłki. Badania przed następną wizytą: kreatynina, potas, HbA1c, TSH, lipidogram. Wizyta za trzy miesiące z wynikami. Pilnie zgłosić się, gdyby pojawiły się zawroty głowy z omdleniem albo obrzęki nóg.",
+  "stage2_dictation": "Pacjentka siedemdziesiąt cztery lata, wizyta w celu przedłużenia leków. Czuje się dobrze, bez bólów w klatce piersiowej, bez duszności. Bóle kolan wysiłkowe, brała ketoprofen kilka razy w tygodniu. Ciśnienia domowe sto trzydzieści do stu czterdziestu na osiemdziesiąt. Wyniki sprzed dwóch tygodni: kreatynina jeden i trzy dziesiąte, eGFR czterdzieści osiem, potas cztery i osiem dziesiątych, HbA1c sześć i dziewięć dziesiątych, TSH dwa i jedna dziesiąta, LDL siedemdziesiąt dwa. W badaniu ciśnienie sto trzydzieści osiem na osiemdziesiąt dwa, tętno siedemdziesiąt, miarowe, bez obrzęków, kolana bez wysięku, trzeszczenia przy ruchach. Rozpoznanie: nadciśnienie tętnicze, cukrzyca typu drugiego, niedoczynność tarczycy i hiperlipidemia wyrównane; przewlekła choroba nerek G3a, odstawienie niesteroidowych leków przeciwzapalnych.",
+  "benchmark": {
+    "title": "Przedłużenie leków przewlekłych u 74-latki z wielochorobowością",
+    "short_title": "Przedłużenie leków (5)",
+    "difficulty": "B",
+    "specialty": "medycyna rodzinna / geriatria",
+    "features": [
+      "polipragmazja",
+      "przedluzenie-recepty",
+      "odstawienie",
+      "wiek-podeszly",
+      "jednostki-slownie"
+    ],
+    "clinical_summary": "Wizyta po recepty na stałe leki: 5 leków na 3 miesiące z różnymi ilościami opakowań, odstawienie ketoprofenu z powodu PChN. Sprawdza, czy model nie pomija leków „przedłużanych” (reguła o lekach kontynuowanych).",
+    "hypotheses": [
+      {
+        "id": "H107-1",
+        "text": "Ryzyko: model pominie część przedłużanych leków, stosując regułę o lekach kontynuowanych bez zmian."
+      },
+      {
+        "id": "H107-2",
+        "text": "Ketoprofen (odstawiony) i paracetamol (tylko zalecenie) nie trafią na receptę."
+      },
+      {
+        "id": "H107-3",
+        "text": "Ilości opakowań pięciu leków zostaną przypisane do właściwych pozycji."
+      }
+    ]
+  }
+}

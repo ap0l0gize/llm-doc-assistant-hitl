@@ -1,0 +1,31 @@
+{
+  "visit_id": "visit_105",
+  "pesel": "79033004329",
+  "stage1_dictation": "Recepta: lewotyroksyna pięćdziesiąt mikrogramów, tabletki, jedna tabletka rano na czczo, trzydzieści minut przed śniadaniem, popijać wodą, dwa opakowania. Zalecenia: lek przyjmować codziennie o tej samej porze, nie razem z kawą ani preparatami żelaza czy wapnia, zachować odstęp co najmniej czterech godzin. Badanie TSH za sześć do ośmiu tygodni, potem wizyta kontrolna z wynikiem. Pilnie zgłosić się przy kołataniu serca, bólu w klatce piersiowej albo nasilonym niepokoju i bezsenności.",
+  "stage2_dictation": "Pacjentka czterdzieści siedem lat. Od kilku miesięcy męczliwość, senność, uczucie zimna, zaparcia, przybór masy ciała o cztery kilogramy w pół roku, sucha skóra. TSH dwanaście i cztery dziesiąte mili jednostki na litr, FT4 zero przecinek siedem nanograma na decylitr, poniżej normy. Przeciwciała anty-TPO podwyższone, czterysta pięćdziesiąt. W badaniu tętno sześćdziesiąt dwa, ciśnienie sto dwadzieścia na osiemdziesiąt, skóra sucha, tarczyca niepowiększona, bez guzków wyczuwalnych palpacyjnie. Rozpoznanie: niedoczynność tarczycy w przebiegu choroby Hashimoto.",
+  "benchmark": {
+    "title": "Niedoczynność tarczycy w przebiegu choroby Hashimoto",
+    "short_title": "Niedoczynność tarczycy",
+    "difficulty": "A",
+    "specialty": "endokrynologia",
+    "features": [
+      "jednostki-slownie",
+      "wartosci-liczbowe"
+    ],
+    "clinical_summary": "47-latka z objawami niedoczynności, TSH 12,4, FT4 poniżej normy, anty-TPO 450. Lewotyroksyna 50 mikrogramów, kontrola TSH za 6–8 tygodni.",
+    "hypotheses": [
+      {
+        "id": "H105-1",
+        "text": "Moc „pięćdziesiąt mikrogramów” zostanie dopasowana do lewotyroksyny 50 mcg."
+      },
+      {
+        "id": "H105-2",
+        "text": "Wartości laboratoryjne (TSH 12,4; FT4 0,7; anty-TPO 450) zostaną przepisane bez błędów."
+      },
+      {
+        "id": "H105-3",
+        "text": "Termin kontroli (TSH za 6–8 tygodni, potem wizyta) zostanie zachowany."
+      }
+    ]
+  }
+}

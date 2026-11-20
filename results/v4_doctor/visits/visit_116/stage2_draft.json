@@ -1,0 +1,9 @@
+{
+  "visit_note": {
+    "history": "Pacjentka lat trzydzieści sześć. Od trzech dni ból gardła, gorączka do 39,2°C. Bez kaszlu. Alergie: pacjentka neguje uczulenia; w danych pacjenta odnotowano alergię na amoksycylinę (pokrzywka, obrzęk warg, 2019). Choroby przewlekłe: brak. Leki stałe: brak.",
+    "physical_examination": "Temperatura ciała 38,8°C. Migdałki przerośnięte, z nalotami. Węzły chłonne podżuchwowe powiększone, bolesne. Punktacja Centor: 4 pkt. Test w kierunku paciorkowca: dodatni.",
+    "diagnosis": "Ostre paciorkowcowe zapalenie migdałków.",
+    "icd10": null
+  },
+  "doctor_notes": []
+}

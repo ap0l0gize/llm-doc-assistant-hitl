@@ -1,0 +1,48 @@
+{
+  "prescription": [
+    {
+      "substance": "fenoksymetylpenicylina",
+      "brand_name": null,
+      "strength": "1 milion jednostek",
+      "form": "tabletki",
+      "dosage": "jedna tabletka trzy razy dziennie przez dziesięć dni",
+      "quantity": null,
+      "product": null,
+      "candidates": [
+        "Polcylin · 50 mg/ml · Granulat do sporządzania roztworu doustnego · RPL 100484820",
+        "Polcylin · 100 mg/ml · Granulat do sporządzania zawiesiny doustnej · RPL 100484838",
+        "Polcylin · 250 mg/ml · Granulat do sporządzania roztworu doustnego · RPL 100484845"
+      ]
+    },
+    {
+      "substance": "paracetamol",
+      "brand_name": null,
+      "strength": "500 mg",
+      "form": "tabletki",
+      "dosage": "jedna do dwóch tabletek doraźnie przy bólu lub gorączce, maksymalnie osiem tabletek na dobę",
+      "quantity": "1 opakowanie",
+      "product": "Paracetamol DOZ · 500 mg · Tabletki · RPL 100246778",
+      "candidates": [
+        "Paracetamol Accord · 500 mg · Tabletki · RPL 100350211",
+        "Paracetamol Hasco · 500 mg · Tabletki powlekane · RPL 100257121"
+      ]
+    }
+  ],
+  "patient_instructions": {
+    "recommendations": [
+      "Antybiotyk (fenoksymetylpenicylina, 1 000 000 jednostek) przyjmować jedną tabletkę trzy razy dziennie przez dziesięć dni, nawet po ustąpieniu objawów.",
+      "Paracetamol 500 mg: jedna do dwóch tabletek doraźnie przy bólu lub gorączce, maksymalnie osiem tabletek na dobę.",
+      "Pić dużo płynów.",
+      "Płukać gardło.",
+      "Zwolnienie lekarskie na pięć dni."
+    ],
+    "warning_signs": [
+      "Szczękościsk.",
+      "Narastający jednostronny obrzęk gardła.",
+      "Trudności w połykaniu śliny.",
+      "Duszność."
+    ],
+    "follow_up": "Kontrola tylko w razie braku poprawy po trzech dniach."
+  },
+  "doctor_notes": []
+}
